@@ -16,7 +16,7 @@ data Expr
     deriving Show
     
 exprParser :: Parser Expr
-exprParser = falseParser <|> trueParser <|> notParser
+exprParser = falseParser <|> trueParser <|> notParser <|> andParser <|> orParser
 
 falseParser :: Parser Expr
 falseParser = lexeme $ string "False" $> FalseLit
@@ -37,8 +37,20 @@ andParser = do
     lexeme $ char '('
     lexeme $ string "and"
     expr <- exprParser
+    skipSpace
+    expr1 <- exprParser
     lexeme $ char ')'
-    return (Not expr)
+    return (And expr expr1)
+
+orParser :: Parser Expr
+orParser = do
+    lexeme $ char '('
+    lexeme $ string "and"
+    expr <- exprParser
+    skipSpace
+    expr1 <- exprParser
+    lexeme $ char ')'
+    return (Or expr expr1)
 
 lexeme :: Parser a -> Parser a
 lexeme p = do
@@ -49,6 +61,8 @@ eval :: Expr -> Bool
 eval FalseLit = False
 eval TrueLit = True
 eval (Not p) = not $ eval p
+eval (And p q) = and [(eval p),(eval q)]
+eval (Or p q) = or [(eval p),(eval q)]
 -- eval (And p q) =  
 -- eval (Or p q) =  
 
