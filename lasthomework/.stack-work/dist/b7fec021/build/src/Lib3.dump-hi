@@ -1,0 +1,1712 @@
+
+==================== FINAL INTERFACE ====================
+2017-01-12 00:53:05.0688803 UTC
+
+interface lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk:Lib3 [family instance module] 8001
+  interface hash: 947c584d401b2c9bf2d8107a62383faa
+  ABI hash: c80ecf406d2424611365f5b050b3dcf9
+  export-list hash: d45d7ea425e2c34c44c9fcb57587e4cd
+  orphan hash: 6c74280f0b135ff95d8d2d22aad4ee69
+  flag hash: 5e23d0c602fd80d7b9e29eaf2e702541
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Lib3.defMain
+  Lib3.genTree
+  Lib3.printDoc
+  Lib3.Tree{Lib3.Cons Lib3.Nil}
+module dependencies:
+package dependencies: GenericPretty-1.2.1@GenericPretty-1.2.1-FqlYg3LhEVa3kMV6nPdaDK
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0*
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 pretty-1.1.3.3@pretty-1.1.3.3
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+import  -/  GenericPretty-1.2.1@GenericPretty-1.2.1-FqlYg3LhEVa3kMV6nPdaDK:Text.PrettyPrint.GenericPretty 3aa3d1ea333dabb2961a068a6b94c04b
+import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:GHC.Err 20faef8829fd13c027d0ee2213637534
+import  -/  base-4.9.0.0:GHC.Generics cdf72cc575895201800451f77c6e6810
+import  -/  base-4.9.0.0:GHC.Num f0aed3315b3ed1b330b71fc4148a5581
+import  -/  base-4.9.0.0:GHC.Show 0b5845243cb2ec62b57dd6963d276ec6
+import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
+import  -/  base-4.9.0.0:System.IO c1068c4f4231e3198e330f99a58145b0
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+import  -/  pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint abe8aeb00d775221281f89090d9fbe2a
+import  -/  pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ b902aa9b6a92998c99560a7e4d6a93ae
+0d01eeb275b7fd136d9abeee281072b0
+  $fGenericTree :: GHC.Generics.Generic (Lib3.Tree a)
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a.
+                  @ (Lib3.Tree a)
+                  (Lib3.$fGenericTree_$cfrom @ a)
+                  (Lib3.$fGenericTree_$cto @ a) -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fGenericTree1 ::
+    (GHC.Generics.:+:)
+      (GHC.Generics.M1
+         GHC.Generics.C
+         ('GHC.Generics.MetaCons
+            "Nil" 'GHC.Generics.PrefixI 'GHC.Types.False)
+         GHC.Generics.U1)
+      (GHC.Generics.C1
+         ('GHC.Generics.MetaCons
+            "Cons" 'GHC.Generics.PrefixI 'GHC.Types.False)
+         (GHC.Generics.S1
+            ('GHC.Generics.MetaSel
+               'GHC.Base.Nothing
+               'GHC.Generics.NoSourceUnpackedness
+               'GHC.Generics.NoSourceStrictness
+               'GHC.Generics.DecidedLazy)
+            (GHC.Generics.Rec0 a)
+          GHC.Generics.:*: (GHC.Generics.S1
+                              ('GHC.Generics.MetaSel
+                                 'GHC.Base.Nothing
+                                 'GHC.Generics.NoSourceUnpackedness
+                                 'GHC.Generics.NoSourceStrictness
+                                 'GHC.Generics.DecidedLazy)
+                              (GHC.Generics.Rec0 (Lib3.Tree a))
+                            GHC.Generics.:*: GHC.Generics.S1
+                                               ('GHC.Generics.MetaSel
+                                                  'GHC.Base.Nothing
+                                                  'GHC.Generics.NoSourceUnpackedness
+                                                  'GHC.Generics.NoSourceStrictness
+                                                  'GHC.Generics.DecidedLazy)
+                                               (GHC.Generics.Rec0 (Lib3.Tree a)))))
+      x
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (\ @ x @ a ->
+                 GHC.Generics.L1
+                   @ (GHC.Generics.M1
+                        GHC.Generics.C
+                        ('GHC.Generics.MetaCons
+                           "Nil" 'GHC.Generics.PrefixI 'GHC.Types.False)
+                        GHC.Generics.U1)
+                   @ (GHC.Generics.C1
+                        ('GHC.Generics.MetaCons
+                           "Cons" 'GHC.Generics.PrefixI 'GHC.Types.False)
+                        (GHC.Generics.S1
+                           ('GHC.Generics.MetaSel
+                              'GHC.Base.Nothing
+                              'GHC.Generics.NoSourceUnpackedness
+                              'GHC.Generics.NoSourceStrictness
+                              'GHC.Generics.DecidedLazy)
+                           (GHC.Generics.Rec0 a)
+                         GHC.Generics.:*: (GHC.Generics.S1
+                                             ('GHC.Generics.MetaSel
+                                                'GHC.Base.Nothing
+                                                'GHC.Generics.NoSourceUnpackedness
+                                                'GHC.Generics.NoSourceStrictness
+                                                'GHC.Generics.DecidedLazy)
+                                             (GHC.Generics.Rec0 (Lib3.Tree a))
+                                           GHC.Generics.:*: GHC.Generics.S1
+                                                              ('GHC.Generics.MetaSel
+                                                                 'GHC.Base.Nothing
+                                                                 'GHC.Generics.NoSourceUnpackedness
+                                                                 'GHC.Generics.NoSourceStrictness
+                                                                 'GHC.Generics.DecidedLazy)
+                                                              (GHC.Generics.Rec0 (Lib3.Tree a)))))
+                   @ x
+                   (GHC.Generics.U1 @ x)
+                     `cast`
+                   (Sym (GHC.Generics.N:M1[0]
+                             <GHC.Generics.C>_P
+                             <'GHC.Generics.MetaCons
+                                "Nil" 'GHC.Generics.PrefixI 'GHC.Types.False>_P
+                             <GHC.Generics.U1>_R) <x>_N)) -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fGenericTree_$cfrom ::
+    Lib3.Tree a -> GHC.Generics.Rep (Lib3.Tree a) x
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a @ x (ds :: Lib3.Tree a) ->
+                 case ds of wild {
+                   Lib3.Nil
+                   -> (Lib3.$fGenericTree1 @ x @ a)
+                        `cast`
+                      (Trans
+                           (Sym (GHC.Generics.N:M1[0]
+                                     <GHC.Generics.D>_P
+                                     <'GHC.Generics.MetaData
+                                        "Tree"
+                                        "Lib3"
+                                        "lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk"
+                                        'GHC.Types.False>_P
+                                     <GHC.Generics.M1
+                                        GHC.Generics.C
+                                        ('GHC.Generics.MetaCons
+                                           "Nil" 'GHC.Generics.PrefixI 'GHC.Types.False)
+                                        GHC.Generics.U1
+                                      GHC.Generics.:+: GHC.Generics.C1
+                                                         ('GHC.Generics.MetaCons
+                                                            "Cons"
+                                                            'GHC.Generics.PrefixI
+                                                            'GHC.Types.False)
+                                                         (GHC.Generics.S1
+                                                            ('GHC.Generics.MetaSel
+                                                               'GHC.Base.Nothing
+                                                               'GHC.Generics.NoSourceUnpackedness
+                                                               'GHC.Generics.NoSourceStrictness
+                                                               'GHC.Generics.DecidedLazy)
+                                                            (GHC.Generics.Rec0 a)
+                                                          GHC.Generics.:*: (GHC.Generics.S1
+                                                                              ('GHC.Generics.MetaSel
+                                                                                 'GHC.Base.Nothing
+                                                                                 'GHC.Generics.NoSourceUnpackedness
+                                                                                 'GHC.Generics.NoSourceStrictness
+                                                                                 'GHC.Generics.DecidedLazy)
+                                                                              (GHC.Generics.Rec0
+                                                                                 (Lib3.Tree a))
+                                                                            GHC.Generics.:*: GHC.Generics.S1
+                                                                                               ('GHC.Generics.MetaSel
+                                                                                                  'GHC.Base.Nothing
+                                                                                                  'GHC.Generics.NoSourceUnpackedness
+                                                                                                  'GHC.Generics.NoSourceStrictness
+                                                                                                  'GHC.Generics.DecidedLazy)
+                                                                                               (GHC.Generics.Rec0
+                                                                                                  (Lib3.Tree
+                                                                                                     a))))>_R))
+                           (Sub (Sym (Lib3.Rep_Tree[0] <a>_N))) <x>_N)
+                   Lib3.Cons g1 g2 g3
+                   -> (GHC.Generics.R1
+                         @ (GHC.Generics.C1
+                              ('GHC.Generics.MetaCons
+                                 "Nil" 'GHC.Generics.PrefixI 'GHC.Types.False)
+                              GHC.Generics.U1)
+                         @ (GHC.Generics.M1
+                              GHC.Generics.C
+                              ('GHC.Generics.MetaCons
+                                 "Cons" 'GHC.Generics.PrefixI 'GHC.Types.False)
+                              (GHC.Generics.M1
+                                 GHC.Generics.S
+                                 ('GHC.Generics.MetaSel
+                                    'GHC.Base.Nothing
+                                    'GHC.Generics.NoSourceUnpackedness
+                                    'GHC.Generics.NoSourceStrictness
+                                    'GHC.Generics.DecidedLazy)
+                                 (GHC.Generics.K1 GHC.Generics.R a)
+                               GHC.Generics.:*: (GHC.Generics.M1
+                                                   GHC.Generics.S
+                                                   ('GHC.Generics.MetaSel
+                                                      'GHC.Base.Nothing
+                                                      'GHC.Generics.NoSourceUnpackedness
+                                                      'GHC.Generics.NoSourceStrictness
+                                                      'GHC.Generics.DecidedLazy)
+                                                   (GHC.Generics.K1 GHC.Generics.R (Lib3.Tree a))
+                                                 GHC.Generics.:*: GHC.Generics.M1
+                                                                    GHC.Generics.S
+                                                                    ('GHC.Generics.MetaSel
+                                                                       'GHC.Base.Nothing
+                                                                       'GHC.Generics.NoSourceUnpackedness
+                                                                       'GHC.Generics.NoSourceStrictness
+                                                                       'GHC.Generics.DecidedLazy)
+                                                                    (GHC.Generics.K1
+                                                                       GHC.Generics.R
+                                                                       (Lib3.Tree a)))))
+                         @ x
+                         (GHC.Generics.:*:
+                            @ (GHC.Generics.M1
+                                 GHC.Generics.S
+                                 ('GHC.Generics.MetaSel
+                                    'GHC.Base.Nothing
+                                    'GHC.Generics.NoSourceUnpackedness
+                                    'GHC.Generics.NoSourceStrictness
+                                    'GHC.Generics.DecidedLazy)
+                                 (GHC.Generics.K1 GHC.Generics.R a))
+                            @ (GHC.Generics.M1
+                                 GHC.Generics.S
+                                 ('GHC.Generics.MetaSel
+                                    'GHC.Base.Nothing
+                                    'GHC.Generics.NoSourceUnpackedness
+                                    'GHC.Generics.NoSourceStrictness
+                                    'GHC.Generics.DecidedLazy)
+                                 (GHC.Generics.K1 GHC.Generics.R (Lib3.Tree a))
+                               GHC.Generics.:*: GHC.Generics.M1
+                                                  GHC.Generics.S
+                                                  ('GHC.Generics.MetaSel
+                                                     'GHC.Base.Nothing
+                                                     'GHC.Generics.NoSourceUnpackedness
+                                                     'GHC.Generics.NoSourceStrictness
+                                                     'GHC.Generics.DecidedLazy)
+                                                  (GHC.Generics.K1 GHC.Generics.R (Lib3.Tree a)))
+                            @ x
+                            g1
+                              `cast`
+                            (Trans
+                                 (Sym (GHC.Generics.N:K1[0] <GHC.Generics.R>_P <a>_R <x>_P))
+                                 (Sym (GHC.Generics.N:M1[0]
+                                           <GHC.Generics.S>_P
+                                           <'GHC.Generics.MetaSel
+                                              'GHC.Base.Nothing
+                                              'GHC.Generics.NoSourceUnpackedness
+                                              'GHC.Generics.NoSourceStrictness
+                                              'GHC.Generics.DecidedLazy>_P
+                                           <GHC.Generics.K1 GHC.Generics.R a>_R) <x>_N))
+                            (GHC.Generics.:*:
+                               @ (GHC.Generics.M1
+                                    GHC.Generics.S
+                                    ('GHC.Generics.MetaSel
+                                       'GHC.Base.Nothing
+                                       'GHC.Generics.NoSourceUnpackedness
+                                       'GHC.Generics.NoSourceStrictness
+                                       'GHC.Generics.DecidedLazy)
+                                    (GHC.Generics.K1 GHC.Generics.R (Lib3.Tree a)))
+                               @ (GHC.Generics.M1
+                                    GHC.Generics.S
+                                    ('GHC.Generics.MetaSel
+                                       'GHC.Base.Nothing
+                                       'GHC.Generics.NoSourceUnpackedness
+                                       'GHC.Generics.NoSourceStrictness
+                                       'GHC.Generics.DecidedLazy)
+                                    (GHC.Generics.K1 GHC.Generics.R (Lib3.Tree a)))
+                               @ x
+                               g2
+                                 `cast`
+                               (Trans
+                                    (Sym (GHC.Generics.N:K1[0]
+                                              <GHC.Generics.R>_P <Lib3.Tree a>_R <x>_P))
+                                    (Sym (GHC.Generics.N:M1[0]
+                                              <GHC.Generics.S>_P
+                                              <'GHC.Generics.MetaSel
+                                                 'GHC.Base.Nothing
+                                                 'GHC.Generics.NoSourceUnpackedness
+                                                 'GHC.Generics.NoSourceStrictness
+                                                 'GHC.Generics.DecidedLazy>_P
+                                              <GHC.Generics.K1
+                                                 GHC.Generics.R (Lib3.Tree a)>_R) <x>_N))
+                               g3
+                                 `cast`
+                               (Trans
+                                    (Sym (GHC.Generics.N:K1[0]
+                                              <GHC.Generics.R>_P <Lib3.Tree a>_R <x>_P))
+                                    (Sym (GHC.Generics.N:M1[0]
+                                              <GHC.Generics.S>_P
+                                              <'GHC.Generics.MetaSel
+                                                 'GHC.Base.Nothing
+                                                 'GHC.Generics.NoSourceUnpackedness
+                                                 'GHC.Generics.NoSourceStrictness
+                                                 'GHC.Generics.DecidedLazy>_P
+                                              <GHC.Generics.K1
+                                                 GHC.Generics.R (Lib3.Tree a)>_R) <x>_N))))
+                           `cast`
+                         (Sym (GHC.Generics.N:M1[0]
+                                   <GHC.Generics.C>_P
+                                   <'GHC.Generics.MetaCons
+                                      "Cons" 'GHC.Generics.PrefixI 'GHC.Types.False>_P
+                                   <GHC.Generics.M1
+                                      GHC.Generics.S
+                                      ('GHC.Generics.MetaSel
+                                         'GHC.Base.Nothing
+                                         'GHC.Generics.NoSourceUnpackedness
+                                         'GHC.Generics.NoSourceStrictness
+                                         'GHC.Generics.DecidedLazy)
+                                      (GHC.Generics.K1 GHC.Generics.R a)
+                                    GHC.Generics.:*: (GHC.Generics.M1
+                                                        GHC.Generics.S
+                                                        ('GHC.Generics.MetaSel
+                                                           'GHC.Base.Nothing
+                                                           'GHC.Generics.NoSourceUnpackedness
+                                                           'GHC.Generics.NoSourceStrictness
+                                                           'GHC.Generics.DecidedLazy)
+                                                        (GHC.Generics.K1
+                                                           GHC.Generics.R (Lib3.Tree a))
+                                                      GHC.Generics.:*: GHC.Generics.M1
+                                                                         GHC.Generics.S
+                                                                         ('GHC.Generics.MetaSel
+                                                                            'GHC.Base.Nothing
+                                                                            'GHC.Generics.NoSourceUnpackedness
+                                                                            'GHC.Generics.NoSourceStrictness
+                                                                            'GHC.Generics.DecidedLazy)
+                                                                         (GHC.Generics.K1
+                                                                            GHC.Generics.R
+                                                                            (Lib3.Tree
+                                                                               a)))>_R) <x>_N))
+                        `cast`
+                      (Trans
+                           (Sym (GHC.Generics.N:M1[0]
+                                     <GHC.Generics.D>_P
+                                     <'GHC.Generics.MetaData
+                                        "Tree"
+                                        "Lib3"
+                                        "lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk"
+                                        'GHC.Types.False>_P
+                                     <GHC.Generics.C1
+                                        ('GHC.Generics.MetaCons
+                                           "Nil" 'GHC.Generics.PrefixI 'GHC.Types.False)
+                                        GHC.Generics.U1
+                                      GHC.Generics.:+: GHC.Generics.M1
+                                                         GHC.Generics.C
+                                                         ('GHC.Generics.MetaCons
+                                                            "Cons"
+                                                            'GHC.Generics.PrefixI
+                                                            'GHC.Types.False)
+                                                         (GHC.Generics.M1
+                                                            GHC.Generics.S
+                                                            ('GHC.Generics.MetaSel
+                                                               'GHC.Base.Nothing
+                                                               'GHC.Generics.NoSourceUnpackedness
+                                                               'GHC.Generics.NoSourceStrictness
+                                                               'GHC.Generics.DecidedLazy)
+                                                            (GHC.Generics.K1 GHC.Generics.R a)
+                                                          GHC.Generics.:*: (GHC.Generics.M1
+                                                                              GHC.Generics.S
+                                                                              ('GHC.Generics.MetaSel
+                                                                                 'GHC.Base.Nothing
+                                                                                 'GHC.Generics.NoSourceUnpackedness
+                                                                                 'GHC.Generics.NoSourceStrictness
+                                                                                 'GHC.Generics.DecidedLazy)
+                                                                              (GHC.Generics.K1
+                                                                                 GHC.Generics.R
+                                                                                 (Lib3.Tree a))
+                                                                            GHC.Generics.:*: GHC.Generics.M1
+                                                                                               GHC.Generics.S
+                                                                                               ('GHC.Generics.MetaSel
+                                                                                                  'GHC.Base.Nothing
+                                                                                                  'GHC.Generics.NoSourceUnpackedness
+                                                                                                  'GHC.Generics.NoSourceStrictness
+                                                                                                  'GHC.Generics.DecidedLazy)
+                                                                                               (GHC.Generics.K1
+                                                                                                  GHC.Generics.R
+                                                                                                  (Lib3.Tree
+                                                                                                     a))))>_R))
+                           (Sub (Sym (Lib3.Rep_Tree[0] <a>_N))) <x>_N) }) -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fGenericTree_$cto ::
+    GHC.Generics.Rep (Lib3.Tree a) x -> Lib3.Tree a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a @ x (ds :: GHC.Generics.Rep (Lib3.Tree a) x) ->
+                 case ds
+                        `cast`
+                      (Trans
+                           (Sub (Lib3.Rep_Tree[0] <a>_N))
+                           (GHC.Generics.N:M1[0]
+                                <GHC.Generics.D>_P
+                                <'GHC.Generics.MetaData
+                                   "Tree"
+                                   "Lib3"
+                                   "lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk"
+                                   'GHC.Types.False>_P
+                                <GHC.Generics.M1
+                                   GHC.Generics.C
+                                   ('GHC.Generics.MetaCons
+                                      "Nil" 'GHC.Generics.PrefixI 'GHC.Types.False)
+                                   GHC.Generics.U1
+                                 GHC.Generics.:+: GHC.Generics.C1
+                                                    ('GHC.Generics.MetaCons
+                                                       "Cons"
+                                                       'GHC.Generics.PrefixI
+                                                       'GHC.Types.False)
+                                                    (GHC.Generics.S1
+                                                       ('GHC.Generics.MetaSel
+                                                          'GHC.Base.Nothing
+                                                          'GHC.Generics.NoSourceUnpackedness
+                                                          'GHC.Generics.NoSourceStrictness
+                                                          'GHC.Generics.DecidedLazy)
+                                                       (GHC.Generics.Rec0 a)
+                                                     GHC.Generics.:*: (GHC.Generics.S1
+                                                                         ('GHC.Generics.MetaSel
+                                                                            'GHC.Base.Nothing
+                                                                            'GHC.Generics.NoSourceUnpackedness
+                                                                            'GHC.Generics.NoSourceStrictness
+                                                                            'GHC.Generics.DecidedLazy)
+                                                                         (GHC.Generics.Rec0
+                                                                            (Lib3.Tree a))
+                                                                       GHC.Generics.:*: GHC.Generics.S1
+                                                                                          ('GHC.Generics.MetaSel
+                                                                                             'GHC.Base.Nothing
+                                                                                             'GHC.Generics.NoSourceUnpackedness
+                                                                                             'GHC.Generics.NoSourceStrictness
+                                                                                             'GHC.Generics.DecidedLazy)
+                                                                                          (GHC.Generics.Rec0
+                                                                                             (Lib3.Tree
+                                                                                                a))))>_R) <x>_N) of wild {
+                   GHC.Generics.L1 ds1 -> case ds1 of tpl { DEFAULT -> Lib3.Nil @ a }
+                   GHC.Generics.R1 ds1
+                   -> case ds1
+                             `cast`
+                           (GHC.Generics.N:M1[0]
+                                <GHC.Generics.C>_P
+                                <'GHC.Generics.MetaCons
+                                   "Cons" 'GHC.Generics.PrefixI 'GHC.Types.False>_P
+                                <GHC.Generics.M1
+                                   GHC.Generics.S
+                                   ('GHC.Generics.MetaSel
+                                      'GHC.Base.Nothing
+                                      'GHC.Generics.NoSourceUnpackedness
+                                      'GHC.Generics.NoSourceStrictness
+                                      'GHC.Generics.DecidedLazy)
+                                   (GHC.Generics.K1 GHC.Generics.R a)
+                                 GHC.Generics.:*: (GHC.Generics.M1
+                                                     GHC.Generics.S
+                                                     ('GHC.Generics.MetaSel
+                                                        'GHC.Base.Nothing
+                                                        'GHC.Generics.NoSourceUnpackedness
+                                                        'GHC.Generics.NoSourceStrictness
+                                                        'GHC.Generics.DecidedLazy)
+                                                     (GHC.Generics.K1 GHC.Generics.R (Lib3.Tree a))
+                                                   GHC.Generics.:*: GHC.Generics.M1
+                                                                      GHC.Generics.S
+                                                                      ('GHC.Generics.MetaSel
+                                                                         'GHC.Base.Nothing
+                                                                         'GHC.Generics.NoSourceUnpackedness
+                                                                         'GHC.Generics.NoSourceStrictness
+                                                                         'GHC.Generics.DecidedLazy)
+                                                                      (GHC.Generics.K1
+                                                                         GHC.Generics.R
+                                                                         (Lib3.Tree
+                                                                            a)))>_R <x>_N) of wild1 { GHC.Generics.:*: ds2 ds3 ->
+                      case ds3 of wild2 { GHC.Generics.:*: ds4 ds5 ->
+                      Lib3.Cons
+                        @ a
+                        ds2
+                          `cast`
+                        (Trans
+                             (GHC.Generics.N:M1[0]
+                                  <GHC.Generics.S>_P
+                                  <'GHC.Generics.MetaSel
+                                     'GHC.Base.Nothing
+                                     'GHC.Generics.NoSourceUnpackedness
+                                     'GHC.Generics.NoSourceStrictness
+                                     'GHC.Generics.DecidedLazy>_P
+                                  <GHC.Generics.K1 GHC.Generics.R a>_R <x>_N)
+                             (GHC.Generics.N:K1[0] <GHC.Generics.R>_P <a>_R <x>_P))
+                        ds4
+                          `cast`
+                        (Trans
+                             (GHC.Generics.N:M1[0]
+                                  <GHC.Generics.S>_P
+                                  <'GHC.Generics.MetaSel
+                                     'GHC.Base.Nothing
+                                     'GHC.Generics.NoSourceUnpackedness
+                                     'GHC.Generics.NoSourceStrictness
+                                     'GHC.Generics.DecidedLazy>_P
+                                  <GHC.Generics.K1 GHC.Generics.R (Lib3.Tree a)>_R <x>_N)
+                             (GHC.Generics.N:K1[0] <GHC.Generics.R>_P <Lib3.Tree a>_R <x>_P))
+                        ds5
+                          `cast`
+                        (Trans
+                             (GHC.Generics.N:M1[0]
+                                  <GHC.Generics.S>_P
+                                  <'GHC.Generics.MetaSel
+                                     'GHC.Base.Nothing
+                                     'GHC.Generics.NoSourceUnpackedness
+                                     'GHC.Generics.NoSourceStrictness
+                                     'GHC.Generics.DecidedLazy>_P
+                                  <GHC.Generics.K1 GHC.Generics.R (Lib3.Tree a)>_R <x>_N)
+                             (GHC.Generics.N:K1[0]
+                                  <GHC.Generics.R>_P <Lib3.Tree a>_R <x>_P)) } } }) -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fOutTree ::
+    Text.PrettyPrint.GenericPretty.Out a =>
+    Text.PrettyPrint.GenericPretty.Out (Lib3.Tree a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a
+                      ($dOut :: Text.PrettyPrint.GenericPretty.Out a).
+                  @ (Lib3.Tree a)
+                  (Lib3.$fOutTree_$cdocPrec @ a $dOut)
+                  (Lib3.$fOutTree_$cdoc @ a $dOut)
+                  (Lib3.$fOutTree_$cdocList @ a $dOut) -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fOutTree_$cdoc ::
+    Text.PrettyPrint.GenericPretty.Out a =>
+    Lib3.Tree a -> Text.PrettyPrint.HughesPJ.Doc
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)> -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fOutTree_$cdocList ::
+    Text.PrettyPrint.GenericPretty.Out a =>
+    [Lib3.Tree a] -> Text.PrettyPrint.HughesPJ.Doc
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><S,1*U>m7,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   (w :: Text.PrettyPrint.GenericPretty.Out a)
+                   (w1 :: [Lib3.Tree a]) ->
+                 case Lib3.$w$cdocList @ a w w1 of ww { (#,,#) ww1 ww2 ww3 ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.Beside @ () ww1 ww2 ww3)
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fOutTree_$cdocPrec ::
+    Text.PrettyPrint.GenericPretty.Out a =>
+    GHC.Types.Int -> Lib3.Tree a -> Text.PrettyPrint.HughesPJ.Doc
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)> -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fOutTree_$s$cdoc ::
+    Lib3.Tree GHC.Types.Int -> Text.PrettyPrint.HughesPJ.Doc
+  {- Arity: 1, Strictness: <S,1*U> -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fOutTree_$s$cdocList ::
+    [Lib3.Tree GHC.Types.Int] -> Text.PrettyPrint.HughesPJ.Doc
+  {- Arity: 1, Strictness: <S,1*U>m7, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: [Lib3.Tree GHC.Types.Int]) ->
+                 case Lib3.$w$s$cdocList w of ww { (#,,#) ww1 ww2 ww3 ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.Beside @ () ww1 ww2 ww3)
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fOutTree_$s$cdocPrec ::
+    GHC.Types.Int
+    -> Lib3.Tree GHC.Types.Int -> Text.PrettyPrint.HughesPJ.Doc
+  {- Arity: 2, Strictness: <L,U(U)><S,1*U> -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fOutTree_$s$fOutTree ::
+    Text.PrettyPrint.GenericPretty.Out (Lib3.Tree GHC.Types.Int)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Lib3.Tree GHC.Types.Int)
+                  Lib3.$fOutTree_$s$cdocPrec
+                  Lib3.$fOutTree_$s$cdoc
+                  Lib3.$fOutTree_$s$cdocList -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fShowTree :: GHC.Show.Show a => GHC.Show.Show (Lib3.Tree a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dShow :: GHC.Show.Show a).
+                  @ (Lib3.Tree a)
+                  (Lib3.$fShowTree_$cshowsPrec @ a $dShow)
+                  (Lib3.$fShowTree_$cshow @ a $dShow)
+                  (Lib3.$fShowTree_$cshowList @ a $dShow) -}
+33019e206d8943af0bcc30f824ca50f8
+  $fShowTree1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fShowTree_$cshow ::
+    GHC.Show.Show a => Lib3.Tree a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dShow :: GHC.Show.Show a) (x :: Lib3.Tree a) ->
+                 Lib3.$fShowTree_$cshowsPrec
+                   @ a
+                   $dShow
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fShowTree_$cshowList ::
+    GHC.Show.Show a => [Lib3.Tree a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (eta :: [Lib3.Tree a])
+                   (eta1 :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Lib3.Tree a)
+                   (Lib3.$fShowTree_$cshowsPrec @ a $dShow Lib3.$fShowTree1)
+                   eta
+                   eta1) -}
+0d01eeb275b7fd136d9abeee281072b0
+  $fShowTree_$cshowsPrec ::
+    GHC.Show.Show a => GHC.Types.Int -> Lib3.Tree a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><L,1*U(U)><S,1*U> -}
+772b5a5a122be913b3033786c546b36e
+  $s$dmdoc10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Nil"#) -}
+d2d5e885f1370adb2a51b73d232ebc5c
+  $s$dmdoc2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Cons"#) -}
+23f21522b100ebdab056b07fd1ed9a2e
+  $s$dmdoc3 ::
+    (GHC.Generics.:*:)
+      (GHC.Generics.M1
+         GHC.Generics.S
+         ('GHC.Generics.MetaSel
+            'GHC.Base.Nothing
+            'GHC.Generics.NoSourceUnpackedness
+            'GHC.Generics.NoSourceStrictness
+            'GHC.Generics.DecidedLazy)
+         (GHC.Generics.Rec0 GHC.Types.Int))
+      (GHC.Generics.S1
+         ('GHC.Generics.MetaSel
+            'GHC.Base.Nothing
+            'GHC.Generics.NoSourceUnpackedness
+            'GHC.Generics.NoSourceStrictness
+            'GHC.Generics.DecidedLazy)
+         (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int))
+       GHC.Generics.:*: GHC.Generics.S1
+                          ('GHC.Generics.MetaSel
+                             'GHC.Base.Nothing
+                             'GHC.Generics.NoSourceUnpackedness
+                             'GHC.Generics.NoSourceStrictness
+                             'GHC.Generics.DecidedLazy)
+                          (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int)))
+      x
+    -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ x
+                   (ds :: (GHC.Generics.:*:)
+                            (GHC.Generics.M1
+                               GHC.Generics.S
+                               ('GHC.Generics.MetaSel
+                                  'GHC.Base.Nothing
+                                  'GHC.Generics.NoSourceUnpackedness
+                                  'GHC.Generics.NoSourceStrictness
+                                  'GHC.Generics.DecidedLazy)
+                               (GHC.Generics.Rec0 GHC.Types.Int))
+                            (GHC.Generics.S1
+                               ('GHC.Generics.MetaSel
+                                  'GHC.Base.Nothing
+                                  'GHC.Generics.NoSourceUnpackedness
+                                  'GHC.Generics.NoSourceStrictness
+                                  'GHC.Generics.DecidedLazy)
+                               (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int))
+                             GHC.Generics.:*: GHC.Generics.S1
+                                                ('GHC.Generics.MetaSel
+                                                   'GHC.Base.Nothing
+                                                   'GHC.Generics.NoSourceUnpackedness
+                                                   'GHC.Generics.NoSourceStrictness
+                                                   'GHC.Generics.DecidedLazy)
+                                                (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int)))
+                            x) ->
+                 GHC.Types.False) -}
+9167cc15dde56ef1e3a8fc6494bbcb83
+  $s$dmdoc4 ::
+    Text.PrettyPrint.GenericPretty.GOut
+      (GHC.Generics.M1
+         GHC.Generics.S
+         ('GHC.Generics.MetaSel
+            'GHC.Base.Nothing
+            'GHC.Generics.NoSourceUnpackedness
+            'GHC.Generics.NoSourceStrictness
+            'GHC.Generics.DecidedLazy)
+         (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int)))
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Lib3.$s$dmdoc_$s$fGOutM10 -}
+109ec15a60d9225d32519e83538f0eb6
+  $s$dmdoc5 ::
+    GHC.Generics.Selector
+      ('GHC.Generics.MetaSel
+         'GHC.Base.Nothing
+         'GHC.Generics.NoSourceUnpackedness
+         'GHC.Generics.NoSourceStrictness
+         'GHC.Generics.DecidedLazy)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Lib3.$s$dmdoc_$s$fSelectorMetaMetaSel -}
+66a34737ecd26355f22c60c8cd1716ef
+  $s$dmdoc6 ::
+    Text.PrettyPrint.GenericPretty.GOut
+      (GHC.Generics.K1 GHC.Generics.R (Lib3.Tree GHC.Types.Int))
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                (Lib3.$s$dmdoc_$s$fGOutK1 @ GHC.Generics.R) -}
+677d861120229742dc5d9c53ebc52187
+  $s$dmdoc7 ::
+    Text.PrettyPrint.GenericPretty.Out (Lib3.Tree GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Lib3.$fOutTree_$s$fOutTree -}
+3374011c1ded1cf4afccd7ecc76117ba
+  $s$dmdoc8 ::
+    GHC.Generics.M1
+      GHC.Generics.S
+      ('GHC.Generics.MetaSel
+         'GHC.Base.Nothing
+         'GHC.Generics.NoSourceUnpackedness
+         'GHC.Generics.NoSourceStrictness
+         'GHC.Generics.DecidedLazy)
+      (GHC.Generics.K1 GHC.Generics.R GHC.Types.Int)
+      x
+    -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ x
+                   (ds :: GHC.Generics.M1
+                            GHC.Generics.S
+                            ('GHC.Generics.MetaSel
+                               'GHC.Base.Nothing
+                               'GHC.Generics.NoSourceUnpackedness
+                               'GHC.Generics.NoSourceStrictness
+                               'GHC.Generics.DecidedLazy)
+                            (GHC.Generics.K1 GHC.Generics.R GHC.Types.Int)
+                            x) ->
+                 GHC.Types.False) -}
+c3aa4b35c7b0048762f3335a83566af3
+  $s$dmdoc_$dGOut2 ::
+    Text.PrettyPrint.GenericPretty.GOut
+      (GHC.Generics.S1
+         ('GHC.Generics.MetaSel
+            'GHC.Base.Nothing
+            'GHC.Generics.NoSourceUnpackedness
+            'GHC.Generics.NoSourceStrictness
+            'GHC.Generics.DecidedLazy)
+         (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int))
+       GHC.Generics.:*: GHC.Generics.S1
+                          ('GHC.Generics.MetaSel
+                             'GHC.Base.Nothing
+                             'GHC.Generics.NoSourceUnpackedness
+                             'GHC.Generics.NoSourceStrictness
+                             'GHC.Generics.DecidedLazy)
+                          (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int)))
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Lib3.$s$dmdoc_$s$fGOut:*:1 -}
+1b3c76dd8b6157c2cf9ba6764d60f7dd
+  $s$dmdoc_$dGOut3 ::
+    Text.PrettyPrint.GenericPretty.GOut
+      (GHC.Generics.M1
+         GHC.Generics.S
+         ('GHC.Generics.MetaSel
+            'GHC.Base.Nothing
+            'GHC.Generics.NoSourceUnpackedness
+            'GHC.Generics.NoSourceStrictness
+            'GHC.Generics.DecidedLazy)
+         (GHC.Generics.Rec0 GHC.Types.Int))
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Lib3.$s$dmdoc_$s$fGOutM2 -}
+f9d9f14ccbd2afcd03235bd385017f4b
+  $s$dmdoc_$dGOut4 ::
+    Text.PrettyPrint.GenericPretty.GOut
+      (GHC.Generics.K1 GHC.Generics.R GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                (Lib3.$s$dmdoc_$s$fGOutK2 @ GHC.Generics.R) -}
+e8e36fdf2508f75cd92f15a62888e1c0
+  $s$dmdoc_$dKnownSymbol :: GHC.TypeLits.KnownSymbol "Cons"
+  {- Unfolding: InlineRule (0, True, True)
+                Lib3.$s$dmdoc2
+                  `cast`
+                (Trans
+                     (Sym (GHC.TypeLits.N:SSymbol[0] <"Cons">_P))
+                     (Sym (GHC.TypeLits.N:KnownSymbol[0]) <"Cons">_N)) -}
+75391e966153a6965c1df45da9955f83
+  $s$dmdoc_$dKnownSymbol1 :: GHC.TypeLits.KnownSymbol "Nil"
+  {- Unfolding: InlineRule (0, True, True)
+                Lib3.$s$dmdoc10
+                  `cast`
+                (Trans
+                     (Sym (GHC.TypeLits.N:SSymbol[0] <"Nil">_P))
+                     (Sym (GHC.TypeLits.N:KnownSymbol[0]) <"Nil">_N)) -}
+e09decc5767fc23e4a1d613091985796
+  $s$dmdoc_$s$fConstructorMetaMetaCons ::
+    GHC.Generics.Constructor
+      ('GHC.Generics.MetaCons
+         "Cons" 'GHC.Generics.PrefixI 'GHC.Types.False)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ GHC.Generics.Meta
+                  @ ('GHC.Generics.MetaCons
+                       "Cons" 'GHC.Generics.PrefixI 'GHC.Types.False)
+                  (GHC.Generics.$fConstructorMetaMetaCons_$cconName
+                     @ "Cons"
+                     @ 'GHC.Generics.PrefixI
+                     @ 'GHC.Types.False
+                     Lib3.$s$dmdoc_$dKnownSymbol
+                     GHC.Generics.$WSPrefix
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.FixityI>_N <'GHC.Generics.PrefixI>_N)
+                     GHC.Generics.$WSFalse
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Types.Bool>_N <'GHC.Types.False>_N))
+                  (GHC.Generics.$fConstructorMetaMetaCons_$cconFixity
+                     @ "Cons"
+                     @ 'GHC.Generics.PrefixI
+                     @ 'GHC.Types.False
+                     Lib3.$s$dmdoc_$dKnownSymbol
+                     GHC.Generics.$WSPrefix
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.FixityI>_N <'GHC.Generics.PrefixI>_N)
+                     GHC.Generics.$WSFalse
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Types.Bool>_N <'GHC.Types.False>_N))
+                  (GHC.Generics.$fConstructorMetaMetaCons_$cconIsRecord
+                     @ "Cons"
+                     @ 'GHC.Generics.PrefixI
+                     @ 'GHC.Types.False
+                     Lib3.$s$dmdoc_$dKnownSymbol
+                     GHC.Generics.$WSPrefix
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.FixityI>_N <'GHC.Generics.PrefixI>_N)
+                     GHC.Generics.$WSFalse
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Types.Bool>_N <'GHC.Types.False>_N)) -}
+3a54eb42d7d6e7a25533a9f2817dd24a
+  $s$dmdoc_$s$fConstructorMetaMetaCons1 ::
+    GHC.Generics.Constructor
+      ('GHC.Generics.MetaCons
+         "Nil" 'GHC.Generics.PrefixI 'GHC.Types.False)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ GHC.Generics.Meta
+                  @ ('GHC.Generics.MetaCons
+                       "Nil" 'GHC.Generics.PrefixI 'GHC.Types.False)
+                  (GHC.Generics.$fConstructorMetaMetaCons_$cconName
+                     @ "Nil"
+                     @ 'GHC.Generics.PrefixI
+                     @ 'GHC.Types.False
+                     Lib3.$s$dmdoc_$dKnownSymbol1
+                     GHC.Generics.$WSPrefix
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.FixityI>_N <'GHC.Generics.PrefixI>_N)
+                     GHC.Generics.$WSFalse
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Types.Bool>_N <'GHC.Types.False>_N))
+                  (GHC.Generics.$fConstructorMetaMetaCons_$cconFixity
+                     @ "Nil"
+                     @ 'GHC.Generics.PrefixI
+                     @ 'GHC.Types.False
+                     Lib3.$s$dmdoc_$dKnownSymbol1
+                     GHC.Generics.$WSPrefix
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.FixityI>_N <'GHC.Generics.PrefixI>_N)
+                     GHC.Generics.$WSFalse
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Types.Bool>_N <'GHC.Types.False>_N))
+                  (GHC.Generics.$fConstructorMetaMetaCons_$cconIsRecord
+                     @ "Nil"
+                     @ 'GHC.Generics.PrefixI
+                     @ 'GHC.Types.False
+                     Lib3.$s$dmdoc_$dKnownSymbol1
+                     GHC.Generics.$WSPrefix
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.FixityI>_N <'GHC.Generics.PrefixI>_N)
+                     GHC.Generics.$WSFalse
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Types.Bool>_N <'GHC.Types.False>_N)) -}
+8ea950af40d7b6380331f086880d5060
+  $s$dmdoc_$s$fGOut:*: ::
+    Text.PrettyPrint.GenericPretty.GOut
+      (GHC.Generics.M1
+         GHC.Generics.S
+         ('GHC.Generics.MetaSel
+            'GHC.Base.Nothing
+            'GHC.Generics.NoSourceUnpackedness
+            'GHC.Generics.NoSourceStrictness
+            'GHC.Generics.DecidedLazy)
+         (GHC.Generics.Rec0 GHC.Types.Int)
+       GHC.Generics.:*: (GHC.Generics.S1
+                           ('GHC.Generics.MetaSel
+                              'GHC.Base.Nothing
+                              'GHC.Generics.NoSourceUnpackedness
+                              'GHC.Generics.NoSourceStrictness
+                              'GHC.Generics.DecidedLazy)
+                           (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int))
+                         GHC.Generics.:*: GHC.Generics.S1
+                                            ('GHC.Generics.MetaSel
+                                               'GHC.Base.Nothing
+                                               'GHC.Generics.NoSourceUnpackedness
+                                               'GHC.Generics.NoSourceStrictness
+                                               'GHC.Generics.DecidedLazy)
+                                            (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int))))
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Generics.M1
+                       GHC.Generics.S
+                       ('GHC.Generics.MetaSel
+                          'GHC.Base.Nothing
+                          'GHC.Generics.NoSourceUnpackedness
+                          'GHC.Generics.NoSourceStrictness
+                          'GHC.Generics.DecidedLazy)
+                       (GHC.Generics.Rec0 GHC.Types.Int)
+                     GHC.Generics.:*: (GHC.Generics.S1
+                                         ('GHC.Generics.MetaSel
+                                            'GHC.Base.Nothing
+                                            'GHC.Generics.NoSourceUnpackedness
+                                            'GHC.Generics.NoSourceStrictness
+                                            'GHC.Generics.DecidedLazy)
+                                         (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int))
+                                       GHC.Generics.:*: GHC.Generics.S1
+                                                          ('GHC.Generics.MetaSel
+                                                             'GHC.Base.Nothing
+                                                             'GHC.Generics.NoSourceUnpackedness
+                                                             'GHC.Generics.NoSourceStrictness
+                                                             'GHC.Generics.DecidedLazy)
+                                                          (GHC.Generics.Rec0
+                                                             (Lib3.Tree GHC.Types.Int))))
+                  (Text.PrettyPrint.GenericPretty.$fGOut:*:_$cout1
+                     @ (GHC.Generics.M1
+                          GHC.Generics.S
+                          ('GHC.Generics.MetaSel
+                             'GHC.Base.Nothing
+                             'GHC.Generics.NoSourceUnpackedness
+                             'GHC.Generics.NoSourceStrictness
+                             'GHC.Generics.DecidedLazy)
+                          (GHC.Generics.Rec0 GHC.Types.Int))
+                     @ (GHC.Generics.S1
+                          ('GHC.Generics.MetaSel
+                             'GHC.Base.Nothing
+                             'GHC.Generics.NoSourceUnpackedness
+                             'GHC.Generics.NoSourceStrictness
+                             'GHC.Generics.DecidedLazy)
+                          (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int))
+                        GHC.Generics.:*: GHC.Generics.S1
+                                           ('GHC.Generics.MetaSel
+                                              'GHC.Base.Nothing
+                                              'GHC.Generics.NoSourceUnpackedness
+                                              'GHC.Generics.NoSourceStrictness
+                                              'GHC.Generics.DecidedLazy)
+                                           (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int)))
+                     Lib3.$s$dmdoc_$dGOut3
+                     Lib3.$s$dmdoc_$dGOut2)
+                  Lib3.$s$dmdoc3 -}
+7d10408473469924b43089f4fb5a004d
+  $s$dmdoc_$s$fGOut:*:1 ::
+    Text.PrettyPrint.GenericPretty.GOut
+      (GHC.Generics.M1
+         GHC.Generics.S
+         ('GHC.Generics.MetaSel
+            'GHC.Base.Nothing
+            'GHC.Generics.NoSourceUnpackedness
+            'GHC.Generics.NoSourceStrictness
+            'GHC.Generics.DecidedLazy)
+         (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int))
+       GHC.Generics.:*: GHC.Generics.M1
+                          GHC.Generics.S
+                          ('GHC.Generics.MetaSel
+                             'GHC.Base.Nothing
+                             'GHC.Generics.NoSourceUnpackedness
+                             'GHC.Generics.NoSourceStrictness
+                             'GHC.Generics.DecidedLazy)
+                          (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int)))
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Generics.M1
+                       GHC.Generics.S
+                       ('GHC.Generics.MetaSel
+                          'GHC.Base.Nothing
+                          'GHC.Generics.NoSourceUnpackedness
+                          'GHC.Generics.NoSourceStrictness
+                          'GHC.Generics.DecidedLazy)
+                       (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int))
+                     GHC.Generics.:*: GHC.Generics.M1
+                                        GHC.Generics.S
+                                        ('GHC.Generics.MetaSel
+                                           'GHC.Base.Nothing
+                                           'GHC.Generics.NoSourceUnpackedness
+                                           'GHC.Generics.NoSourceStrictness
+                                           'GHC.Generics.DecidedLazy)
+                                        (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int)))
+                  (Text.PrettyPrint.GenericPretty.$fGOut:*:_$cout1
+                     @ (GHC.Generics.M1
+                          GHC.Generics.S
+                          ('GHC.Generics.MetaSel
+                             'GHC.Base.Nothing
+                             'GHC.Generics.NoSourceUnpackedness
+                             'GHC.Generics.NoSourceStrictness
+                             'GHC.Generics.DecidedLazy)
+                          (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int)))
+                     @ (GHC.Generics.M1
+                          GHC.Generics.S
+                          ('GHC.Generics.MetaSel
+                             'GHC.Base.Nothing
+                             'GHC.Generics.NoSourceUnpackedness
+                             'GHC.Generics.NoSourceStrictness
+                             'GHC.Generics.DecidedLazy)
+                          (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int)))
+                     Lib3.$s$dmdoc4
+                     Lib3.$s$dmdoc4)
+                  (Text.PrettyPrint.GenericPretty.$fGOut:*:_$cisNullary
+                     @ (GHC.Generics.M1
+                          GHC.Generics.S
+                          ('GHC.Generics.MetaSel
+                             'GHC.Base.Nothing
+                             'GHC.Generics.NoSourceUnpackedness
+                             'GHC.Generics.NoSourceStrictness
+                             'GHC.Generics.DecidedLazy)
+                          (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int)))
+                     @ (GHC.Generics.M1
+                          GHC.Generics.S
+                          ('GHC.Generics.MetaSel
+                             'GHC.Base.Nothing
+                             'GHC.Generics.NoSourceUnpackedness
+                             'GHC.Generics.NoSourceStrictness
+                             'GHC.Generics.DecidedLazy)
+                          (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int)))
+                     Lib3.$s$dmdoc4
+                     Lib3.$s$dmdoc4) -}
+7d74722b9087264d62fb8d43585e36d5
+  $s$dmdoc_$s$fGOutK1 ::
+    Text.PrettyPrint.GenericPretty.GOut
+      (GHC.Generics.K1 t (Lib3.Tree GHC.Types.Int))
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ t.
+                  @ (GHC.Generics.K1 t (Lib3.Tree GHC.Types.Int))
+                  (Text.PrettyPrint.GenericPretty.$fGOutK1_$cout1
+                     @ (Lib3.Tree GHC.Types.Int)
+                     @ t
+                     Lib3.$s$dmdoc7)
+                  (Text.PrettyPrint.GenericPretty.$fGOutK1_$cisNullary
+                     @ (Lib3.Tree GHC.Types.Int)
+                     @ t
+                     Lib3.$s$dmdoc7) -}
+44a2b485ae8c7eb05ea5f142f6b5b7f0
+  $s$dmdoc_$s$fGOutK1_$cisNullary ::
+    GHC.Generics.K1 t GHC.Types.Int x -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ t @ x (ds :: GHC.Generics.K1 t GHC.Types.Int x) ->
+                 GHC.Types.False) -}
+25dedcd9f598e59417629a08c07108b7
+  $s$dmdoc_$s$fGOutK1_$cout1 ::
+    GHC.Generics.K1 t GHC.Types.Int x
+    -> Text.PrettyPrint.GenericPretty.Type
+    -> GHC.Types.Int
+    -> GHC.Types.Bool
+    -> [Text.PrettyPrint.HughesPJ.Doc]
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,1*U(U)><L,A><L,1*U(1*U)><L,A>m2,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ t
+                   @ x
+                   (ds :: GHC.Generics.K1 t GHC.Types.Int x)
+                   (ds1 :: Text.PrettyPrint.GenericPretty.Type)
+                   (d :: GHC.Types.Int)
+                   (ds2 :: GHC.Types.Bool) ->
+                 GHC.Types.:
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   (Text.PrettyPrint.GenericPretty.$fOutInt_$cdocPrec
+                      d
+                      ds `cast` (GHC.Generics.N:K1[0] <t>_P <GHC.Types.Int>_R <x>_P))
+                   (GHC.Types.[] @ Text.PrettyPrint.HughesPJ.Doc)) -}
+438c0335a747772093b49422baee9258
+  $s$dmdoc_$s$fGOutK2 ::
+    Text.PrettyPrint.GenericPretty.GOut
+      (GHC.Generics.K1 t GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ t.
+                  @ (GHC.Generics.K1 t GHC.Types.Int)
+                  (Lib3.$s$dmdoc_$s$fGOutK1_$cout1 @ t)
+                  (Lib3.$s$dmdoc_$s$fGOutK1_$cisNullary @ t) -}
+fc9949844b069ebce4752b8196ab8525
+  $s$dmdoc_$s$fGOutM10 ::
+    Text.PrettyPrint.GenericPretty.GOut
+      (GHC.Generics.M1
+         GHC.Generics.S
+         ('GHC.Generics.MetaSel
+            'GHC.Base.Nothing
+            'GHC.Generics.NoSourceUnpackedness
+            'GHC.Generics.NoSourceStrictness
+            'GHC.Generics.DecidedLazy)
+         (GHC.Generics.K1 GHC.Generics.R (Lib3.Tree GHC.Types.Int)))
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Generics.M1
+                       GHC.Generics.S
+                       ('GHC.Generics.MetaSel
+                          'GHC.Base.Nothing
+                          'GHC.Generics.NoSourceUnpackedness
+                          'GHC.Generics.NoSourceStrictness
+                          'GHC.Generics.DecidedLazy)
+                       (GHC.Generics.K1 GHC.Generics.R (Lib3.Tree GHC.Types.Int)))
+                  (Text.PrettyPrint.GenericPretty.$fGOutM10_$cout1
+                     @ (GHC.Generics.K1 GHC.Generics.R (Lib3.Tree GHC.Types.Int))
+                     @ ('GHC.Generics.MetaSel
+                          'GHC.Base.Nothing
+                          'GHC.Generics.NoSourceUnpackedness
+                          'GHC.Generics.NoSourceStrictness
+                          'GHC.Generics.DecidedLazy)
+                     Lib3.$s$dmdoc6
+                     Lib3.$s$dmdoc5)
+                  (Text.PrettyPrint.GenericPretty.$fGOutM10_$cisNullary
+                     @ (GHC.Generics.K1 GHC.Generics.R (Lib3.Tree GHC.Types.Int))
+                     @ ('GHC.Generics.MetaSel
+                          'GHC.Base.Nothing
+                          'GHC.Generics.NoSourceUnpackedness
+                          'GHC.Generics.NoSourceStrictness
+                          'GHC.Generics.DecidedLazy)
+                     Lib3.$s$dmdoc6
+                     Lib3.$s$dmdoc5) -}
+82279f2e297d979a21c4ba2a23ca1c46
+  $s$dmdoc_$s$fGOutM2 ::
+    Text.PrettyPrint.GenericPretty.GOut
+      (GHC.Generics.M1
+         GHC.Generics.S
+         ('GHC.Generics.MetaSel
+            'GHC.Base.Nothing
+            'GHC.Generics.NoSourceUnpackedness
+            'GHC.Generics.NoSourceStrictness
+            'GHC.Generics.DecidedLazy)
+         (GHC.Generics.K1 GHC.Generics.R GHC.Types.Int))
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Generics.M1
+                       GHC.Generics.S
+                       ('GHC.Generics.MetaSel
+                          'GHC.Base.Nothing
+                          'GHC.Generics.NoSourceUnpackedness
+                          'GHC.Generics.NoSourceStrictness
+                          'GHC.Generics.DecidedLazy)
+                       (GHC.Generics.K1 GHC.Generics.R GHC.Types.Int))
+                  (Text.PrettyPrint.GenericPretty.$fGOutM10_$cout1
+                     @ (GHC.Generics.K1 GHC.Generics.R GHC.Types.Int)
+                     @ ('GHC.Generics.MetaSel
+                          'GHC.Base.Nothing
+                          'GHC.Generics.NoSourceUnpackedness
+                          'GHC.Generics.NoSourceStrictness
+                          'GHC.Generics.DecidedLazy)
+                     Lib3.$s$dmdoc_$dGOut4
+                     Lib3.$s$dmdoc5)
+                  Lib3.$s$dmdoc8 -}
+cb90a1dda02a20bfcef2fa20fadfdea6
+  $s$dmdoc_$s$fSelectorMetaMetaSel ::
+    GHC.Generics.Selector
+      ('GHC.Generics.MetaSel
+         'GHC.Base.Nothing
+         'GHC.Generics.NoSourceUnpackedness
+         'GHC.Generics.NoSourceStrictness
+         'GHC.Generics.DecidedLazy)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ GHC.Generics.Meta
+                  @ ('GHC.Generics.MetaSel
+                       'GHC.Base.Nothing
+                       'GHC.Generics.NoSourceUnpackedness
+                       'GHC.Generics.NoSourceStrictness
+                       'GHC.Generics.DecidedLazy)
+                  Lib3.$s$dmdoc_$s$fSelectorMetaMetaSel_$cselName
+                  (GHC.Generics.$fSelectorMetaMetaSel_$cselSourceUnpackedness
+                     @ 'GHC.Base.Nothing
+                     @ 'GHC.Generics.NoSourceUnpackedness
+                     @ 'GHC.Generics.NoSourceStrictness
+                     @ 'GHC.Generics.DecidedLazy
+                     (GHC.Generics.$WSNothing @ GHC.Types.Symbol)
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Base.Maybe
+                                                       GHC.Types.Symbol>_N <'GHC.Base.Nothing>_N)
+                     GHC.Generics.$WSNoSourceUnpackedness
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.SourceUnpackedness>_N <'GHC.Generics.NoSourceUnpackedness>_N)
+                     GHC.Generics.$WSNoSourceStrictness
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.SourceStrictness>_N <'GHC.Generics.NoSourceStrictness>_N)
+                     GHC.Generics.$WSDecidedLazy
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.DecidedStrictness>_N <'GHC.Generics.DecidedLazy>_N))
+                  (GHC.Generics.$fSelectorMetaMetaSel_$cselSourceStrictness
+                     @ 'GHC.Base.Nothing
+                     @ 'GHC.Generics.NoSourceUnpackedness
+                     @ 'GHC.Generics.NoSourceStrictness
+                     @ 'GHC.Generics.DecidedLazy
+                     (GHC.Generics.$WSNothing @ GHC.Types.Symbol)
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Base.Maybe
+                                                       GHC.Types.Symbol>_N <'GHC.Base.Nothing>_N)
+                     GHC.Generics.$WSNoSourceUnpackedness
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.SourceUnpackedness>_N <'GHC.Generics.NoSourceUnpackedness>_N)
+                     GHC.Generics.$WSNoSourceStrictness
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.SourceStrictness>_N <'GHC.Generics.NoSourceStrictness>_N)
+                     GHC.Generics.$WSDecidedLazy
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.DecidedStrictness>_N <'GHC.Generics.DecidedLazy>_N))
+                  (GHC.Generics.$fSelectorMetaMetaSel_$cselDecidedStrictness
+                     @ 'GHC.Base.Nothing
+                     @ 'GHC.Generics.NoSourceUnpackedness
+                     @ 'GHC.Generics.NoSourceStrictness
+                     @ 'GHC.Generics.DecidedLazy
+                     (GHC.Generics.$WSNothing @ GHC.Types.Symbol)
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Base.Maybe
+                                                       GHC.Types.Symbol>_N <'GHC.Base.Nothing>_N)
+                     GHC.Generics.$WSNoSourceUnpackedness
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.SourceUnpackedness>_N <'GHC.Generics.NoSourceUnpackedness>_N)
+                     GHC.Generics.$WSNoSourceStrictness
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.SourceStrictness>_N <'GHC.Generics.NoSourceStrictness>_N)
+                     GHC.Generics.$WSDecidedLazy
+                       `cast`
+                     (Sym (GHC.Generics.N:SingI[0]) <GHC.Generics.DecidedStrictness>_N <'GHC.Generics.DecidedLazy>_N)) -}
+5a01d79a355b80e394d6878dfd3fb778
+  $s$dmdoc_$s$fSelectorMetaMetaSel_$cselName ::
+    forall k (t :: GHC.Generics.Meta
+                   -> (GHC.Types.* -> GHC.Types.*) -> k -> *) (f :: GHC.Types.*
+                                                                    -> GHC.Types.*) (a :: k).
+    t ('GHC.Generics.MetaSel
+         'GHC.Base.Nothing
+         'GHC.Generics.NoSourceUnpackedness
+         'GHC.Generics.NoSourceStrictness
+         'GHC.Generics.DecidedLazy) f a
+    -> [GHC.Types.Char]
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ k
+                   @ (t :: GHC.Generics.Meta
+                           -> (GHC.Types.* -> GHC.Types.*) -> k -> *)
+                   @ (f :: GHC.Types.* -> GHC.Types.*)
+                   @ (a :: k)
+                   (ds1 :: t ('GHC.Generics.MetaSel
+                                'GHC.Base.Nothing
+                                'GHC.Generics.NoSourceUnpackedness
+                                'GHC.Generics.NoSourceStrictness
+                                'GHC.Generics.DecidedLazy) f a) ->
+                 GHC.Types.[] @ GHC.Types.Char) -}
+db64a42cad6f01c56cdb4b905a15476b
+  $s$fDatatypeMetaMetaData1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk"#) -}
+b94577a6c8b2550542e757369bd76c6f
+  $s$fDatatypeMetaMetaData2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Lib3"#) -}
+18bf853cc9a81b0cd2bd4c2b4c572864
+  $tc'Cons :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6565894311897694696##
+                   12604091485069223025##
+                   Lib3.$trModule
+                   Lib3.$tc'Cons1) -}
+15e48f4d6fff09a04a09ccfbab0c58d2
+  $tc'Cons1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Cons"#) -}
+e01a383110e80a3bf6c4e5c70fe762d0
+  $tc'Nil :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12889939439419031561##
+                   7384628219146895594##
+                   Lib3.$trModule
+                   Lib3.$tc'Nil1) -}
+9cd580ef821a553e42fb8244bd0d6b2b
+  $tc'Nil1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Nil"#) -}
+76125991bc27d94c62931f862433d096
+  $tcTree :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15932336644727750475##
+                   3911037488212811477##
+                   Lib3.$trModule
+                   Lib3.$tcTree1) -}
+92dcc316dd01e5a8b2fc156683dad301
+  $tcTree1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Tree"#) -}
+5f9ca5d7b1d533321f9e567e860c8cc5
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Lib3.$trModule2 Lib3.$trModule1) -}
+ef2912142ebca53bee9a3c4e416781de
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Lib3"#) -}
+739bb40850696d37e524cb3db2ae3145
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk"#) -}
+0d01eeb275b7fd136d9abeee281072b0
+  $w$cdocList ::
+    Text.PrettyPrint.GenericPretty.Out a =>
+    [Lib3.Tree a]
+    -> (# Text.PrettyPrint.Annotated.HughesPJ.Doc (), GHC.Types.Bool,
+          Text.PrettyPrint.Annotated.HughesPJ.Doc () #)
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><S,1*U>, Inline: [0] -}
+0d01eeb275b7fd136d9abeee281072b0
+  $w$s$cdocList ::
+    [Lib3.Tree GHC.Types.Int]
+    -> (# Text.PrettyPrint.Annotated.HughesPJ.Doc (), GHC.Types.Bool,
+          Text.PrettyPrint.Annotated.HughesPJ.Doc () #)
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+140d79d1e5787e962d06e54ba0e833d5
+  $wgenTree :: GHC.Prim.Int# -> Lib3.Tree GHC.Types.Int
+  {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
+0d01eeb275b7fd136d9abeee281072b0
+  axiom Rep_Tree::
+    [a]
+      GHC.Generics.Rep (Lib3.Tree a)
+        = GHC.Generics.D1
+            ('GHC.Generics.MetaData
+               "Tree"
+               "Lib3"
+               "lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk"
+               'GHC.Types.False)
+            (GHC.Generics.C1
+               ('GHC.Generics.MetaCons
+                  "Nil" 'GHC.Generics.PrefixI 'GHC.Types.False)
+               GHC.Generics.U1
+             GHC.Generics.:+: GHC.Generics.C1
+                                ('GHC.Generics.MetaCons
+                                   "Cons" 'GHC.Generics.PrefixI 'GHC.Types.False)
+                                (GHC.Generics.S1
+                                   ('GHC.Generics.MetaSel
+                                      'GHC.Base.Nothing
+                                      'GHC.Generics.NoSourceUnpackedness
+                                      'GHC.Generics.NoSourceStrictness
+                                      'GHC.Generics.DecidedLazy)
+                                   (GHC.Generics.Rec0 a)
+                                 GHC.Generics.:*: (GHC.Generics.S1
+                                                     ('GHC.Generics.MetaSel
+                                                        'GHC.Base.Nothing
+                                                        'GHC.Generics.NoSourceUnpackedness
+                                                        'GHC.Generics.NoSourceStrictness
+                                                        'GHC.Generics.DecidedLazy)
+                                                     (GHC.Generics.Rec0 (Lib3.Tree a))
+                                                   GHC.Generics.:*: GHC.Generics.S1
+                                                                      ('GHC.Generics.MetaSel
+                                                                         'GHC.Base.Nothing
+                                                                         'GHC.Generics.NoSourceUnpackedness
+                                                                         'GHC.Generics.NoSourceStrictness
+                                                                         'GHC.Generics.DecidedLazy)
+                                                                      (GHC.Generics.Rec0
+                                                                         (Lib3.Tree a)))))
+0d01eeb275b7fd136d9abeee281072b0
+  data Tree a = Nil | Cons a (Lib3.Tree a) (Lib3.Tree a)
+273b733f344d48926d5b8cfa9a357c42
+  defMain :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib3.defMain1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+d5c96df452251ef522b5e539b27aa175
+  defMain1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (eta :: GHC.Prim.State#
+                             GHC.Prim.RealWorld)[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   Lib3.defMain2
+                   GHC.Types.True
+                   eta) -}
+9cf0eab1dd08d07b1e26a71db25d84d2
+  defMain2 :: GHC.Base.String
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.fullRenderAnn
+                   @ ()
+                   @ GHC.Base.String
+                   Text.PrettyPrint.Annotated.HughesPJ.PageMode
+                   Text.PrettyPrint.Annotated.HughesPJ.render3
+                   Text.PrettyPrint.Annotated.HughesPJ.render2
+                   Lib3.defMain5
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   Lib3.defMain3 `cast` (Text.PrettyPrint.HughesPJ.N:Doc[0])) -}
+ae2b5106e5dc8879f6028874b940fbee
+  defMain3 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Lib3.$fOutTree_$s$cdoc Lib3.defMain4) -}
+b8a8ada22db7c68e3f7aa22c7fe711c6
+  defMain4 :: Lib3.Tree GHC.Types.Int
+  {- Unfolding: (Lib3.$wgenTree 5#) -}
+04f0adc75e176e8e1735659d5f468a58
+  defMain5 ::
+    Text.PrettyPrint.Annotated.HughesPJ.AnnotDetails ()
+    -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, HasNoCafRefs,
+     Unfolding: (\ (ds :: Text.PrettyPrint.Annotated.HughesPJ.AnnotDetails
+                            ())
+                   (eta :: GHC.Base.String)[OneShot] ->
+                 case ds of wild {
+                   DEFAULT -> eta
+                   Text.PrettyPrint.Annotated.HughesPJ.NoAnnot s dt1
+                   -> case s of wild1 {
+                        Text.PrettyPrint.Annotated.HughesPJ.Chr dt
+                        -> GHC.Types.: @ GHC.Types.Char (GHC.Types.C# dt) eta
+                        Text.PrettyPrint.Annotated.HughesPJ.Str s1
+                        -> GHC.Base.++ @ GHC.Types.Char s1 eta
+                        Text.PrettyPrint.Annotated.HughesPJ.PStr s1
+                        -> GHC.Base.++ @ GHC.Types.Char s1 eta } }) -}
+a3a1cfb349bdb0423357c2d784ac70db
+  genTree :: GHC.Types.Int -> Lib3.Tree GHC.Types.Int
+  {- Arity: 1, Strictness: <S(S),1*U(U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: GHC.Types.Int) ->
+                 case w of ww { GHC.Types.I# ww1 -> Lib3.$wgenTree ww1 }) -}
+9d6e9e959c575b851252da32b6b169a6
+  printDoc :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib3.defMain1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+instance [safe] GHC.Generics.Generic [Lib3.Tree]
+  = Lib3.$fGenericTree
+instance [safe] Text.PrettyPrint.GenericPretty.Out [Lib3.Tree]
+  = Lib3.$fOutTree
+instance [safe] GHC.Show.Show [Lib3.Tree] = Lib3.$fShowTree
+family instance GHC.Generics.Rep [Lib3.Tree] = Lib3.Rep_Tree
+"SPEC $cdoc @ Int" [ALWAYS] forall ($dOut :: Text.PrettyPrint.GenericPretty.Out
+                                               GHC.Types.Int)
+  Lib3.$fOutTree_$cdoc @ GHC.Types.Int $dOut = Lib3.$fOutTree_$s$cdoc
+"SPEC $cdocList @ Int" [ALWAYS] forall ($dOut :: Text.PrettyPrint.GenericPretty.Out
+                                                   GHC.Types.Int)
+  Lib3.$fOutTree_$cdocList @ GHC.Types.Int $dOut
+  = Lib3.$fOutTree_$s$cdocList
+"SPEC $cdocPrec @ Int" [ALWAYS] forall ($dOut :: Text.PrettyPrint.GenericPretty.Out
+                                                   GHC.Types.Int)
+  Lib3.$fOutTree_$cdocPrec @ GHC.Types.Int $dOut
+  = Lib3.$fOutTree_$s$cdocPrec
+"SPEC $fOutTree @ Int" [ALWAYS] forall ($dOut :: Text.PrettyPrint.GenericPretty.Out
+                                                   GHC.Types.Int)
+  Lib3.$fOutTree @ GHC.Types.Int $dOut = Lib3.$fOutTree_$s$fOutTree
+"SPEC/Lib3 $fConstructorMetaMetaCons @ "Cons" @ 'PrefixI @ 'False" [ALWAYS] forall ($dKnownSymbol :: GHC.TypeLits.KnownSymbol
+                                                                                                       "Cons")
+                                                                                   ($dSingI :: GHC.Generics.SingI
+                                                                                                 'GHC.Generics.PrefixI)
+                                                                                   ($dSingI1 :: GHC.Generics.SingI
+                                                                                                  'GHC.Types.False)
+  GHC.Generics.$fConstructorMetaMetaCons @ "Cons"
+                                         @ 'GHC.Generics.PrefixI
+                                         @ 'GHC.Types.False
+                                         $dKnownSymbol
+                                         $dSingI
+                                         $dSingI1
+  = Lib3.$s$dmdoc_$s$fConstructorMetaMetaCons
+"SPEC/Lib3 $fConstructorMetaMetaCons @ "Nil" @ 'PrefixI @ 'False" [ALWAYS] forall ($dKnownSymbol :: GHC.TypeLits.KnownSymbol
+                                                                                                      "Nil")
+                                                                                  ($dSingI :: GHC.Generics.SingI
+                                                                                                'GHC.Generics.PrefixI)
+                                                                                  ($dSingI1 :: GHC.Generics.SingI
+                                                                                                 'GHC.Types.False)
+  GHC.Generics.$fConstructorMetaMetaCons @ "Nil"
+                                         @ 'GHC.Generics.PrefixI
+                                         @ 'GHC.Types.False
+                                         $dKnownSymbol
+                                         $dSingI
+                                         $dSingI1
+  = Lib3.$s$dmdoc_$s$fConstructorMetaMetaCons1
+"SPEC/Lib3 $fGOut:*: @ (M1
+                         S
+                         ('MetaSel
+                            'Nothing 'NoSourceUnpackedness 'NoSourceStrictness 'DecidedLazy)
+                         (Rec0 (Tree Int))) @ (M1
+                                                 S
+                                                 ('MetaSel
+                                                    'Nothing
+                                                    'NoSourceUnpackedness
+                                                    'NoSourceStrictness
+                                                    'DecidedLazy)
+                                                 (Rec0 (Tree Int)))" [ALWAYS] forall ($dGOut :: Text.PrettyPrint.GenericPretty.GOut
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         (GHC.Generics.M1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            GHC.Generics.S
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ('GHC.Generics.MetaSel
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               'GHC.Base.Nothing
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               'GHC.Generics.NoSourceUnpackedness
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               'GHC.Generics.NoSourceStrictness
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               'GHC.Generics.DecidedLazy)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            (GHC.Generics.Rec0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               (Lib3.Tree
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  GHC.Types.Int))))
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ($dGOut1 :: Text.PrettyPrint.GenericPretty.GOut
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          (GHC.Generics.M1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             GHC.Generics.S
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ('GHC.Generics.MetaSel
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                'GHC.Base.Nothing
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                'GHC.Generics.NoSourceUnpackedness
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                'GHC.Generics.NoSourceStrictness
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                'GHC.Generics.DecidedLazy)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             (GHC.Generics.Rec0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (Lib3.Tree
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   GHC.Types.Int))))
+  Text.PrettyPrint.GenericPretty.$fGOut:*: @ (GHC.Generics.M1
+                                                GHC.Generics.S
+                                                ('GHC.Generics.MetaSel
+                                                   'GHC.Base.Nothing
+                                                   'GHC.Generics.NoSourceUnpackedness
+                                                   'GHC.Generics.NoSourceStrictness
+                                                   'GHC.Generics.DecidedLazy)
+                                                (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int)))
+                                           @ (GHC.Generics.M1
+                                                GHC.Generics.S
+                                                ('GHC.Generics.MetaSel
+                                                   'GHC.Base.Nothing
+                                                   'GHC.Generics.NoSourceUnpackedness
+                                                   'GHC.Generics.NoSourceStrictness
+                                                   'GHC.Generics.DecidedLazy)
+                                                (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int)))
+                                           $dGOut
+                                           $dGOut1
+  = Lib3.$s$dmdoc_$s$fGOut:*:1
+"SPEC/Lib3 $fGOut:*: @ (M1
+                         S
+                         ('MetaSel
+                            'Nothing 'NoSourceUnpackedness 'NoSourceStrictness 'DecidedLazy)
+                         (Rec0 Int)) @ (S1
+                                          ('MetaSel
+                                             'Nothing
+                                             'NoSourceUnpackedness
+                                             'NoSourceStrictness
+                                             'DecidedLazy)
+                                          (Rec0 (Tree Int))
+                                        :*: S1
+                                              ('MetaSel
+                                                 'Nothing
+                                                 'NoSourceUnpackedness
+                                                 'NoSourceStrictness
+                                                 'DecidedLazy)
+                                              (Rec0 (Tree Int)))" [ALWAYS] forall ($dGOut :: Text.PrettyPrint.GenericPretty.GOut
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 (GHC.Generics.M1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    GHC.Generics.S
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ('GHC.Generics.MetaSel
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       'GHC.Base.Nothing
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       'GHC.Generics.NoSourceUnpackedness
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       'GHC.Generics.NoSourceStrictness
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       'GHC.Generics.DecidedLazy)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    (GHC.Generics.Rec0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       GHC.Types.Int)))
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ($dGOut1 :: Text.PrettyPrint.GenericPretty.GOut
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  (GHC.Generics.S1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ('GHC.Generics.MetaSel
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        'GHC.Base.Nothing
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        'GHC.Generics.NoSourceUnpackedness
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        'GHC.Generics.NoSourceStrictness
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        'GHC.Generics.DecidedLazy)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     (GHC.Generics.Rec0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        (Lib3.Tree
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           GHC.Types.Int))
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   GHC.Generics.:*: GHC.Generics.S1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ('GHC.Generics.MetaSel
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         'GHC.Base.Nothing
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         'GHC.Generics.NoSourceUnpackedness
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         'GHC.Generics.NoSourceStrictness
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         'GHC.Generics.DecidedLazy)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      (GHC.Generics.Rec0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         (Lib3.Tree
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            GHC.Types.Int))))
+  Text.PrettyPrint.GenericPretty.$fGOut:*: @ (GHC.Generics.M1
+                                                GHC.Generics.S
+                                                ('GHC.Generics.MetaSel
+                                                   'GHC.Base.Nothing
+                                                   'GHC.Generics.NoSourceUnpackedness
+                                                   'GHC.Generics.NoSourceStrictness
+                                                   'GHC.Generics.DecidedLazy)
+                                                (GHC.Generics.Rec0 GHC.Types.Int))
+                                           @ (GHC.Generics.S1
+                                                ('GHC.Generics.MetaSel
+                                                   'GHC.Base.Nothing
+                                                   'GHC.Generics.NoSourceUnpackedness
+                                                   'GHC.Generics.NoSourceStrictness
+                                                   'GHC.Generics.DecidedLazy)
+                                                (GHC.Generics.Rec0 (Lib3.Tree GHC.Types.Int))
+                                              GHC.Generics.:*: GHC.Generics.S1
+                                                                 ('GHC.Generics.MetaSel
+                                                                    'GHC.Base.Nothing
+                                                                    'GHC.Generics.NoSourceUnpackedness
+                                                                    'GHC.Generics.NoSourceStrictness
+                                                                    'GHC.Generics.DecidedLazy)
+                                                                 (GHC.Generics.Rec0
+                                                                    (Lib3.Tree GHC.Types.Int)))
+                                           $dGOut
+                                           $dGOut1
+  = Lib3.$s$dmdoc_$s$fGOut:*:
+"SPEC/Lib3 $fGOutK1 @ (Tree Int) _" [ALWAYS] forall @ t
+                                                    ($dOut :: Text.PrettyPrint.GenericPretty.Out
+                                                                (Lib3.Tree GHC.Types.Int))
+  Text.PrettyPrint.GenericPretty.$fGOutK1 @ (Lib3.Tree GHC.Types.Int)
+                                          @ t
+                                          $dOut
+  = Lib3.$s$dmdoc_$s$fGOutK1 @ t
+"SPEC/Lib3 $fGOutK1 @ Int _" [ALWAYS] forall @ t
+                                             ($dOut :: Text.PrettyPrint.GenericPretty.Out
+                                                         GHC.Types.Int)
+  Text.PrettyPrint.GenericPretty.$fGOutK1 @ GHC.Types.Int @ t $dOut
+  = Lib3.$s$dmdoc_$s$fGOutK2 @ t
+"SPEC/Lib3 $fGOutK1_$cisNullary @ Int _" [ALWAYS] forall @ t
+                                                         ($dOut :: Text.PrettyPrint.GenericPretty.Out
+                                                                     GHC.Types.Int)
+  Text.PrettyPrint.GenericPretty.$fGOutK1_$cisNullary @ GHC.Types.Int
+                                                      @ t
+                                                      $dOut
+  = Lib3.$s$dmdoc_$s$fGOutK1_$cisNullary @ t
+"SPEC/Lib3 $fGOutK1_$cout1 @ Int _" [ALWAYS] forall @ t
+                                                    ($dOut :: Text.PrettyPrint.GenericPretty.Out
+                                                                GHC.Types.Int)
+  Text.PrettyPrint.GenericPretty.$fGOutK1_$cout1 @ GHC.Types.Int
+                                                 @ t
+                                                 $dOut
+  = Lib3.$s$dmdoc_$s$fGOutK1_$cout1 @ t
+"SPEC/Lib3 $fGOutM10 @ (K1 R (Tree Int)) @ ('MetaSel
+                                             'Nothing
+                                             'NoSourceUnpackedness
+                                             'NoSourceStrictness
+                                             'DecidedLazy)" [ALWAYS] forall ($dGOut :: Text.PrettyPrint.GenericPretty.GOut
+                                                                                                                                                                                                                                                                                                                                        (GHC.Generics.K1
+                                                                                                                                                                                                                                                                                                                                           GHC.Generics.R
+                                                                                                                                                                                                                                                                                                                                           (Lib3.Tree
+                                                                                                                                                                                                                                                                                                                                              GHC.Types.Int)))
+                                                                                                                                                                                                                                                                                                                           ($dSelector :: GHC.Generics.Selector
+                                                                                                                                                                                                                                                                                                                                            ('GHC.Generics.MetaSel
+                                                                                                                                                                                                                                                                                                                                               'GHC.Base.Nothing
+                                                                                                                                                                                                                                                                                                                                               'GHC.Generics.NoSourceUnpackedness
+                                                                                                                                                                                                                                                                                                                                               'GHC.Generics.NoSourceStrictness
+                                                                                                                                                                                                                                                                                                                                               'GHC.Generics.DecidedLazy))
+  Text.PrettyPrint.GenericPretty.$fGOutM10 @ (GHC.Generics.K1
+                                                GHC.Generics.R (Lib3.Tree GHC.Types.Int))
+                                           @ ('GHC.Generics.MetaSel
+                                                'GHC.Base.Nothing
+                                                'GHC.Generics.NoSourceUnpackedness
+                                                'GHC.Generics.NoSourceStrictness
+                                                'GHC.Generics.DecidedLazy)
+                                           $dGOut
+                                           $dSelector
+  = Lib3.$s$dmdoc_$s$fGOutM10
+"SPEC/Lib3 $fGOutM10 @ (K1 R Int) @ ('MetaSel
+                                      'Nothing
+                                      'NoSourceUnpackedness
+                                      'NoSourceStrictness
+                                      'DecidedLazy)" [ALWAYS] forall ($dGOut :: Text.PrettyPrint.GenericPretty.GOut
+                                                                                                                                                                                                                                                                                                     (GHC.Generics.K1
+                                                                                                                                                                                                                                                                                                        GHC.Generics.R
+                                                                                                                                                                                                                                                                                                        GHC.Types.Int))
+                                                                                                                                                                                                                                                                                        ($dSelector :: GHC.Generics.Selector
+                                                                                                                                                                                                                                                                                                         ('GHC.Generics.MetaSel
+                                                                                                                                                                                                                                                                                                            'GHC.Base.Nothing
+                                                                                                                                                                                                                                                                                                            'GHC.Generics.NoSourceUnpackedness
+                                                                                                                                                                                                                                                                                                            'GHC.Generics.NoSourceStrictness
+                                                                                                                                                                                                                                                                                                            'GHC.Generics.DecidedLazy))
+  Text.PrettyPrint.GenericPretty.$fGOutM10 @ (GHC.Generics.K1
+                                                GHC.Generics.R GHC.Types.Int)
+                                           @ ('GHC.Generics.MetaSel
+                                                'GHC.Base.Nothing
+                                                'GHC.Generics.NoSourceUnpackedness
+                                                'GHC.Generics.NoSourceStrictness
+                                                'GHC.Generics.DecidedLazy)
+                                           $dGOut
+                                           $dSelector
+  = Lib3.$s$dmdoc_$s$fGOutM2
+"SPEC/Lib3 $fSelectorMetaMetaSel @ 'Nothing @ 'NoSourceUnpackedness @ 'NoSourceStrictness @ 'DecidedLazy" [ALWAYS] forall ($dSingI :: GHC.Generics.SingI
+                                                                                                                                        'GHC.Base.Nothing)
+                                                                                                                          ($dSingI1 :: GHC.Generics.SingI
+                                                                                                                                         'GHC.Generics.NoSourceUnpackedness)
+                                                                                                                          ($dSingI2 :: GHC.Generics.SingI
+                                                                                                                                         'GHC.Generics.NoSourceStrictness)
+                                                                                                                          ($dSingI3 :: GHC.Generics.SingI
+                                                                                                                                         'GHC.Generics.DecidedLazy)
+  GHC.Generics.$fSelectorMetaMetaSel @ 'GHC.Base.Nothing
+                                     @ 'GHC.Generics.NoSourceUnpackedness
+                                     @ 'GHC.Generics.NoSourceStrictness
+                                     @ 'GHC.Generics.DecidedLazy
+                                     $dSingI
+                                     $dSingI1
+                                     $dSingI2
+                                     $dSingI3
+  = Lib3.$s$dmdoc_$s$fSelectorMetaMetaSel
+"SPEC/Lib3 $fSelectorMetaMetaSel_$cselName @ 'Nothing @ 'NoSourceUnpackedness @ 'NoSourceStrictness @ 'DecidedLazy" [ALWAYS] forall ($dSingI :: GHC.Generics.SingI
+                                                                                                                                                  'GHC.Base.Nothing)
+                                                                                                                                    ($dSingI1 :: GHC.Generics.SingI
+                                                                                                                                                   'GHC.Generics.NoSourceUnpackedness)
+                                                                                                                                    ($dSingI2 :: GHC.Generics.SingI
+                                                                                                                                                   'GHC.Generics.NoSourceStrictness)
+                                                                                                                                    ($dSingI3 :: GHC.Generics.SingI
+                                                                                                                                                   'GHC.Generics.DecidedLazy)
+  GHC.Generics.$fSelectorMetaMetaSel_$cselName @ 'GHC.Base.Nothing
+                                               @ 'GHC.Generics.NoSourceUnpackedness
+                                               @ 'GHC.Generics.NoSourceStrictness
+                                               @ 'GHC.Generics.DecidedLazy
+                                               $dSingI
+                                               $dSingI1
+                                               $dSingI2
+                                               $dSingI3
+  = Lib3.$s$dmdoc_$s$fSelectorMetaMetaSel_$cselName
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

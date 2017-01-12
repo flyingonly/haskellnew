@@ -31,7 +31,15 @@ notParser = do
     expr <- exprParser
     lexeme $ char ')'
     return (Not expr)
-    
+
+andParser :: Parser Expr
+andParser = do
+    lexeme $ char '('
+    lexeme $ string "and"
+    expr <- exprParser
+    lexeme $ char ')'
+    return (Not expr)
+
 lexeme :: Parser a -> Parser a
 lexeme p = do
     skipSpace

@@ -1,0 +1,919 @@
+
+==================== FINAL INTERFACE ====================
+2017-01-12 00:53:06.7536886 UTC
+
+interface lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk:Lib 8001
+  interface hash: cd67709c7c00678865abe91de61feda2
+  ABI hash: 0dc6a07e44f53c880fe656fdaafc4170
+  export-list hash: 20fa842811b86b9e892bc93b1ee6329a
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 36f5ed5780f13d451f8563110c8a6d30
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Lib.andParser
+  Lib.defMain
+  Lib.eval
+  Lib.evalWithErrorThrowing
+  Lib.exprParser
+  Lib.falseParser
+  Lib.lexeme
+  Lib.notParser
+  Lib.trueParser
+  Lib.Expr{Lib.And Lib.FalseLit Lib.Not Lib.Or Lib.TrueLit}
+module dependencies:
+package dependencies: array-0.5.1.1@array-0.5.1.1
+                      attoparsec-0.13.1.0@attoparsec-0.13.1.0-2AyzLuPV4T95RcYDl03Ghe*
+                      base-4.9.0.0* binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      hashable-1.2.4.0@hashable-1.2.4.0-Ctl752zbguF6QanxurLOm2
+                      integer-gmp-1.0.0.1
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      scientific-0.3.4.9@scientific-0.3.4.9-ENrtAw13zTS8y4klTK3l4D
+                      text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs
+                      transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3
+orphans: attoparsec-0.13.1.0@attoparsec-0.13.1.0-2AyzLuPV4T95RcYDl03Ghe:Data.Attoparsec.Text.Internal
+         base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hashable-1.2.4.0@hashable-1.2.4.0-Ctl752zbguF6QanxurLOm2:Data.Hashable.Generic
+         text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text
+         text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text.Lazy
+         text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text.Show
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Fusion.Bundle
+family instance modules: attoparsec-0.13.1.0@attoparsec-0.13.1.0-2AyzLuPV4T95RcYDl03Ghe:Data.Attoparsec.Internal.Types
+                         base-4.9.0.0:Control.Applicative base-4.9.0.0:Data.Complex
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Functor.Identity base-4.9.0.0:Data.List.NonEmpty
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Semigroup
+                         base-4.9.0.0:Data.Type.Equality base-4.9.0.0:Data.Version
+                         base-4.9.0.0:Data.Void base-4.9.0.0:GHC.Exts
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text
+                         text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text.Lazy
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector
+import  -/  attoparsec-0.13.1.0@attoparsec-0.13.1.0-2AyzLuPV4T95RcYDl03Ghe:Data.Attoparsec.Text 3fafd4cecfbf70a4b0cc52719e7602b9
+import  -/  attoparsec-0.13.1.0@attoparsec-0.13.1.0-2AyzLuPV4T95RcYDl03Ghe:Data.Attoparsec.Text.Internal e682a9f2864a8ebe8143367ebe6e5446
+import  -/  base-4.9.0.0:Control.Applicative fdcece230f8af145aec7b432bfe73083
+import  -/  base-4.9.0.0:Data.Either 4cef602ce360a0155ac0dd580a5b4863
+import  -/  base-4.9.0.0:Data.Functor 67cebb006c069ea73adcd2d468cdb0dc
+import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:GHC.Show 0b5845243cb2ec62b57dd6963d276ec6
+import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
+import  -/  base-4.9.0.0:System.IO c1068c4f4231e3198e330f99a58145b0
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+50150219dc6b1cf338627aadf66f3061
+  $fShowExpr :: GHC.Show.Show Lib.Expr
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Lib.Expr
+                  Lib.$fShowExpr_$cshowsPrec
+                  Lib.$fShowExpr_$cshow
+                  Lib.$fShowExpr_$cshowList -}
+50150219dc6b1cf338627aadf66f3061
+  $fShowExpr1 :: Lib.Expr -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (Lib.$fShowExpr_$cshowsPrec Lib.$fShowExpr2) -}
+4fb03dea36000c21330d7175887f6efc
+  $fShowExpr2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+50150219dc6b1cf338627aadf66f3061
+  $fShowExpr_$cshow :: Lib.Expr -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Lib.Expr) ->
+                 Lib.$fShowExpr_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+50150219dc6b1cf338627aadf66f3061
+  $fShowExpr_$cshowList :: [Lib.Expr] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__ @ Lib.Expr Lib.$fShowExpr1) -}
+50150219dc6b1cf338627aadf66f3061
+  $fShowExpr_$cshowsPrec ::
+    GHC.Types.Int -> Lib.Expr -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,1*U(U)><S,1*U><L,U> -}
+ab377471d8486d15f9d3ae04c2163492
+  $tc'And :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13634260832244422718##
+                   16941390765221717127##
+                   Lib.$trModule
+                   Lib.$tc'And1) -}
+5c619fca1763011a74fc0e8c47482040
+  $tc'And1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'And"#) -}
+7146f660d62d7d5030da722466293a79
+  $tc'FalseLit :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14544375452286800205##
+                   3761716168818368482##
+                   Lib.$trModule
+                   Lib.$tc'FalseLit1) -}
+116a484f7005aec64aba7496a9646d0c
+  $tc'FalseLit1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'FalseLit"#) -}
+55bae0ac877ce1384677b97aeb71f481
+  $tc'Not :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12706570412752937195##
+                   13042550923057634997##
+                   Lib.$trModule
+                   Lib.$tc'Not1) -}
+1f07d3ad2674aff02ad8df8dcd54aa72
+  $tc'Not1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Not"#) -}
+cb625c7721f2782e876a2db957fc8da5
+  $tc'Or :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11934760199245012240##
+                   14344291200624182054##
+                   Lib.$trModule
+                   Lib.$tc'Or1) -}
+caf03ef0492004b11835a3e3a258a2b2
+  $tc'Or1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Or"#) -}
+155a6c022f586f83c7c0286793b7efa4
+  $tc'TrueLit :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9461767476193441992##
+                   131917785286489153##
+                   Lib.$trModule
+                   Lib.$tc'TrueLit1) -}
+b06a35b31b3eb3847118eb99134056c4
+  $tc'TrueLit1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'TrueLit"#) -}
+19cba7dfbff6ab5440ad37ad71eb236c
+  $tcExpr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10173918999615931263##
+                   9339547063406741659##
+                   Lib.$trModule
+                   Lib.$tcExpr1) -}
+c1907a20ede3f4cef2a3b4832ffbf481
+  $tcExpr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Expr"#) -}
+4c379ccb7bb41879e85d683b964985ac
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Lib.$trModule2 Lib.$trModule1) -}
+2e8abbbd379b1ef4bca26f14a12abf5b
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Lib"#) -}
+c88e00073be66684252854049256a810
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk"#) -}
+6739ad0bbab001d97da0f779db69e9e5
+  $wandParser ::
+    GHC.Prim.ByteArray#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Failure
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         r
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         Lib.Expr
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 9,
+     Strictness: <S,U><S,U><S,U><L,U><L,U><S,U><L,U><L,U><L,C(C1(C1(C1(U))))>,
+     Inline: [0] -}
+ce3f37ed41fdb3895146331a4afcd7be
+  $wexprParser ::
+    GHC.Prim.ByteArray#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Failure
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         r
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         Lib.Expr
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 9,
+     Strictness: <S,U><S,U><S,U><L,U><L,U><S,U><L,U><L,U><L,U>,
+     Inline: [0] -}
+9982ba74eeb29a37b487be0f036f457b
+  $wfalseParser ::
+    GHC.Prim.ByteArray#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Failure
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         r
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         Lib.Expr
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 9,
+     Strictness: <S,U><S,U><S,U><L,U><L,U><S,U><L,U><L,C(C1(C1(C1(C1(U)))))><L,C(C1(C1(C1(U))))>,
+     Inline: [0] -}
+13394b0500a70dccb43495af5d898417
+  $wgo1 ::
+    GHC.Prim.ByteArray#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         ()
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 8,
+     Strictness: <S,U><S,U><S,U><L,U><L,U><S,U><L,U><L,C(C1(C1(C1(U))))>,
+     Inline: [0] -}
+752c92bde32cedc6ba17f5d07ac8389c
+  $wlexeme ::
+    Data.Attoparsec.Text.Internal.Parser a
+    -> forall r.
+       GHC.Prim.ByteArray#
+       -> GHC.Prim.Int#
+       -> GHC.Prim.Int#
+       -> GHC.Prim.Int#
+       -> GHC.Prim.Int#
+       -> GHC.Prim.Int#
+       -> Data.Attoparsec.Internal.Types.More
+       -> Data.Attoparsec.Internal.Types.Failure
+            Data.Text.Internal.Text
+            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+            r
+       -> Data.Attoparsec.Internal.Types.Success
+            Data.Text.Internal.Text
+            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+            a
+            r
+       -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 10,
+     Strictness: <L,C(C1(C1(C1(C1(U)))))><S,U><S,U><S,U><L,U><L,U><S,U><L,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   (w :: Data.Attoparsec.Text.Internal.Parser a)
+                   @ r
+                   (ww :: GHC.Prim.ByteArray#)
+                   (ww1 :: GHC.Prim.Int#)
+                   (ww2 :: GHC.Prim.Int#)
+                   (ww3 :: GHC.Prim.Int#)
+                   (ww4 :: GHC.Prim.Int#)
+                   (ww5 :: GHC.Prim.Int#)
+                   (w1 :: Data.Attoparsec.Internal.Types.More)
+                   (w2 :: Data.Attoparsec.Internal.Types.Failure
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            r)
+                   (w3 :: Data.Attoparsec.Internal.Types.Success
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            a
+                            r) ->
+                 Lib.$wgo1
+                   @ r
+                   ww
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   ww5
+                   w1
+                   (\ (t' :: Data.Attoparsec.Internal.Types.State
+                               Data.Text.Internal.Text)
+                      (pos' :: Data.Attoparsec.Internal.Types.Pos)[OneShot]
+                      (more' :: Data.Attoparsec.Internal.Types.More)[OneShot]
+                      (a1 :: ())[OneShot] ->
+                    case pos'
+                           `cast`
+                         (Data.Attoparsec.Internal.Types.N:Pos[0]) of nt1 { GHC.Types.I# ipv1 ->
+                    w `cast`
+                    (Data.Attoparsec.Internal.Types.N:Parser[0]
+                         <Data.Text.Internal.Text>_N <a>_R)
+                      @ r
+                      t'
+                      nt1 `cast` (Sym (Data.Attoparsec.Internal.Types.N:Pos[0]))
+                      more'
+                      w2
+                      w3 })) -}
+a5ad3294c1fae11a98c6b7e0aa11ccb7
+  $wnotParser ::
+    GHC.Prim.ByteArray#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Failure
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         r
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         Lib.Expr
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 9,
+     Strictness: <S,U><S,U><S,U><L,U><L,U><S,U><L,U><L,U><L,C(C1(C1(C1(U))))>,
+     Inline: [0],
+     Unfolding: (\ @ r
+                   (ww :: GHC.Prim.ByteArray#)
+                   (ww1 :: GHC.Prim.Int#)
+                   (ww2 :: GHC.Prim.Int#)
+                   (ww3 :: GHC.Prim.Int#)
+                   (ww4 :: GHC.Prim.Int#)
+                   (ww5 :: GHC.Prim.Int#)
+                   (w :: Data.Attoparsec.Internal.Types.More)
+                   (w1 :: Data.Attoparsec.Internal.Types.Failure
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            r)
+                   (w2 :: Data.Attoparsec.Internal.Types.Success
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            Lib.Expr
+                            r) ->
+                 let {
+                   w3 :: Data.Attoparsec.Internal.Types.Success
+                           Data.Text.Internal.Text
+                           (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                           GHC.Types.Char
+                           r
+                     {- Arity: 4 -}
+                   = \ (t' :: Data.Attoparsec.Internal.Types.State
+                                Data.Text.Internal.Text)
+                       (pos' :: Data.Attoparsec.Internal.Types.Pos)
+                       (more' :: Data.Attoparsec.Internal.Types.More)
+                       (a1 :: GHC.Types.Char) ->
+                     Lib.notParser2 @ r t' pos' more' w1 w2
+                 } in
+                 Lib.$wgo1
+                   @ r
+                   ww
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   ww5
+                   w
+                   (\ (t' :: Data.Attoparsec.Internal.Types.State
+                               Data.Text.Internal.Text)
+                      (pos' :: Data.Attoparsec.Internal.Types.Pos)[OneShot]
+                      (more' :: Data.Attoparsec.Internal.Types.More)[OneShot]
+                      (a1 :: ())[OneShot] ->
+                    case pos'
+                           `cast`
+                         (Data.Attoparsec.Internal.Types.N:Pos[0]) of nt1 { GHC.Types.I# ipv1 ->
+                    Lib.$wnotParser1 @ r t' ipv1 more' w1 w3 })) -}
+3b3ff076f3fdded8707fdd1c59a3c5b7
+  $wnotParser1 ::
+    Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
+    -> GHC.Prim.Int#
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Failure
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         r
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         GHC.Types.Char
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 5,
+     Strictness: <L,U(U,U,U,U,U)><S,U><L,U><L,C(C1(C1(C1(C1(U)))))><L,C(C1(C1(C1(U))))>,
+     Inline: [0] -}
+f403b8b7d982826716d91da758266c32
+  $wnotParser2 ::
+    GHC.Prim.ByteArray#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Failure
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         r
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         Lib.Expr
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 9,
+     Strictness: <S,U><S,U><S,U><L,U><L,U><S,U><L,U><L,U><L,C(C1(C1(C1(U))))>,
+     Inline: [0] -}
+c363f24503cb5ccd48155e888a6e5d7a
+  $wtrueParser ::
+    GHC.Prim.ByteArray#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Failure
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         r
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         Lib.Expr
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 9,
+     Strictness: <S,U><S,U><S,U><L,U><L,U><S,U><L,U><L,C(C1(C1(C1(C1(U)))))><L,C(C1(C1(C1(U))))>,
+     Inline: [0] -}
+50150219dc6b1cf338627aadf66f3061
+  data Expr
+    = FalseLit
+    | TrueLit
+    | Not Lib.Expr
+    | And Lib.Expr Lib.Expr
+    | Or Lib.Expr Lib.Expr
+c53ac071694e027f8098fb68eea0e4f7
+  andParser :: Data.Attoparsec.Text.Internal.Parser Lib.Expr
+  {- Arity: 5,
+     Strictness: <S(SSSLL),1*U(U,U,U,U,U)><S(S),1*U(U)><L,U><L,U><L,C(C1(C1(C1(U))))>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.andParser1
+                  `cast`
+                (Sym (Data.Attoparsec.Internal.Types.N:Parser[0]
+                          <Data.Text.Internal.Text>_N <Lib.Expr>_R)) -}
+b3883044e0523726f3ee4f4c232fc0a9
+  andParser1 ::
+    Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
+    -> Data.Attoparsec.Internal.Types.Pos
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Failure
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         r
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         Lib.Expr
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 5,
+     Strictness: <S(SSSLL),1*U(U,U,U,U,U)><S(S),1*U(U)><L,U><L,U><L,C(C1(C1(C1(U))))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ r
+                   (w :: Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                   (w1 :: Data.Attoparsec.Internal.Types.Pos)
+                   (w2 :: Data.Attoparsec.Internal.Types.More)
+                   (w3 :: Data.Attoparsec.Internal.Types.Failure
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            r)
+                   (w4 :: Data.Attoparsec.Internal.Types.Success
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            Lib.Expr
+                            r) ->
+                 case w `cast`
+                      (Sub (Data.Attoparsec.Internal.Types.D:R:StateText[0])) of ww { Data.Attoparsec.Text.Buffer.Buf ww1 ww2 ww3 ww4 ww5 ->
+                 case w1
+                        `cast`
+                      (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
+                 Lib.$wandParser @ r ww1 ww2 ww3 ww4 ww5 ww7 w2 w3 w4 } }) -}
+6c0c4709f0fb77dfeade3efe0af81724
+  defMain :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.defMain1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+9e23d3255523a2524906e00b3b117e5c
+  defMain1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U> -}
+11abf30b96aef6c7a5852f17105b673e
+  eval :: Lib.Expr -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S,1*U> -}
+5e5350613aaa884f22dea4768c5bcf0f
+  evalWithErrorThrowing ::
+    Data.Either.Either GHC.Base.String Lib.Expr -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: Data.Either.Either
+                            GHC.Base.String Lib.Expr) ->
+                 case ds of wild {
+                   Data.Either.Left errStr
+                   -> Lib.evalWithErrorThrowing1
+                        @ [GHC.Types.Char]
+                        (GHC.Types.: @ GHC.Types.Char)
+                        errStr
+                   Data.Either.Right expr
+                   -> case Lib.eval expr of wild1 {
+                        GHC.Types.False -> GHC.Show.shows21
+                        GHC.Types.True -> GHC.Show.shows20 } }) -}
+3edf5c70e107d3ade95bcd140bd6e9db
+  evalWithErrorThrowing1 :: (GHC.Types.Char -> b -> b) -> b -> b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(C1(U))><L,U>,
+     Unfolding: (\ @ b
+                   (c :: GHC.Types.Char -> b -> b)[OneShot]
+                   (n :: b)[OneShot] ->
+                 GHC.CString.unpackFoldrCString#
+                   @ b
+                   "not a valid bool expr: "#
+                   c
+                   n) -}
+a55101f8484b6dfa19b315e524021c31
+  exprParser :: Data.Attoparsec.Text.Internal.Parser Lib.Expr
+  {- Arity: 5,
+     Strictness: <S(SSSLL),1*U(U,U,U,U,U)><S(S),U(U)><L,U><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.exprParser1
+                  `cast`
+                (Sym (Data.Attoparsec.Internal.Types.N:Parser[0]
+                          <Data.Text.Internal.Text>_N <Lib.Expr>_R)) -}
+9976a0489ba159567f1a90983363c35a
+  exprParser1 ::
+    Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
+    -> Data.Attoparsec.Internal.Types.Pos
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Failure
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         r
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         Lib.Expr
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 5,
+     Strictness: <S(SSSLL),1*U(U,U,U,U,U)><S(S),U(U)><L,U><L,U><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ r
+                   (w :: Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                   (w1 :: Data.Attoparsec.Internal.Types.Pos)
+                   (w2 :: Data.Attoparsec.Internal.Types.More)
+                   (w3 :: Data.Attoparsec.Internal.Types.Failure
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            r)
+                   (w4 :: Data.Attoparsec.Internal.Types.Success
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            Lib.Expr
+                            r) ->
+                 case w `cast`
+                      (Sub (Data.Attoparsec.Internal.Types.D:R:StateText[0])) of ww { Data.Attoparsec.Text.Buffer.Buf ww1 ww2 ww3 ww4 ww5 ->
+                 case w1
+                        `cast`
+                      (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
+                 Lib.$wexprParser @ r ww1 ww2 ww3 ww4 ww5 ww7 w2 w3 w4 } }) -}
+51c0ab3e651b7c2468ea5c7276191646
+  falseParser :: Data.Attoparsec.Text.Internal.Parser Lib.Expr
+  {- Arity: 5,
+     Unfolding: InlineRule (0, True, True)
+                Lib.falseParser1
+                  `cast`
+                (Sym (Data.Attoparsec.Internal.Types.N:Parser[0]
+                          <Data.Text.Internal.Text>_N <Lib.Expr>_R)) -}
+6cba31b7cd5345354f5e5cb9ee41b384
+  falseParser1 ::
+    Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
+    -> Data.Attoparsec.Internal.Types.Pos
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Failure
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         r
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         Lib.Expr
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 5,
+     Unfolding: (\ @ r
+                   (w :: Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                   (w1 :: Data.Attoparsec.Internal.Types.Pos)
+                   (w2 :: Data.Attoparsec.Internal.Types.More)
+                   (w3 :: Data.Attoparsec.Internal.Types.Failure
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            r)
+                   (w4 :: Data.Attoparsec.Internal.Types.Success
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            Lib.Expr
+                            r) ->
+                 case w `cast`
+                      (Sub (Data.Attoparsec.Internal.Types.D:R:StateText[0])) of ww { Data.Attoparsec.Text.Buffer.Buf ww1 ww2 ww3 ww4 ww5 ->
+                 case w1
+                        `cast`
+                      (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
+                 Lib.$wgo1
+                   @ r
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   ww5
+                   ww7
+                   w2
+                   (\ (t' :: Data.Attoparsec.Internal.Types.State
+                               Data.Text.Internal.Text)
+                      (pos' :: Data.Attoparsec.Internal.Types.Pos)[OneShot]
+                      (more' :: Data.Attoparsec.Internal.Types.More)[OneShot]
+                      (a1 :: ())[OneShot] ->
+                    case pos'
+                           `cast`
+                         (Data.Attoparsec.Internal.Types.N:Pos[0]) of nt1 { GHC.Types.I# ipv1 ->
+                    case t'
+                           `cast`
+                         (Sub (Data.Attoparsec.Internal.Types.D:R:StateText[0])) of ww8 { Data.Attoparsec.Text.Buffer.Buf ww9 ww10 ww11 ww12 ww13 ->
+                    Lib.$wfalseParser
+                      @ r
+                      ww9
+                      ww10
+                      ww11
+                      ww12
+                      ww13
+                      ipv1
+                      more'
+                      w3
+                      w4 } }) } }) -}
+bb752b3d499ca4353b1a141d9d198e48
+  lexeme ::
+    Data.Attoparsec.Text.Internal.Parser a
+    -> Data.Attoparsec.Text.Internal.Parser a
+  {- Arity: 6,
+     Strictness: <L,C(C1(C1(C1(C1(U)))))><S(SSSLL),1*U(U,U,U,U,U)><S(S),1*U(U)><L,U><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.lexeme1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Data.Attoparsec.Text.Internal.Parser a>_R
+                 ->_R Sym (Data.Attoparsec.Internal.Types.N:Parser[0]
+                               <Data.Text.Internal.Text>_N <a>_R)) -}
+98eec77b4784d7bff9b5fd41de568186
+  lexeme1 ::
+    Data.Attoparsec.Text.Internal.Parser a
+    -> forall r.
+       Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
+       -> Data.Attoparsec.Internal.Types.Pos
+       -> Data.Attoparsec.Internal.Types.More
+       -> Data.Attoparsec.Internal.Types.Failure
+            Data.Text.Internal.Text
+            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+            r
+       -> Data.Attoparsec.Internal.Types.Success
+            Data.Text.Internal.Text
+            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+            a
+            r
+       -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 6,
+     Strictness: <L,C(C1(C1(C1(C1(U)))))><S(SSSLL),1*U(U,U,U,U,U)><S(S),1*U(U)><L,U><L,U><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (6, True, False)
+                (\ @ a
+                   (w :: Data.Attoparsec.Text.Internal.Parser a)
+                   @ r
+                   (w1 :: Data.Attoparsec.Internal.Types.State
+                            Data.Text.Internal.Text)
+                   (w2 :: Data.Attoparsec.Internal.Types.Pos)
+                   (w3 :: Data.Attoparsec.Internal.Types.More)
+                   (w4 :: Data.Attoparsec.Internal.Types.Failure
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            r)
+                   (w5 :: Data.Attoparsec.Internal.Types.Success
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            a
+                            r) ->
+                 case w1
+                        `cast`
+                      (Sub (Data.Attoparsec.Internal.Types.D:R:StateText[0])) of ww { Data.Attoparsec.Text.Buffer.Buf ww1 ww2 ww3 ww4 ww5 ->
+                 case w2
+                        `cast`
+                      (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
+                 Lib.$wlexeme @ a w @ r ww1 ww2 ww3 ww4 ww5 ww7 w3 w4 w5 } }) -}
+33a79cfa7c3adc2a0337f9cef510b060
+  notParser :: Data.Attoparsec.Text.Internal.Parser Lib.Expr
+  {- Arity: 5,
+     Strictness: <S(SSSLL),1*U(U,U,U,U,U)><S(S),1*U(U)><L,U><L,U><L,C(C1(C1(C1(U))))>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.notParser1
+                  `cast`
+                (Sym (Data.Attoparsec.Internal.Types.N:Parser[0]
+                          <Data.Text.Internal.Text>_N <Lib.Expr>_R)) -}
+97fd955d876b580b91da502c2a266881
+  notParser1 ::
+    Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
+    -> Data.Attoparsec.Internal.Types.Pos
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Failure
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         r
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         Lib.Expr
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 5,
+     Strictness: <S(SSSLL),1*U(U,U,U,U,U)><S(S),1*U(U)><L,U><L,U><L,C(C1(C1(C1(U))))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ r
+                   (w :: Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                   (w1 :: Data.Attoparsec.Internal.Types.Pos)
+                   (w2 :: Data.Attoparsec.Internal.Types.More)
+                   (w3 :: Data.Attoparsec.Internal.Types.Failure
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            r)
+                   (w4 :: Data.Attoparsec.Internal.Types.Success
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            Lib.Expr
+                            r) ->
+                 case w `cast`
+                      (Sub (Data.Attoparsec.Internal.Types.D:R:StateText[0])) of ww { Data.Attoparsec.Text.Buffer.Buf ww1 ww2 ww3 ww4 ww5 ->
+                 case w1
+                        `cast`
+                      (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
+                 Lib.$wnotParser @ r ww1 ww2 ww3 ww4 ww5 ww7 w2 w3 w4 } }) -}
+fe464ac24fe58693a67e3d416756b157
+  notParser2 ::
+    Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
+    -> Data.Attoparsec.Internal.Types.Pos
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Failure
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         r
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         Lib.Expr
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 5,
+     Strictness: <S(SSSLL),1*U(U,U,U,U,U)><S(S),1*U(U)><L,U><L,U><L,C(C1(C1(C1(U))))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ r
+                   (w :: Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                   (w1 :: Data.Attoparsec.Internal.Types.Pos)
+                   (w2 :: Data.Attoparsec.Internal.Types.More)
+                   (w3 :: Data.Attoparsec.Internal.Types.Failure
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            r)
+                   (w4 :: Data.Attoparsec.Internal.Types.Success
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            Lib.Expr
+                            r) ->
+                 case w `cast`
+                      (Sub (Data.Attoparsec.Internal.Types.D:R:StateText[0])) of ww { Data.Attoparsec.Text.Buffer.Buf ww1 ww2 ww3 ww4 ww5 ->
+                 case w1
+                        `cast`
+                      (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
+                 Lib.$wnotParser2 @ r ww1 ww2 ww3 ww4 ww5 ww7 w2 w3 w4 } }) -}
+652e77a8a2d09f8491fcfc36e3ea9da2
+  trueParser :: Data.Attoparsec.Text.Internal.Parser Lib.Expr
+  {- Arity: 5,
+     Unfolding: InlineRule (0, True, True)
+                Lib.trueParser1
+                  `cast`
+                (Sym (Data.Attoparsec.Internal.Types.N:Parser[0]
+                          <Data.Text.Internal.Text>_N <Lib.Expr>_R)) -}
+fcd16e5a93ddd6f0ba7178df794a560f
+  trueParser1 ::
+    Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
+    -> Data.Attoparsec.Internal.Types.Pos
+    -> Data.Attoparsec.Internal.Types.More
+    -> Data.Attoparsec.Internal.Types.Failure
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         r
+    -> Data.Attoparsec.Internal.Types.Success
+         Data.Text.Internal.Text
+         (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+         Lib.Expr
+         r
+    -> Data.Attoparsec.Internal.Types.IResult Data.Text.Internal.Text r
+  {- Arity: 5,
+     Unfolding: (\ @ r
+                   (w :: Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                   (w1 :: Data.Attoparsec.Internal.Types.Pos)
+                   (w2 :: Data.Attoparsec.Internal.Types.More)
+                   (w3 :: Data.Attoparsec.Internal.Types.Failure
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            r)
+                   (w4 :: Data.Attoparsec.Internal.Types.Success
+                            Data.Text.Internal.Text
+                            (Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text)
+                            Lib.Expr
+                            r) ->
+                 case w `cast`
+                      (Sub (Data.Attoparsec.Internal.Types.D:R:StateText[0])) of ww { Data.Attoparsec.Text.Buffer.Buf ww1 ww2 ww3 ww4 ww5 ->
+                 case w1
+                        `cast`
+                      (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
+                 Lib.$wgo1
+                   @ r
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   ww5
+                   ww7
+                   w2
+                   (\ (t' :: Data.Attoparsec.Internal.Types.State
+                               Data.Text.Internal.Text)
+                      (pos' :: Data.Attoparsec.Internal.Types.Pos)[OneShot]
+                      (more' :: Data.Attoparsec.Internal.Types.More)[OneShot]
+                      (a1 :: ())[OneShot] ->
+                    case pos'
+                           `cast`
+                         (Data.Attoparsec.Internal.Types.N:Pos[0]) of nt1 { GHC.Types.I# ipv1 ->
+                    case t'
+                           `cast`
+                         (Sub (Data.Attoparsec.Internal.Types.D:R:StateText[0])) of ww8 { Data.Attoparsec.Text.Buffer.Buf ww9 ww10 ww11 ww12 ww13 ->
+                    Lib.$wtrueParser
+                      @ r
+                      ww9
+                      ww10
+                      ww11
+                      ww12
+                      ww13
+                      ipv1
+                      more'
+                      w3
+                      w4 } }) } }) -}
+instance [safe] GHC.Show.Show [Lib.Expr] = Lib.$fShowExpr
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

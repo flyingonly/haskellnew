@@ -1,0 +1,517 @@
+
+==================== FINAL INTERFACE ====================
+2017-01-12 00:53:05.739145 UTC
+
+interface lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk:Lib2 8001
+  interface hash: 49203ff5e36feee20c50fc053b1df9db
+  ABI hash: 09c200655753b1ffe4e3f618990c0b0c
+  export-list hash: 07616904705ca442ac3dd60fc59a698d
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 365edb496d38399416a64131c77130e2
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Lib2.defMain
+  Lib2.parseField
+  Lib2.parseFlag
+  Lib2.parseInPath
+  Lib2.parseOption
+  Lib2.parseOutPath
+  Lib2.Option{Lib2.Option inPath outPath}
+  Lib2.Parser
+module dependencies:
+package dependencies: base-4.9.0.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
+                      transformers-0.5.2.0@transformers-0.5.2.0
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Functor.Identity base-4.9.0.0:Data.List.NonEmpty
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Semigroup
+                         base-4.9.0.0:Data.Type.Equality base-4.9.0.0:Data.Version
+                         base-4.9.0.0:Data.Void base-4.9.0.0:GHC.Exts
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:Control.Applicative fdcece230f8af145aec7b432bfe73083
+import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:GHC.Show 0b5845243cb2ec62b57dd6963d276ec6
+import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
+import  -/  base-4.9.0.0:System.Environment b460b4a8ded59bf876fca87a5a3550f2
+import  -/  base-4.9.0.0:System.IO c1068c4f4231e3198e330f99a58145b0
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+import  -/  mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM:Control.Monad.State d851912d62cbc95e043a9cc13c3581de
+import  -/  mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM:Control.Monad.State.Class 6b9267d06a66633777f53733046c8d46
+import  -/  transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.State.Lazy fd06dab0d634fc591e8c33380a9811a8
+ddb9b975e71a18bd58dae3bb45386392
+  $fShowOption :: GHC.Show.Show Lib2.Option
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Lib2.Option
+                  Lib2.$fShowOption_$cshowsPrec
+                  Lib2.$fShowOption_$cshow
+                  Lib2.$fShowOption_$cshowList -}
+ddb9b975e71a18bd58dae3bb45386392
+  $fShowOption1 :: Lib2.Option -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ (w :: Lib2.Option) (w1 :: GHC.Base.String) ->
+                 case w of ww { Lib2.Option ww1 ww2 ->
+                 Lib2.$w$cshowsPrec 0# ww1 ww2 w1 }) -}
+ab6bf43c6a8b22cbab9d886342090b7f
+  $fShowOption2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+79538befbdd71ec513193075bf4ebd33
+  $fShowOption3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "outPath = "#) -}
+d1c99f1e6d52551d730246f54f6bb373
+  $fShowOption4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+988df9f7b8d66fa409fe79e3bd724c5f
+  $fShowOption5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "inPath = "#) -}
+31b10004ed2b6c913a6ab477d0429990
+  $fShowOption6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Option {"#) -}
+ddb9b975e71a18bd58dae3bb45386392
+  $fShowOption_$cshow :: Lib2.Option -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Lib2.Option) ->
+                 Lib2.$fShowOption_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+ddb9b975e71a18bd58dae3bb45386392
+  $fShowOption_$cshowList :: [Lib2.Option] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Lib2.Option
+                   Lib2.$fShowOption1) -}
+ddb9b975e71a18bd58dae3bb45386392
+  $fShowOption_$cshowsPrec ::
+    GHC.Types.Int -> Lib2.Option -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U,1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Lib2.Option)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Lib2.Option ww3 ww4 ->
+                 Lib2.$w$cshowsPrec ww1 ww3 ww4 w2 } }) -}
+386e5195cb0104c4a41b1905a287e185
+  $tc'Option :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16405647146574405766##
+                   9075217109230453495##
+                   Lib2.$trModule
+                   Lib2.$tc'Option1) -}
+b34df9ad711207ff882b57189a129dbb
+  $tc'Option1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Option"#) -}
+9d2356e952e8ca641f1055b3145044b9
+  $tcOption :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9694771908882085671##
+                   18051975033588611739##
+                   Lib2.$trModule
+                   Lib2.$tcOption1) -}
+ff05fb02c06e714723064e6f12d52780
+  $tcOption1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Option"#) -}
+fe4438d91f124563523505e768e01db6
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Lib2.$trModule2 Lib2.$trModule1) -}
+de4f0061b7d60f5929d3a2a0af135b48
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Lib2"#) -}
+86f7b4f43acb0f3ae016023fe49f8b3f
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk"#) -}
+04534bb6703d463f9f99a43d4b88b62d
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 4, Strictness: <S,U><L,1*U><L,1*U><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: GHC.Base.String)
+                   (ww2 :: GHC.Base.String)
+                   (w :: GHC.Base.String) ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ (x :: GHC.Base.String)[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Lib2.$fShowOption6
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Lib2.$fShowOption5
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows8
+                             (GHC.Show.showLitString
+                                ww1
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows8
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      Lib2.$fShowOption4
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Lib2.$fShowOption3
+                                         (GHC.Types.:
+                                            @ GHC.Types.Char
+                                            GHC.Show.shows8
+                                            (GHC.Show.showLitString
+                                               ww2
+                                               (GHC.Types.:
+                                                  @ GHC.Types.Char
+                                                  GHC.Show.shows8
+                                                  (GHC.Base.++
+                                                     @ GHC.Types.Char
+                                                     Lib2.$fShowOption2
+                                                     x))))))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 w)) }) -}
+ddb9b975e71a18bd58dae3bb45386392
+  data Option
+    = Option {inPath :: GHC.Base.String, outPath :: GHC.Base.String}
+dc0a963229b065bd1b1e0067bd57a59d
+  type Parser a =
+    Control.Monad.Trans.State.Lazy.StateT
+      [GHC.Base.String] GHC.Base.Maybe a
+137096f61ecd2014de0a3b474b06953c
+  defMain :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib2.defMain1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+90872520f2a05fcb0684365ea7dd76aa
+  defMain1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case System.Environment.getArgs2 s of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of wild {
+                   GHC.Base.Nothing
+                   -> case GHC.Environment.getFullArgs1
+                             ipv of ds2 { (#,#) ipv2 ipv3 ->
+                      Lib2.defMain6
+                        (case System.Environment.dropRTSArgs ipv3 of wild1 {
+                           []
+                           -> case GHC.List.scanl2
+                              ret_ty (GHC.Base.Maybe (Lib2.Option, [GHC.Base.String]))
+                              of {}
+                           : ds3 xs
+                           -> case Lib2.defMain5 xs of wild2 {
+                                GHC.Base.Nothing -> Lib2.defMain2 xs
+                                GHC.Base.Just ipv4 -> wild2 } })
+                        ipv2 }
+                   GHC.Base.Just argv
+                   -> Lib2.defMain6
+                        (case argv of wild1 {
+                           []
+                           -> case GHC.List.scanl2
+                              ret_ty (GHC.Base.Maybe (Lib2.Option, [GHC.Base.String]))
+                              of {}
+                           : ds2 xs
+                           -> case Lib2.defMain5 xs of wild2 {
+                                GHC.Base.Nothing -> Lib2.defMain2 xs
+                                GHC.Base.Just ipv2 -> wild2 } })
+                        ipv } }) -}
+c5b744304556deed8b1ac3eb321391a4
+  defMain2 ::
+    [GHC.Base.String]
+    -> GHC.Base.Maybe (Lib2.Option, [GHC.Base.String])
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (s1 :: [GHC.Base.String]) ->
+                 case s1 of wild {
+                   [] -> GHC.Base.Nothing @ (Lib2.Option, [GHC.Base.String])
+                   : arg args'
+                   -> case GHC.Base.eqString arg Lib2.defMain4 of wild1 {
+                        GHC.Types.False
+                        -> GHC.Base.Nothing @ (Lib2.Option, [GHC.Base.String])
+                        GHC.Types.True
+                        -> case args' of wild2 {
+                             [] -> GHC.Base.Nothing @ (Lib2.Option, [GHC.Base.String])
+                             : arg1 args'1
+                             -> case args'1 of wild3 {
+                                  [] -> GHC.Base.Nothing @ (Lib2.Option, [GHC.Base.String])
+                                  : arg2 args'2
+                                  -> case GHC.Base.eqString arg2 Lib2.defMain3 of wild4 {
+                                       GHC.Types.False
+                                       -> GHC.Base.Nothing @ (Lib2.Option, [GHC.Base.String])
+                                       GHC.Types.True
+                                       -> case args'2 of wild5 {
+                                            []
+                                            -> GHC.Base.Nothing @ (Lib2.Option, [GHC.Base.String])
+                                            : arg3 args'3
+                                            -> GHC.Base.Just
+                                                 @ (Lib2.Option, [GHC.Base.String])
+                                                 (Lib2.Option arg3 arg1, args'3) } } } } } }) -}
+32191fbaed295e946544cab27d824816
+  defMain3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackAppendCString#
+                   "--"#
+                   Lib2.defMain_f) -}
+dc2aa39d9b94e14356d7741b60ccf6a1
+  defMain4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackAppendCString#
+                   "--"#
+                   Lib2.defMain_f1) -}
+3f685b3679d41c847f19c5808adf2310
+  defMain5 ::
+    [GHC.Base.String]
+    -> GHC.Base.Maybe (Lib2.Option, [GHC.Base.String])
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (s1 :: [GHC.Base.String]) ->
+                 case s1 of wild {
+                   [] -> GHC.Base.Nothing @ (Lib2.Option, [GHC.Base.String])
+                   : arg args'
+                   -> case GHC.Base.eqString arg Lib2.defMain3 of wild1 {
+                        GHC.Types.False
+                        -> GHC.Base.Nothing @ (Lib2.Option, [GHC.Base.String])
+                        GHC.Types.True
+                        -> case args' of wild2 {
+                             [] -> GHC.Base.Nothing @ (Lib2.Option, [GHC.Base.String])
+                             : arg1 args'1
+                             -> case args'1 of wild3 {
+                                  [] -> GHC.Base.Nothing @ (Lib2.Option, [GHC.Base.String])
+                                  : arg2 args'2
+                                  -> case GHC.Base.eqString arg2 Lib2.defMain4 of wild4 {
+                                       GHC.Types.False
+                                       -> GHC.Base.Nothing @ (Lib2.Option, [GHC.Base.String])
+                                       GHC.Types.True
+                                       -> case args'2 of wild5 {
+                                            []
+                                            -> GHC.Base.Nothing @ (Lib2.Option, [GHC.Base.String])
+                                            : arg3 args'3
+                                            -> GHC.Base.Just
+                                                 @ (Lib2.Option, [GHC.Base.String])
+                                                 (Lib2.Option arg1 arg3, args'3) } } } } } }) -}
+c3433a64b090c0e9c82e4bf3ef82103d
+  defMain6 ::
+    GHC.Base.Maybe (Lib2.Option, [GHC.Base.String])
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,1*U><S,U>,
+     Unfolding: (\ (x :: GHC.Base.Maybe
+                           (Lib2.Option, [GHC.Base.String]))
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (case x of wild {
+                      GHC.Base.Nothing -> GHC.Show.$fShowMaybe3
+                      GHC.Base.Just b1
+                      -> GHC.Base.++
+                           @ GHC.Types.Char
+                           GHC.Show.$fShowMaybe1
+                           (case b1 of ww { (,) ww1 ww2 ->
+                            GHC.Types.:
+                              @ GHC.Types.Char
+                              GHC.Show.shows9
+                              (case ww1 of ww4 { Lib2.Option ww5 ww6 ->
+                               Lib2.$w$cshowsPrec
+                                 0#
+                                 ww5
+                                 ww6
+                                 (GHC.Types.:
+                                    @ GHC.Types.Char
+                                    GHC.Show.shows7
+                                    (GHC.Show.$fShow(,)_$sgo
+                                       Lib2.defMain7
+                                       (\ (eta1 :: GHC.Base.String) ->
+                                        GHC.Show.shows_$s$cshowList ww2 eta1)
+                                       (GHC.Types.[] @ GHC.Show.ShowS))) }) }) })
+                   GHC.Types.True
+                   eta) -}
+0cdd849a7e502a7cc518409bec0d62d5
+  defMain7 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows6
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+4c395df2b6b4c8ff962751d0c9466562
+  defMain_f :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "in"#) -}
+cc303cd21a50016fa13c2995d7f1c88e
+  defMain_f1 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "out"#) -}
+bd4733231111718c07f6faf45236b5bb
+  inPath :: Lib2.Option -> GHC.Base.String
+  RecSel Left Lib2.Option
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Lib2.Option) ->
+                 case ds of wild { Lib2.Option ds1 ds2 -> ds1 }) -}
+2b8f73dfc2c49dedfe13b618b92b496d
+  outPath :: Lib2.Option -> GHC.Base.String
+  RecSel Left Lib2.Option
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Lib2.Option) ->
+                 case ds of wild { Lib2.Option ds1 ds2 -> ds2 }) -}
+4821c042d8c8262123f0782e5bfaf530
+  parseField :: GHC.Base.String -> Lib2.Parser GHC.Base.String
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib2.parseField1
+                  `cast`
+                (<GHC.Base.String>_R
+                 ->_R Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <[GHC.Base.String]>_N <GHC.Base.Maybe>_R <GHC.Base.String>_N)) -}
+5209cd4eec40978432939ed2166df492
+  parseField1 ::
+    GHC.Base.String
+    -> [GHC.Base.String]
+    -> GHC.Base.Maybe (GHC.Base.String, [GHC.Base.String])
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: (\ (f :: GHC.Base.String) (eta :: [GHC.Base.String]) ->
+                 case eta of wild {
+                   [] -> GHC.Base.Nothing @ (GHC.Base.String, [GHC.Base.String])
+                   : arg args'
+                   -> case GHC.Base.eqString
+                             arg
+                             (GHC.CString.unpackAppendCString# "--"# f) of wild1 {
+                        GHC.Types.False
+                        -> GHC.Base.Nothing @ (GHC.Base.String, [GHC.Base.String])
+                        GHC.Types.True
+                        -> case args' of wild2 {
+                             [] -> GHC.Base.Nothing @ (GHC.Base.String, [GHC.Base.String])
+                             : arg1 args'1
+                             -> GHC.Base.Just
+                                  @ (GHC.Base.String, [GHC.Base.String])
+                                  (arg1, args'1) } } }) -}
+5dd290b61413de3b8a8fdcb9410ba512
+  parseFlag :: GHC.Base.String -> Lib2.Parser GHC.Base.String
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib2.parseFlag1
+                  `cast`
+                (<GHC.Base.String>_R
+                 ->_R Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <[GHC.Base.String]>_N <GHC.Base.Maybe>_R <GHC.Base.String>_N)) -}
+ca1900ebfb4bdd74e4edb73e2f100369
+  parseFlag1 ::
+    GHC.Base.String
+    -> [GHC.Base.String]
+    -> GHC.Base.Maybe (GHC.Base.String, [GHC.Base.String])
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: (\ (f :: GHC.Base.String) (eta :: [GHC.Base.String]) ->
+                 case eta of wild {
+                   [] -> GHC.Base.Nothing @ (GHC.Base.String, [GHC.Base.String])
+                   : arg args'
+                   -> case GHC.Base.eqString
+                             arg
+                             (GHC.CString.unpackAppendCString# "--"# f) of wild1 {
+                        GHC.Types.False
+                        -> GHC.Base.Nothing @ (GHC.Base.String, [GHC.Base.String])
+                        GHC.Types.True
+                        -> GHC.Base.Just
+                             @ (GHC.Base.String, [GHC.Base.String])
+                             (f, args') } }) -}
+c61b5f17ec5d5337ee5593516ebe8f95
+  parseInPath :: Lib2.Parser GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib2.parseInPath1
+                  `cast`
+                (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                          <[GHC.Base.String]>_N <GHC.Base.Maybe>_R <GHC.Base.String>_N)) -}
+7113a4e163743477724ccedb53cdee41
+  parseInPath1 ::
+    [GHC.Base.String]
+    -> GHC.Base.Maybe (GHC.Base.String, [GHC.Base.String])
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (eta :: [GHC.Base.String]) ->
+                 case eta of wild {
+                   [] -> GHC.Base.Nothing @ (GHC.Base.String, [GHC.Base.String])
+                   : arg args'
+                   -> case GHC.Base.eqString arg Lib2.defMain3 of wild1 {
+                        GHC.Types.False
+                        -> GHC.Base.Nothing @ (GHC.Base.String, [GHC.Base.String])
+                        GHC.Types.True
+                        -> case args' of wild2 {
+                             [] -> GHC.Base.Nothing @ (GHC.Base.String, [GHC.Base.String])
+                             : arg1 args'1
+                             -> GHC.Base.Just
+                                  @ (GHC.Base.String, [GHC.Base.String])
+                                  (arg1, args'1) } } }) -}
+e74d1c513125a0ddca93ee28daf36056
+  parseOption :: Lib2.Parser Lib2.Option
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib2.parseOption1
+                  `cast`
+                (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                          <[GHC.Base.String]>_N <GHC.Base.Maybe>_R <Lib2.Option>_N)) -}
+bcbe7aa9eaa69a8775ef30757d9e6854
+  parseOption1 ::
+    [GHC.Base.String]
+    -> GHC.Base.Maybe (Lib2.Option, [GHC.Base.String])
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s1 :: [GHC.Base.String]) ->
+                 case Lib2.defMain5 s1 of wild {
+                   GHC.Base.Nothing -> Lib2.defMain2 s1
+                   GHC.Base.Just ipv -> wild }) -}
+a095109e21214a29404593d3f049d1b7
+  parseOutPath :: Lib2.Parser GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib2.parseOutPath1
+                  `cast`
+                (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                          <[GHC.Base.String]>_N <GHC.Base.Maybe>_R <GHC.Base.String>_N)) -}
+92e9c95e011c48054272207e4bc5fa81
+  parseOutPath1 ::
+    [GHC.Base.String]
+    -> GHC.Base.Maybe (GHC.Base.String, [GHC.Base.String])
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (eta :: [GHC.Base.String]) ->
+                 case eta of wild {
+                   [] -> GHC.Base.Nothing @ (GHC.Base.String, [GHC.Base.String])
+                   : arg args'
+                   -> case GHC.Base.eqString arg Lib2.defMain4 of wild1 {
+                        GHC.Types.False
+                        -> GHC.Base.Nothing @ (GHC.Base.String, [GHC.Base.String])
+                        GHC.Types.True
+                        -> case args' of wild2 {
+                             [] -> GHC.Base.Nothing @ (GHC.Base.String, [GHC.Base.String])
+                             : arg1 args'1
+                             -> GHC.Base.Just
+                                  @ (GHC.Base.String, [GHC.Base.String])
+                                  (arg1, args'1) } } }) -}
+instance [safe] GHC.Show.Show [Lib2.Option] = Lib2.$fShowOption
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
