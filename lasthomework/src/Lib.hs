@@ -32,7 +32,23 @@ data Expr
     | LessEq Expr Expr
     | Greater Expr Expr
     | GreaterEq Expr Expr
+
+    | Variable
+    | Vectorref Expr Expr
+    | Functionname [Expr]
     deriving Show
+
+data Statment
+    = Begin [Statment]
+    |Set Expr Expr
+    |Skip
+    |If Expr Statment Statment
+    |While Expr Statment
+    |Makevector Expr Expr
+    |Vectorset Expr Expr Expr
+    |Return Expr
+
+data Function = Define Expr Statment
 
 data Result1
     = BoolResult Bool
@@ -40,31 +56,110 @@ data Result1
     | NilResult
     | ConsResult Result1 Result1
 
+statParser :: Parser Statment
+statParser = beginParser <|> setParser <|> skipParser <|> ifParser <|> whileParser
+            <|> makevectorParser <|> vectorsetParser <|> returnParser
+
+
+beginParser :: Parser Statment
+beginParser = do
+    lexeme $ char '('
+    lexeme $ string "begin"
+    stats <- many statParser
+    lexeme $ char ')'
+    return (Begin stats)
+
+setParser :: Parser Statment
+setParser = do
+    lexeme $ char '('
+    lexeme $ string "set!"
+    expr <- exprParser
+    skipSpace
+    expr1 <- exprParser
+    lexeme $ char ')'
+    return (Set expr expr1)
+
+skipParser :: Parser Statment
+skipParser = lexeme $ string "skip" $> Skip
+
+ifParser :: Parser Statment
+ifParser = do
+    lexeme $ char '('
+    lexeme $ string "if"
+    expr <- exprParser
+    skipSpace
+    stat <- statParser
+    skipSpace
+    stat1 <- statParser
+    lexeme $ char ')'
+    return (If expr stat stat1)
+
+whileParser :: Parser Statment
+whileParser = do
+    lexeme $ char '('
+    lexeme $ string "while"
+    expr <- exprParser
+    skipSpace
+    stat <- statParser
+    lexeme $ char ')'
+    return (While expr stat)
+
+makevectorParser :: Parser Statment
+makevectorParser = do
+    lexeme $ char '('
+    lexeme $ string "make-vector"
+    expr <- exprParser
+    skipSpace
+    expr1 <- exprParser
+    lexeme $ char ')'
+    return (Makevector expr expr1)
+
+vectorsetParser :: Parser Statment
+vectorsetParser = do
+    lexeme $ char '('
+    lexeme $ string "vector-set!"
+    expr <- exprParser
+    skipSpace
+    expr1 <- exprParser
+    skipSpace
+    expr2 <- exprParser
+    lexeme $ char ')'
+    return (Vectorset expr expr1 expr2)
+
+returnParser :: Parser Statment
+returnParser = do
+    lexeme $ char '('
+    lexeme $ string "return"
+    expr <- exprParser
+    lexeme $ char ')'
+    return (Return expr)
+
+
 exprParser :: Parser Expr
 exprParser = falseParser <|> trueParser <|> notParser <|> andParser <|> orParser
-            <|> charparser <|> stringparser <|> consparser <|> carparser <|> cdrparser
+            <|> charParser <|> stringParser <|> consParser <|> carParser <|> cdrParser
             <|> numParser <|> addParser <|> minusParser <|> multParser <|> divParser
             <|> eqParser <|> lessParser <|> lesseqParser <|> greaterParser <|> greatereqParser
 
 falseParser :: Parser Expr
 falseParser = lexeme $ string "False" $> FalseLit
 
-charparser :: Parser Expr
-charparser = do
+charParser :: Parser Expr
+charParser = do
  lexeme $ char '\''
  a <- anyChar
  char '\''
  return (Char_literal a)
 
-stringparser:: Parser Expr
-stringparser = do
+stringParser:: Parser Expr
+stringParser = do
  lexeme $ char '\"'
  a <- many anyChar
  char '\"'
  return (String_literal a)
 
-consparser:: Parser Expr
-consparser = do
+consParser:: Parser Expr
+consParser = do
     lexeme $ char '('
     lexeme $ string "cons"
     expr <- exprParser
@@ -73,16 +168,16 @@ consparser = do
     lexeme $ char ')'
     return (Cons expr expr1)
 
-carparser:: Parser Expr
-carparser = do
+carParser:: Parser Expr
+carParser = do
     lexeme $ char '('
     lexeme $ string "car"
     expr <- exprParser
     lexeme $ char ')'
     return (Car expr)
 
-cdrparser:: Parser Expr
-cdrparser = do
+cdrParser:: Parser Expr
+cdrParser = do
     lexeme $ char '('
     lexeme $ string "cdr"
     expr <- exprParser
