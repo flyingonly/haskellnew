@@ -86,11 +86,11 @@ beginParser = do
     stats <- many statParser
     lexeme $ char ')'
     return (Statmentlist stats)
-
+    
 variableonlyParser:: Parser Var
 variableonlyParser = do
  skipSpace
- a <- (manyTill anyChar (char ' '))
+ a <- let name c = (c >= 'a' && c <= 'z') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') in (many (satisfy name))
  return a
 
 setParser :: Parser Statment
@@ -169,7 +169,7 @@ exprParser = nilParser <|> falseParser <|> trueParser <|> notParser <|> andParse
 variableParser:: Parser Expr
 variableParser = do
  skipSpace
- a <- (manyTill anyChar (char ' '))
+ a <- let name c = (c >= 'a' && c <= 'z') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') in (many (satisfy name))
  return (VarRef a)
 
 nilParser :: Parser Expr
