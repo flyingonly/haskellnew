@@ -54,6 +54,7 @@ data MyResult
     | NumResult Double
     | CharResult Char
     | NilResult
+    | FailResult
     | ConsResult MyResult MyResult
     deriving Show
 
@@ -63,15 +64,15 @@ testResult _ = False
 
 evalw :: Prog -> Mem -> Mem
 
-evalw (Set p q) mem1 = let f _ = Just (eval q) in Map.alter f p mem1
+evalw (Set p q) mem1 = let f _ = Just (eval mem1 q) in Map.alter f p mem1
 evalw Skip mem1 = mem1
 evalw (Statmentlist []) mem1 = mem1
 evalw (Statmentlist (x:xs)) mem1 = evalw (Statmentlist xs) (evalw x mem1)
 evalw (While p q) mem1
-    |testResult (eval p) = evalw (While p q) (evalw q mem1)
+    |testResult (eval mem1 p) = evalw (While p q) (evalw q mem1)
     |otherwise = mem1
 evalw (If p q s) mem1
-    |testResult (eval p) = (evalw q mem1)
+    |testResult (eval mem1 p) = (evalw q mem1)
     |otherwise = (evalw s mem1)
 
 statParser :: Parser Statment
@@ -82,7 +83,8 @@ beginParser :: Parser Statment
 beginParser = do
     lexeme $ char '('
     lexeme $ string "begin"
-    stats <- (manyTill statParser (char ')'))
+    stats <- many statParser
+    lexeme $ char ')'
     return (Statmentlist stats)
 
 variableonlyParser:: Parser Var
@@ -361,56 +363,61 @@ greatereqParser = do
     return (GreaterEq expr expr1)
 
 
-eval :: Expr -> MyResult
-eval FalseLit = BoolResult False
-eval TrueLit = BoolResult True
-eval (Not expr) = let BoolResult a = eval (expr) in BoolResult (not a)
-eval (And expr1 expr2) = let BoolResult a1 = eval (expr1)
-                             BoolResult a2 = eval (expr2)
-                         in BoolResult (and [a1, a2])
-eval (Or expr1 expr2) = let BoolResult a1 = eval (expr1)
-                            BoolResult a2 = eval (expr2)
-                        in BoolResult (or [a1, a2])
-eval (NumLit a) = NumResult a
-eval (Add expr1 expr2) = let NumResult a1 = eval (expr1)
-                             NumResult a2 = eval (expr2)
-                         in NumResult (a1 + a2)
-eval (Minus expr1 expr2) = let NumResult a1 = eval (expr1)
-                               NumResult a2 = eval (expr2)
-                           in NumResult (a1 - a2)
-eval (Mult expr1 expr2) = let NumResult a1 = eval (expr1)
-                              NumResult a2 = eval (expr2)
-                          in NumResult (a1 * a2)
-eval (Div expr1 expr2) = let NumResult a1 = eval (expr1)
-                             NumResult a2 = eval (expr2)
-                         in NumResult (a1 / a2)
-eval (Eq expr1 expr2) = let NumResult a1 = eval (expr1)
-                            NumResult a2 = eval (expr2)
-                        in BoolResult (a1 == a2)
-eval (Less expr1 expr2) = let NumResult a1 = eval (expr1)
-                              NumResult a2 = eval (expr2)
-                          in BoolResult (a1 < a2)
-eval (LessEq expr1 expr2) = let NumResult a1 = eval (expr1)
-                                NumResult a2 = eval (expr2)
-                            in BoolResult (a1 <= a2)
-eval (Greater expr1 expr2) = let NumResult a1 = eval (expr1)
-                                 NumResult a2 = eval (expr2)
-                             in BoolResult (a1 > a2)
-eval (GreaterEq expr1 expr2) = let NumResult a1 = eval (expr1)
-                                   NumResult a2 = eval (expr2)
-                               in BoolResult (a1 >= a2)
-eval Nil = NilResult
-eval (CharLit a) = CharResult a
-eval (Cons expr1 expr2) = ConsResult (eval expr1) (eval expr2)
-eval (Car expr) = let ConsResult a1 a2 = eval expr in a1
-eval (Cdr expr) = let ConsResult a1 a2 = eval expr in a2
+eval :: Mem -> Expr -> MyResult
+eval _ FalseLit = BoolResult False
+eval _ TrueLit = BoolResult True
+eval mem1 (VarRef a) = Map.findWithDefault FailResult a mem1
+eval mem1 (Not expr) = let BoolResult a = eval mem1 (expr) in BoolResult (not a)
+eval mem1 (And expr1 expr2) = let BoolResult a1 = eval mem1 (expr1)
+                                  BoolResult a2 = eval mem1 (expr2)
+                              in BoolResult (and [a1, a2])
+eval mem1 (Or expr1 expr2) = let BoolResult a1 = eval mem1 (expr1)
+                                 BoolResult a2 = eval mem1 (expr2)
+                             in BoolResult (or [a1, a2])
+eval _ (NumLit a) = NumResult a
+eval mem1 (Add expr1 expr2) = let NumResult a1 = eval mem1 (expr1)
+                                  NumResult a2 = eval mem1 (expr2)
+                              in NumResult (a1 + a2)
+eval mem1 (Minus expr1 expr2) = let NumResult a1 = eval mem1 (expr1)
+                                    NumResult a2 = eval mem1 (expr2)
+                                in NumResult (a1 - a2)
+eval mem1 (Mult expr1 expr2) = let NumResult a1 = eval mem1 (expr1)
+                                   NumResult a2 = eval mem1 (expr2)
+                               in NumResult (a1 * a2)
+eval mem1 (Div expr1 expr2) = let NumResult a1 = eval mem1 (expr1)
+                                  NumResult a2 = eval mem1 (expr2)
+                              in NumResult (a1 / a2)
+eval mem1 (Eq expr1 expr2) = let NumResult a1 = eval mem1 (expr1)
+                                 NumResult a2 = eval mem1 (expr2)
+                             in BoolResult (a1 == a2)
+eval mem1 (Less expr1 expr2) = let NumResult a1 = eval mem1 (expr1)
+                                   NumResult a2 = eval mem1 (expr2)
+                               in BoolResult (a1 < a2)
+eval mem1 (LessEq expr1 expr2) = let NumResult a1 = eval mem1 (expr1)
+                                     NumResult a2 = eval mem1 (expr2)
+                                 in BoolResult (a1 <= a2)
+eval mem1 (Greater expr1 expr2) = let NumResult a1 = eval mem1 (expr1)
+                                      NumResult a2 = eval mem1 (expr2)
+                                  in BoolResult (a1 > a2)
+eval mem1 (GreaterEq expr1 expr2) = let NumResult a1 = eval mem1 (expr1)
+                                        NumResult a2 = eval mem1 (expr2)
+                                    in BoolResult (a1 >= a2)
+eval _ Nil = NilResult
+eval _ (CharLit a) = CharResult a
+eval mem1 (Cons expr1 expr2) = ConsResult (eval mem1 expr1) (eval mem1 expr2)
+eval mem1 (Car expr) = let ConsResult a1 a2 = (eval mem1 expr) in a1
+eval mem1 (Cdr expr) = let ConsResult a1 a2 = (eval mem1 expr) in a2
 
 -- designed for parseOnly
 --   :: Data.Attoparsec.Text.Parser a
 --      -> Data.Text.Internal.Text -> Either String a
 evalWithErrorThrowing :: Either String Expr -> String
 evalWithErrorThrowing (Left errStr) = "not a valid bool expr: " ++ errStr
-evalWithErrorThrowing (Right expr) = show $ eval expr
+evalWithErrorThrowing (Right expr) = show $ eval Map.empty expr
+
+evalwWithErrorThrowing :: Either String Prog -> String
+evalwWithErrorThrowing (Left errStr) = "not a valid bool expr: " ++ errStr
+evalwWithErrorThrowing (Right prog) = show $ evalw prog Map.empty
 
 defMain :: IO ()
 defMain = do

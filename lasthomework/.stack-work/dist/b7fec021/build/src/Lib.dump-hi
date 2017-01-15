@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-15 04:43:59.6270468 UTC
+2017-01-15 06:01:39.7951833 UTC
 
 interface lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk:Lib 8001
-  interface hash: a4156b3a88e644644cff0f17108b63b5
-  ABI hash: a8c9ba0fbd5ac21dd572892409db8adb
-  export-list hash: 67b81b1cfafd21a3b5d8f35b7cec68d4
+  interface hash: e546db013dfe21575efb57d8f90376d5
+  ABI hash: d1716dc5509bcab3be5564b29f4fb1f3
+  export-list hash: 9f963d2833747e0e2481170eea272f79
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 36f5ed5780f13d451f8563110c8a6d30
   sig of: Nothing
@@ -25,6 +25,7 @@ exports:
   Lib.eval
   Lib.evalWithErrorThrowing
   Lib.evalw
+  Lib.evalwWithErrorThrowing
   Lib.exprParser
   Lib.falseParser
   Lib.greaterParser
@@ -51,7 +52,7 @@ exports:
   Lib.whileParser
   Lib.Expr{Lib.Add Lib.And Lib.Car Lib.Cdr Lib.CharLit Lib.Cons Lib.Div Lib.Eq Lib.FalseLit Lib.Greater Lib.GreaterEq Lib.Less Lib.LessEq Lib.Minus Lib.Mult Lib.Nil Lib.Not Lib.NumLit Lib.Or Lib.TrueLit Lib.VarRef}
   Lib.Mem
-  Lib.MyResult{Lib.BoolResult Lib.CharResult Lib.ConsResult Lib.NilResult Lib.NumResult}
+  Lib.MyResult{Lib.BoolResult Lib.CharResult Lib.ConsResult Lib.FailResult Lib.NilResult Lib.NumResult}
   Lib.Prog
   Lib.Statment{Lib.If Lib.Set Lib.Skip Lib.Statmentlist Lib.While}
   Lib.Var
@@ -147,7 +148,7 @@ import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
   $fShowExpr_$cshowsPrec ::
     GHC.Types.Int -> Lib.Expr -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <L,1*U(U)><S,1*U> -}
-80d599d889aa4d3121720b9adc2456e7
+1e8060567b17528d4b6a8434e73d5998
   $fShowMyResult :: GHC.Show.Show Lib.MyResult
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -156,11 +157,11 @@ import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
                   Lib.$fShowMyResult_$cshowsPrec
                   Lib.$fShowMyResult_$cshow
                   Lib.$fShowMyResult_$cshowList -}
-80d599d889aa4d3121720b9adc2456e7
+1e8060567b17528d4b6a8434e73d5998
   $fShowMyResult1 :: Lib.MyResult -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (Lib.$fShowMyResult_$cshowsPrec Lib.$fShowExpr2) -}
-80d599d889aa4d3121720b9adc2456e7
+1e8060567b17528d4b6a8434e73d5998
   $fShowMyResult_$cshow :: Lib.MyResult -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -169,17 +170,17 @@ import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-80d599d889aa4d3121720b9adc2456e7
+1e8060567b17528d4b6a8434e73d5998
   $fShowMyResult_$cshowList :: [Lib.MyResult] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Lib.MyResult
                    Lib.$fShowMyResult1) -}
-80d599d889aa4d3121720b9adc2456e7
+1e8060567b17528d4b6a8434e73d5998
   $fShowMyResult_$cshowsPrec ::
     GHC.Types.Int -> Lib.MyResult -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <L,1*U(U)><S,1*U> -}
-319efb148ed5819ce5055e785abf9881
+60b34e7bc8ded7206adb369f8fe05ae7
   $fShowStatment :: GHC.Show.Show Lib.Statment
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -188,11 +189,10 @@ import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
                   Lib.$fShowStatment_$cshowsPrec
                   Lib.$fShowStatment_$cshow
                   Lib.$fShowStatment_$cshowList -}
-319efb148ed5819ce5055e785abf9881
+60b34e7bc8ded7206adb369f8fe05ae7
   $fShowStatment1 :: Lib.Statment -> GHC.Show.ShowS
-  {- Arity: 1,
-     Unfolding: (Lib.$fShowStatment_$cshowsPrec Lib.$fShowExpr2) -}
-319efb148ed5819ce5055e785abf9881
+  {- Arity: 1 -}
+60b34e7bc8ded7206adb369f8fe05ae7
   $fShowStatment_$cshow :: Lib.Statment -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -201,13 +201,13 @@ import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-319efb148ed5819ce5055e785abf9881
+60b34e7bc8ded7206adb369f8fe05ae7
   $fShowStatment_$cshowList :: [Lib.Statment] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Lib.Statment
                    Lib.$fShowStatment1) -}
-319efb148ed5819ce5055e785abf9881
+60b34e7bc8ded7206adb369f8fe05ae7
   $fShowStatment_$cshowsPrec ::
     GHC.Types.Int -> Lib.Statment -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <L,1*U(U)><S,1*U> -}
@@ -218,6 +218,10 @@ import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
     -> Data.Map.Base.Map Lib.Var a1
     -> Data.Map.Base.Map Lib.Var a1
   {- Arity: 3, Strictness: <C(S),1*C1(U)><S,1*U><S,1*U> -}
+7179ecd8d664aa81a5b38162c0e0307e
+  $sfindWithDefault1 ::
+    a -> Lib.Var -> Data.Map.Base.Map Lib.Var a -> a
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,1*U><S,1*U><S,1*U> -}
 74fd7e08d151bcb05cb20dca0044b608
   $tc'Add :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
@@ -350,6 +354,18 @@ e74b2eeafe2c47f02c10d62a3b2dc7d2
   $tc'Eq1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'Eq"#) -}
+bdd5668fcb04a8ee9479bbe31c691fda
+  $tc'FailResult :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15550614310938694818##
+                   3331097682978920372##
+                   Lib.$trModule
+                   Lib.$tc'FailResult1) -}
+926a12d55104dd273cdc8b1dda51804b
+  $tc'FailResult1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'FailResult"#) -}
 7146f660d62d7d5030da722466293a79
   $tc'FalseLit :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
@@ -683,7 +699,7 @@ eadb53195cbe8597b3dd5dff5ed035c9
   {- Arity: 9,
      Strictness: <S,U><S,U><S,U><L,U><L,U><S,U><L,U><L,U><L,C(C1(C1(C1(U))))>,
      Inline: [0] -}
-14cb42c67b96839138c5b5f5855a9761
+2a27b5235eb89a33d5e87ec189258752
   $wbeginParser ::
     GHC.Prim.ByteArray#
     -> GHC.Prim.Int#
@@ -997,7 +1013,7 @@ eedd9e529d0baa012015a5b5fd1e11a8
   {- Arity: 9,
      Strictness: <S,U><S,U><S,U><L,U><L,U><S,U><L,U><L,U><L,C(C1(C1(C1(U))))>,
      Inline: [0] -}
-1bd7a5e5d4597a669cd9699b163430a8
+ec67d21ca22078ac87025ad04b14a38a
   $wifParser ::
     GHC.Prim.ByteArray#
     -> GHC.Prim.Int#
@@ -1321,7 +1337,7 @@ f22c7f8487a813af653de7ab0012d8ab
   {- Arity: 9,
      Strictness: <S,U><S,U><S,U><L,U><L,U><S,U><L,U><L,U><L,C(C1(C1(C1(U))))>,
      Inline: [0] -}
-31b3f46c33c05ed0bf23f3070d9db24d
+e91deac9dd0f3501d310d7dc9ca8389a
   $wsetParser ::
     GHC.Prim.ByteArray#
     -> GHC.Prim.Int#
@@ -1343,7 +1359,7 @@ f22c7f8487a813af653de7ab0012d8ab
   {- Arity: 9,
      Strictness: <S,U><S,U><S,U><L,U><L,U><S,U><L,U><L,U><L,C(C1(C1(C1(U))))>,
      Inline: [0] -}
-fa108ca9a8e322f9557108661ce2a74d
+619ebc859665fc87151c3202fbd42727
   $wskipParser ::
     GHC.Prim.ByteArray#
     -> GHC.Prim.Int#
@@ -1365,7 +1381,7 @@ fa108ca9a8e322f9557108661ce2a74d
   {- Arity: 9,
      Strictness: <S,U><S,U><S,U><L,U><L,U><S,U><L,U><L,C(C1(C1(C1(C1(U)))))><L,C(C1(C1(C1(U))))>,
      Inline: [0] -}
-17096608d40e0f3e0639d1bebc178d98
+f91ff6c2dafcf9c7308eabf47bb61906
   $wstatParser ::
     GHC.Prim.ByteArray#
     -> GHC.Prim.Int#
@@ -1651,7 +1667,7 @@ a69a11f4aa0c18e9d8a76c39db6a0958
   {- Arity: 5,
      Strictness: <L,U(U,U,U,U,U)><S,U><L,U><L,C(C1(C1(C1(C1(U)))))><L,C(C1(C1(C1(U))))>,
      Inline: [0] -}
-cf500772212c5d9342d820daac5c20b0
+e61ae61411299ad42de63d1be6049b04
   $wwhileParser ::
     GHC.Prim.ByteArray#
     -> GHC.Prim.Int#
@@ -1696,18 +1712,19 @@ cf500772212c5d9342d820daac5c20b0
     | Greater Lib.Expr Lib.Expr
     | GreaterEq Lib.Expr Lib.Expr
     | VarRef Lib.Var
-4141abd3405b5340d6f13835a03c75be
+8182c933c2bbc2f10693a3a8357bf973
   type Mem = Data.Map.Base.Map Lib.Var Lib.MyResult
-80d599d889aa4d3121720b9adc2456e7
+1e8060567b17528d4b6a8434e73d5998
   data MyResult
     = BoolResult GHC.Types.Bool
     | NumResult GHC.Types.Double
     | CharResult GHC.Types.Char
     | NilResult
+    | FailResult
     | ConsResult Lib.MyResult Lib.MyResult
-f130231509b154241561715c7536dc16
+3c2505e1ab3433d1661f29f9ba3248f2
   type Prog = Lib.Statment
-319efb148ed5819ce5055e785abf9881
+60b34e7bc8ded7206adb369f8fe05ae7
   data Statment
     = Statmentlist [Lib.Statment]
     | Set Lib.Var Lib.Expr
@@ -1810,7 +1827,7 @@ f0e7911bfd18720619f1f8a5b55ade3a
                         `cast`
                       (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
                  Lib.$wandParser @ r ww1 ww2 ww3 ww4 ww5 ww7 w2 w3 w4 } }) -}
-4745d18511d55affe1dcf41be7be8ef1
+28ebccb816a703e8c440048d1229b0e4
   beginParser :: Data.Attoparsec.Text.Internal.Parser Lib.Statment
   {- Arity: 5,
      Strictness: <S(SSSLL),1*U(U,U,U,U,U)><S(S),1*U(U)><L,U><L,U><L,C(C1(C1(C1(U))))>,
@@ -1819,7 +1836,7 @@ f0e7911bfd18720619f1f8a5b55ade3a
                   `cast`
                 (Sym (Data.Attoparsec.Internal.Types.N:Parser[0]
                           <Data.Text.Internal.Text>_N <Lib.Statment>_R)) -}
-47ab3e7ece60a4ee1ac2f5513f460f7a
+51bcf4610da89bd5afc0d94aac11f9a9
   beginParser1 ::
     Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
     -> Data.Attoparsec.Internal.Types.Pos
@@ -2149,10 +2166,10 @@ ce6a173c830210c2ebbe5626f1b574a0
                         `cast`
                       (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
                  Lib.$weqParser @ r ww1 ww2 ww3 ww4 ww5 ww7 w2 w3 w4 } }) -}
-bfc26f32152fd4516e82fd07637bc325
-  eval :: Lib.Expr -> Lib.MyResult
-  {- Arity: 1, Strictness: <S,1*U> -}
-611e8043668c75c1be629f10bad29518
+753ba52f8c7c7f4474ba65d49a7a621e
+  eval :: Lib.Mem -> Lib.Expr -> Lib.MyResult
+  {- Arity: 2, Strictness: <L,U><S,1*U> -}
+1a82f034e6eaab3bd9f84f2ddfa28500
   evalWithErrorThrowing ::
     Data.Either.Either GHC.Base.String Lib.Expr -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
@@ -2167,7 +2184,7 @@ bfc26f32152fd4516e82fd07637bc325
                    Data.Either.Right expr
                    -> Lib.$fShowMyResult_$cshowsPrec
                         GHC.Show.shows22
-                        (Lib.eval expr)
+                        (Lib.eval (Data.Map.Base.Tip @ Lib.Var @ Lib.MyResult) expr)
                         (GHC.Types.[] @ GHC.Types.Char) }) -}
 3edf5c70e107d3ade95bcd140bd6e9db
   evalWithErrorThrowing1 :: (GHC.Types.Char -> b -> b) -> b -> b
@@ -2180,9 +2197,27 @@ bfc26f32152fd4516e82fd07637bc325
                    "not a valid bool expr: "#
                    c
                    n) -}
-2f65d88172b6a26a5199358750aeb096
+8ab525dab72f5cae6e607516c6649963
   evalw :: Lib.Prog -> Lib.Mem -> Lib.Mem
-  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+  {- Arity: 2, Strictness: <S,1*U><S,U> -}
+1131548fa0eccda7a0f132edbd23065f
+  evalwWithErrorThrowing ::
+    Data.Either.Either GHC.Base.String Lib.Prog -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: Data.Either.Either
+                            GHC.Base.String Lib.Prog) ->
+                 case ds of wild {
+                   Data.Either.Left errStr
+                   -> GHC.CString.unpackAppendCString#
+                        "not a valid bool expr: "#
+                        errStr
+                   Data.Either.Right prog
+                   -> Data.Map.Base.$fShowMap_$cshow
+                        @ [GHC.Types.Char]
+                        @ Lib.MyResult
+                        GHC.Show.$fShow[]_$s$fShow[]1
+                        Lib.$fShowMyResult
+                        (Lib.evalw prog (Data.Map.Base.Tip @ Lib.Var @ Lib.MyResult)) }) -}
 4910076a79480e0ad0407a1d1d8e5914
   exprParser :: Data.Attoparsec.Text.Internal.Parser Lib.Expr
   {- Arity: 5,
@@ -2397,7 +2432,7 @@ f8bec51f82c9a4b7096131f349ca9a10
                         `cast`
                       (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
                  Lib.$wgreatereqParser @ r ww1 ww2 ww3 ww4 ww5 ww7 w2 w3 w4 } }) -}
-ebac6977ff85f4ef02cce69a6bdae72b
+ec39053b489b0df48047fd9fcd02338c
   ifParser :: Data.Attoparsec.Text.Internal.Parser Lib.Statment
   {- Arity: 5,
      Strictness: <S(SSSLL),1*U(U,U,U,U,U)><S(S),1*U(U)><L,U><L,U><L,C(C1(C1(C1(U))))>,
@@ -2406,7 +2441,7 @@ ebac6977ff85f4ef02cce69a6bdae72b
                   `cast`
                 (Sym (Data.Attoparsec.Internal.Types.N:Parser[0]
                           <Data.Text.Internal.Text>_N <Lib.Statment>_R)) -}
-9a9edcc34a7a7ee12c1b5c19c1d39315
+93f5abece35cae4eef88aea00032bc66
   ifParser1 ::
     Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
     -> Data.Attoparsec.Internal.Types.Pos
@@ -2903,7 +2938,7 @@ f2d93871a5a3755828925fa63afca5ec
                         `cast`
                       (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
                  Lib.$worParser @ r ww1 ww2 ww3 ww4 ww5 ww7 w2 w3 w4 } }) -}
-b70d19170696ac5f7f9f61e80a0cb7e4
+35617b48dd5eda3f142ecfd3d3479bb9
   setParser :: Data.Attoparsec.Text.Internal.Parser Lib.Statment
   {- Arity: 5,
      Strictness: <S(SSSLL),1*U(U,U,U,U,U)><S(S),1*U(U)><L,U><L,U><L,C(C1(C1(C1(U))))>,
@@ -2912,7 +2947,7 @@ b70d19170696ac5f7f9f61e80a0cb7e4
                   `cast`
                 (Sym (Data.Attoparsec.Internal.Types.N:Parser[0]
                           <Data.Text.Internal.Text>_N <Lib.Statment>_R)) -}
-74b9e25de0e41777652bd485b736ba27
+4c85893e0efdab9dc24677486e69882d
   setParser1 ::
     Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
     -> Data.Attoparsec.Internal.Types.Pos
@@ -2950,7 +2985,7 @@ b70d19170696ac5f7f9f61e80a0cb7e4
                         `cast`
                       (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
                  Lib.$wsetParser @ r ww1 ww2 ww3 ww4 ww5 ww7 w2 w3 w4 } }) -}
-28a804d42fe3aca6e2af272480bb1fc0
+e750c94065392137ca16d95d68df4d41
   skipParser :: Data.Attoparsec.Text.Internal.Parser Lib.Statment
   {- Arity: 5,
      Unfolding: InlineRule (0, True, True)
@@ -2958,7 +2993,7 @@ b70d19170696ac5f7f9f61e80a0cb7e4
                   `cast`
                 (Sym (Data.Attoparsec.Internal.Types.N:Parser[0]
                           <Data.Text.Internal.Text>_N <Lib.Statment>_R)) -}
-5e7f338403c3155f9b0be062c60ceb85
+6531fe19428c8bffe2e668451838e70b
   skipParser1 ::
     Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
     -> Data.Attoparsec.Internal.Types.Pos
@@ -3023,7 +3058,7 @@ b70d19170696ac5f7f9f61e80a0cb7e4
                       more'
                       w3
                       w4 } }) } }) -}
-f2b74d2e7463d63b7cb4f8bae7326b2c
+8d9148ca9c2ad85f3afef1b452b62517
   statParser :: Data.Attoparsec.Text.Internal.Parser Lib.Statment
   {- Arity: 5,
      Strictness: <S(SSSLL),1*U(U,U,U,U,U)><S(S),U(U)><L,U><L,U><L,U>,
@@ -3032,7 +3067,7 @@ f2b74d2e7463d63b7cb4f8bae7326b2c
                   `cast`
                 (Sym (Data.Attoparsec.Internal.Types.N:Parser[0]
                           <Data.Text.Internal.Text>_N <Lib.Statment>_R)) -}
-f917b090ef831bbf1b4c46d8dba63484
+c7ec18b0cda70f96083b6ee7f121fdff
   statParser1 ::
     Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
     -> Data.Attoparsec.Internal.Types.Pos
@@ -3117,7 +3152,7 @@ f917b090ef831bbf1b4c46d8dba63484
                         `cast`
                       (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
                  Lib.$wstringParser @ r ww1 ww2 ww3 ww4 ww5 ww7 w2 w3 w4 } }) -}
-13bfb253b6befa0b6dcb81e56a510f17
+4173aff9dcfdd78b6f5a7be6bbbc2e81
   testResult :: Lib.MyResult -> GHC.Types.Bool
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -3376,7 +3411,7 @@ bcf27a91aad343e3f9665e63a05ea73b
                         `cast`
                       (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww { GHC.Types.I# ww1 ->
                  Lib.$wvariableonlyParser1 @ r w ww1 w2 w3 w4 }) -}
-ea1dd84c76e6ece3ebb81d814c514fcd
+afd7fcbfe68eaabf5947833015e67090
   whileParser :: Data.Attoparsec.Text.Internal.Parser Lib.Statment
   {- Arity: 5,
      Strictness: <S(SSSLL),1*U(U,U,U,U,U)><S(S),1*U(U)><L,U><L,U><L,C(C1(C1(C1(U))))>,
@@ -3385,7 +3420,7 @@ ea1dd84c76e6ece3ebb81d814c514fcd
                   `cast`
                 (Sym (Data.Attoparsec.Internal.Types.N:Parser[0]
                           <Data.Text.Internal.Text>_N <Lib.Statment>_R)) -}
-5ffa27d731c8f2c2a48d8d20207135b4
+bb6ee210a63996dcdbd69115d7065e69
   whileParser1 ::
     Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
     -> Data.Attoparsec.Internal.Types.Pos
