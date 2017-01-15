@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-15 09:05:15.1500739 UTC
+2017-01-15 09:37:39.8155101 UTC
 
 interface lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk:Lib 8001
-  interface hash: 06c3c08fa89630bfadcfcc3216844bc8
-  ABI hash: 235d4951ef41f3d2231abb69528be5d3
+  interface hash: 635f9507b1848c4930d76b2a37d9a679
+  ABI hash: baf4effadd6e3f04a7f87d9acbc1dc56
   export-list hash: 04adde34c95a9ef9a6a10e6622365de4
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 36f5ed5780f13d451f8563110c8a6d30
@@ -109,10 +109,12 @@ import  -/  attoparsec-0.13.1.0@attoparsec-0.13.1.0-2AyzLuPV4T95RcYDl03Ghe:Data.
 import  -/  attoparsec-0.13.1.0@attoparsec-0.13.1.0-2AyzLuPV4T95RcYDl03Ghe:Data.Attoparsec.Text 3fafd4cecfbf70a4b0cc52719e7602b9
 import  -/  attoparsec-0.13.1.0@attoparsec-0.13.1.0-2AyzLuPV4T95RcYDl03Ghe:Data.Attoparsec.Text.Internal e682a9f2864a8ebe8143367ebe6e5446
 import  -/  base-4.9.0.0:Control.Applicative fdcece230f8af145aec7b432bfe73083
+import  -/  base-4.9.0.0:Control.Exception.Base 0f704105a0b2c9a9a0b50fdf0b35065d
 import  -/  base-4.9.0.0:Data.Either 4cef602ce360a0155ac0dd580a5b4863
 import  -/  base-4.9.0.0:Data.Foldable 3cbed01c922be29649c33015287c82ca
 import  -/  base-4.9.0.0:Data.Functor 67cebb006c069ea73adcd2d468cdb0dc
 import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:GHC.IO 1429985c1cb03cc0778fa4876799f1d2
 import  -/  base-4.9.0.0:GHC.Num f0aed3315b3ed1b330b71fc4148a5581
 import  -/  base-4.9.0.0:GHC.Real 011de9ca3282ad24a84e4e15f974f98e
 import  -/  base-4.9.0.0:GHC.Show 0b5845243cb2ec62b57dd6963d276ec6
@@ -125,7 +127,7 @@ import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
 import  -/  mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM:Control.Monad.State d851912d62cbc95e043a9cc13c3581de
 import  -/  mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM:Control.Monad.State.Class 6b9267d06a66633777f53733046c8d46
-import  -/  text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text 769c914c1985c5c356af906de5892ffb
+import  -/  text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text.IO 3a5fa756afb81d5e488e7b14fffb0d67
 import  -/  transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.State.Lazy fd06dab0d634fc591e8c33380a9811a8
 671e2ff89e7db3166b7129af1a3626c2
   $fShowExpr :: GHC.Show.Show Lib.Expr
@@ -1291,7 +1293,7 @@ ec67d21ca22078ac87025ad04b14a38a
                       more'
                       w2
                       w3 })) -}
-3e09292e20955ca05e4ca85b9584876a
+47fcbe7931f0bb91a6638f9efb669ca9
   $wlvl ::
     Lib.Option
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -1302,16 +1304,84 @@ ec67d21ca22078ac87025ad04b14a38a
                  case GHC.IO.Handle.FD.openFile1
                         (case ww of wild { Lib.Option ds ds1 -> ds })
                         GHC.IO.IOMode.ReadMode
-                        w of ds1 { (#,#) ipv ipv2 ->
-                 case GHC.IO.Handle.Text.hGetContents1
-                        ipv2
-                        ipv of ds2 { (#,#) ipv1 ipv3 ->
+                        w of ds1 { (#,#) ipv ipv1 ->
+                 case Data.Text.IO.getContents2 ipv1 ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case GHC.Prim.seq#
+                        @ GHC.Base.String
+                        @ GHC.Prim.RealWorld
+                        (case ipv3 of wild { Data.Text.Internal.Text dt dt1 dt2 ->
+                         case Lib.$wstatParser
+                                @ Lib.Statment
+                                dt
+                                dt1
+                                dt2
+                                dt2
+                                0#
+                                0#
+                                Data.Attoparsec.Internal.Types.Complete
+                                (Data.Attoparsec.Text.Internal.failK @ Lib.Statment)
+                                  `cast`
+                                (Sub (Sym (Data.Attoparsec.Internal.Types.D:R:StateText[0]))
+                                 ->_R <Data.Attoparsec.Internal.Types.Pos
+                                       -> Data.Attoparsec.Internal.Types.More
+                                       -> [GHC.Base.String]
+                                       -> GHC.Base.String
+                                       -> Data.Attoparsec.Internal.Types.IResult
+                                            Data.Text.Internal.Text Lib.Statment>_R)
+                                (Data.Attoparsec.Text.Internal.successK @ Lib.Statment)
+                                  `cast`
+                                (Sub (Sym (Data.Attoparsec.Internal.Types.D:R:StateText[0]))
+                                 ->_R <Data.Attoparsec.Internal.Types.Pos
+                                       -> Data.Attoparsec.Internal.Types.More
+                                       -> Lib.Statment
+                                       -> Data.Attoparsec.Internal.Types.IResult
+                                            Data.Text.Internal.Text Lib.Statment>_R) of wild1 {
+                           Data.Attoparsec.Internal.Types.Fail ds ds3 err
+                           -> case ds3 of wild2 {
+                                []
+                                -> Lib.defMain14
+                                     @ [GHC.Types.Char]
+                                     (GHC.Types.: @ GHC.Types.Char)
+                                     err
+                                : ipv4 ipv5
+                                -> Lib.defMain14
+                                     @ [GHC.Types.Char]
+                                     (GHC.Types.: @ GHC.Types.Char)
+                                     (GHC.Base.++
+                                        @ GHC.Types.Char
+                                        (Data.OldList.intercalate_$spoly_go
+                                           @ GHC.Types.Char
+                                           ipv4
+                                           (Data.OldList.prependToAll
+                                              @ [GHC.Types.Char]
+                                              Lib.defMain13
+                                              ipv5))
+                                        (GHC.CString.unpackAppendCString# ": "# err)) }
+                           Data.Attoparsec.Internal.Types.Partial ipv4
+                           -> case GHC.Err.error
+                                     @ 'GHC.Types.PtrRepLifted
+                                     @ (Data.Either.Either GHC.Base.String Lib.Statment)
+                                     Lib.defMain4
+                                       `cast`
+                                     (Sym (GHC.Classes.N:IP[0]
+                                               <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                                     Lib.defMain3
+                              ret_ty GHC.Base.String
+                              of {}
+                           Data.Attoparsec.Internal.Types.Done ds a1
+                           -> Data.Map.Base.$fShowMap_$cshow
+                                @ [GHC.Types.Char]
+                                @ Lib.MyResult
+                                GHC.Show.$fShow[]_$s$fShow[]1
+                                Lib.$fShowMyResult
+                                (Lib.evalw a1 (Data.Map.Base.Tip @ Lib.Var @ Lib.MyResult)) } })
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
                  Control.Exception.Base.bracket1
                    @ GHC.IO.Handle.Types.Handle
                    @ ()
                    @ ()
                    (GHC.IO.Handle.FD.openFile1
-                      (case ww of wild { Lib.Option ds ds3 -> ds3 })
+                      (case ww of wild { Lib.Option ds ds4 -> ds4 })
                       GHC.IO.IOMode.WriteMode)
                      `cast`
                    (Sym (GHC.Types.N:IO[0] <GHC.IO.Handle.Types.Handle>_R))
@@ -1320,11 +1390,11 @@ ec67d21ca22078ac87025ad04b14a38a
                    (<GHC.IO.Handle.Types.Handle>_R
                     ->_R Sym (GHC.Types.N:IO[0] <()>_R))
                    (\ (hdl :: GHC.IO.Handle.Types.Handle)[OneShot] ->
-                    GHC.IO.Handle.Text.hPutStr1 hdl ipv3)
+                    GHC.IO.Handle.Text.hPutStr1 hdl ipv5)
                      `cast`
                    (<GHC.IO.Handle.Types.Handle>_R
                     ->_R Sym (GHC.Types.N:IO[0] <()>_R))
-                   ipv1 } }) -}
+                   ipv4 } } }) -}
 da862ba83546dde06f91d673be9929f1
   $wmany_v1 ::
     Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
@@ -2196,12 +2266,12 @@ b67d22f63cf07cb29a85480c8407fc6b
                         `cast`
                       (Data.Attoparsec.Internal.Types.N:Pos[0]) of ww6 { GHC.Types.I# ww7 ->
                  Lib.$wconsParser @ r ww1 ww2 ww3 ww4 ww5 ww7 w2 w3 w4 } }) -}
-7fe2b3bd180e4aebce1cbafa486d3828
+a5e24f18828f73695b2d1dcdd960aa0c
   defMain :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Lib.defMain1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-80dc30c56c66e2c534973374a72789e6
+1bda9cac605f7a698d87712774895ec8
   defMain1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -2218,7 +2288,7 @@ b67d22f63cf07cb29a85480c8407fc6b
                            ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
                            of {}
                         : ds3 xs
-                        -> case Lib.defMain3 xs ipv2 of ds4 { (#,#) ipv4 ipv5 ->
+                        -> case Lib.defMain15 xs ipv2 of ds4 { (#,#) ipv4 ipv5 ->
                            Lib.defMain2 ipv5 ipv4 } } }
                    GHC.Base.Just argv
                    -> case argv of wild1 {
@@ -2227,21 +2297,35 @@ b67d22f63cf07cb29a85480c8407fc6b
                            ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
                            of {}
                         : ds2 xs
-                        -> case Lib.defMain3 xs ipv of ds3 { (#,#) ipv2 ipv3 ->
+                        -> case Lib.defMain15 xs ipv of ds3 { (#,#) ipv2 ipv3 ->
                            Lib.defMain2 ipv3 ipv2 } } } }) -}
-8772668cb923dcd07fbe9ca96a4e5280
-  defMain2 ::
-    (Lib.Option, [GHC.Base.String])
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 2, Strictness: <S,1*U(U(1*U,1*U),A)><S,U>,
-     Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, False)
-                (\ (w :: (Lib.Option, [GHC.Base.String]))
-                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case w of ww { (,) ww1 ww2 -> Lib.$wlvl ww1 w1 }) -}
-c262fa5c4b03b58d3f19274b87af72e9
-  defMain3 ::
+f3bcaf92e5b6db6f26549c941a05c1d4
+  defMain10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Data.Attoparsec.Text.Internal"#) -}
+c9877042f9e76b483fc7911fd8e7a5c8
+  defMain11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "attoparsec-0.13.1.0-2AyzLuPV4T95RcYDl03Ghe"#) -}
+d28da94552266adbe3e972a5de3ecdb7
+  defMain12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "error"#) -}
+dffc426a250c3898e1c85ab85c0ae986
+  defMain13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# " > "#) -}
+955a25da28070830e92be8ad77525dcd
+  defMain14 :: (GHC.Types.Char -> b -> b) -> b -> b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(C1(U))><L,U>,
+     Unfolding: (\ @ b
+                   (c :: GHC.Types.Char -> b -> b)[OneShot]
+                   (n :: b)[OneShot] ->
+                 GHC.CString.unpackFoldrCString#
+                   @ b
+                   "not a valid bool expr: "#
+                   c
+                   n) -}
+3a4ed2377dbb7365d4fdabbbac95821e
+  defMain15 ::
     [GHC.Base.String]
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
@@ -2258,18 +2342,18 @@ c262fa5c4b03b58d3f19274b87af72e9
                       -> case GHC.Prim.raiseIO#
                                 @ GHC.Exception.SomeException
                                 @ (GHC.Base.String, [GHC.Base.String])
-                                Lib.defMain8
+                                Lib.defMain20
                                 s
                          ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
                                    (Lib.Option, [GHC.Base.String]) #)
                          of {}
                       : arg args'
-                      -> case GHC.Base.eqString arg Lib.defMain6 of wild1 {
+                      -> case GHC.Base.eqString arg Lib.defMain18 of wild1 {
                            GHC.Types.False
                            -> case GHC.Prim.raiseIO#
                                      @ GHC.Exception.SomeException
                                      @ (GHC.Base.String, [GHC.Base.String])
-                                     Lib.defMain8
+                                     Lib.defMain20
                                      s
                               ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
                                         (Lib.Option, [GHC.Base.String]) #)
@@ -2280,7 +2364,7 @@ c262fa5c4b03b58d3f19274b87af72e9
                                 -> case GHC.Prim.raiseIO#
                                           @ GHC.Exception.SomeException
                                           @ (GHC.Base.String, [GHC.Base.String])
-                                          Lib.defMain8
+                                          Lib.defMain20
                                           s
                                    ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
                                              (Lib.Option, [GHC.Base.String]) #)
@@ -2291,18 +2375,18 @@ c262fa5c4b03b58d3f19274b87af72e9
                                      -> case GHC.Prim.raiseIO#
                                                @ GHC.Exception.SomeException
                                                @ (GHC.Base.String, [GHC.Base.String])
-                                               Lib.defMain8
+                                               Lib.defMain20
                                                s
                                         ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
                                                   (Lib.Option, [GHC.Base.String]) #)
                                         of {}
                                      : arg2 args'2
-                                     -> case GHC.Base.eqString arg2 Lib.defMain4 of wild4 {
+                                     -> case GHC.Base.eqString arg2 Lib.defMain16 of wild4 {
                                           GHC.Types.False
                                           -> case GHC.Prim.raiseIO#
                                                     @ GHC.Exception.SomeException
                                                     @ (GHC.Base.String, [GHC.Base.String])
-                                                    Lib.defMain8
+                                                    Lib.defMain20
                                                     s
                                              ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
                                                        (Lib.Option, [GHC.Base.String]) #)
@@ -2313,7 +2397,7 @@ c262fa5c4b03b58d3f19274b87af72e9
                                                -> case GHC.Prim.raiseIO#
                                                          @ GHC.Exception.SomeException
                                                          @ (GHC.Base.String, [GHC.Base.String])
-                                                         Lib.defMain8
+                                                         Lib.defMain20
                                                          s
                                                   ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
                                                             (Lib.Option, [GHC.Base.String]) #)
@@ -2356,18 +2440,18 @@ c262fa5c4b03b58d3f19274b87af72e9
                                 -> case GHC.Prim.raiseIO#
                                           @ GHC.Exception.SomeException
                                           @ (GHC.Base.String, [GHC.Base.String])
-                                          Lib.defMain8
+                                          Lib.defMain20
                                           eta1
                                    ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
                                              (Lib.Option, [GHC.Base.String]) #)
                                    of {}
                                 : arg args'
-                                -> case GHC.Base.eqString arg Lib.defMain4 of wild8 {
+                                -> case GHC.Base.eqString arg Lib.defMain16 of wild8 {
                                      GHC.Types.False
                                      -> case GHC.Prim.raiseIO#
                                                @ GHC.Exception.SomeException
                                                @ (GHC.Base.String, [GHC.Base.String])
-                                               Lib.defMain8
+                                               Lib.defMain20
                                                eta1
                                         ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
                                                   (Lib.Option, [GHC.Base.String]) #)
@@ -2378,7 +2462,7 @@ c262fa5c4b03b58d3f19274b87af72e9
                                           -> case GHC.Prim.raiseIO#
                                                     @ GHC.Exception.SomeException
                                                     @ (GHC.Base.String, [GHC.Base.String])
-                                                    Lib.defMain8
+                                                    Lib.defMain20
                                                     eta1
                                              ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
                                                        (Lib.Option, [GHC.Base.String]) #)
@@ -2389,7 +2473,7 @@ c262fa5c4b03b58d3f19274b87af72e9
                                                -> case GHC.Prim.raiseIO#
                                                          @ GHC.Exception.SomeException
                                                          @ (GHC.Base.String, [GHC.Base.String])
-                                                         Lib.defMain8
+                                                         Lib.defMain20
                                                          eta1
                                                   ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
                                                             (Lib.Option, [GHC.Base.String]) #)
@@ -2397,12 +2481,12 @@ c262fa5c4b03b58d3f19274b87af72e9
                                                : arg2 args'2
                                                -> case GHC.Base.eqString
                                                          arg2
-                                                         Lib.defMain6 of wild11 {
+                                                         Lib.defMain18 of wild11 {
                                                     GHC.Types.False
                                                     -> case GHC.Prim.raiseIO#
                                                               @ GHC.Exception.SomeException
                                                               @ (GHC.Base.String, [GHC.Base.String])
-                                                              Lib.defMain8
+                                                              Lib.defMain20
                                                               eta1
                                                        ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
                                                                  (Lib.Option, [GHC.Base.String]) #)
@@ -2414,7 +2498,7 @@ c262fa5c4b03b58d3f19274b87af72e9
                                                                    @ GHC.Exception.SomeException
                                                                    @ (GHC.Base.String,
                                                                       [GHC.Base.String])
-                                                                   Lib.defMain8
+                                                                   Lib.defMain20
                                                                    eta1
                                                             ret_ty (# GHC.Prim.State#
                                                                         GHC.Prim.RealWorld,
@@ -2426,28 +2510,39 @@ c262fa5c4b03b58d3f19274b87af72e9
                                                                (Lib.Option arg3 arg1,
                                                                 args'3) #) } } } } } } } } } } })
                    eta) -}
-c0885d17297c3a9015b1a1594e99255a
-  defMain4 :: [GHC.Types.Char]
+3ecafcb3dbb561bd41c1afcea117a75f
+  defMain16 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackAppendCString#
                    "--"#
-                   Lib.defMain5) -}
-52eeb05e72d3c896190db69ebe3c7a48
-  defMain5 :: [GHC.Types.Char]
+                   Lib.defMain17) -}
+68949144c0896f1f65690eae1ac272b3
+  defMain17 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "out"#) -}
-3cf6e7c0e6a5876ba15956ff3f6fae57
-  defMain6 :: [GHC.Types.Char]
+f96bb32a3934f86aa745985ac5e6608d
+  defMain18 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackAppendCString#
                    "--"#
-                   Lib.defMain7) -}
-71b5c4ee9c23b0d16164f499e1a636a4
-  defMain7 :: [GHC.Types.Char]
+                   Lib.defMain19) -}
+963e97c9572669cf5dd83d718cb3125d
+  defMain19 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "in"#) -}
-02654dbc76d134ebd8ee40db843d4194
-  defMain8 :: GHC.Exception.SomeException
+6337a5e3c68e20d65c8927ed8f1359f5
+  defMain2 ::
+    (Lib.Option, [GHC.Base.String])
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U(U(1*U,1*U),A)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: (Lib.Option, [GHC.Base.String]))
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { (,) ww1 ww2 -> Lib.$wlvl ww1 w1 }) -}
+f283d405ce64872765c19ac45e21270e
+  defMain20 :: GHC.Exception.SomeException
   {- Unfolding: (GHC.IO.Exception.$fExceptionIOException_$ctoException
-                   Lib.defMain9) -}
-a3c9b386c6ab4f51efc5d13d063fd6b3
-  defMain9 :: GHC.IO.Exception.IOException
+                   Lib.defMain21) -}
+0653dcf93a48ffe3b748c16d52eeb565
+  defMain21 :: GHC.IO.Exception.IOException
   {- Unfolding: (GHC.IO.Exception.IOError
                    (GHC.Base.Nothing @ GHC.IO.Handle.Types.Handle)
                    GHC.IO.Exception.UserError
@@ -2455,6 +2550,39 @@ a3c9b386c6ab4f51efc5d13d063fd6b3
                    GHC.Base.$fAlternativeIO3
                    (GHC.Base.Nothing @ Foreign.C.Types.CInt)
                    (GHC.Base.Nothing @ GHC.IO.FilePath)) -}
+fb215060730d22eb7fc1563e0adcb3cc
+  defMain3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "parseOnly: impossible error!"#) -}
+c687d7e3c1bd76f5d7e0cc78182e911c
+  defMain4 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Lib.defMain12
+                   Lib.defMain5
+                   GHC.Stack.Types.EmptyCallStack) -}
+a5cf9bd413459fca55a4aa9e446b9844
+  defMain5 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Lib.defMain11
+                   Lib.defMain10
+                   Lib.defMain9
+                   Lib.defMain8
+                   Lib.defMain7
+                   Lib.defMain8
+                   Lib.defMain6) -}
+7f926f43dffedc7e66f6be1ca831c7ad
+  defMain6 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 74#) -}
+46b85427fb20d658be20783f4e2bd4de
+  defMain7 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 38#) -}
+a5ab6c0e11d69690e8bc4412cd49ffe3
+  defMain8 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 477#) -}
+d0e6e9089c4684cf7135c94b61566415
+  defMain9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   ".\\Data\\Attoparsec\\Text\\Internal.hs"#) -}
 902d57cdd2778d640226c4b26e773390
   divParser :: Data.Attoparsec.Text.Internal.Parser Lib.Expr
   {- Arity: 5,
@@ -2571,7 +2699,7 @@ e1a40dcb7a6ce2e6975b5c38ca09c23c
 8ab525dab72f5cae6e607516c6649963
   evalw :: Lib.Prog -> Lib.Mem -> Lib.Mem
   {- Arity: 2, Strictness: <S,1*U><S,U> -}
-1131548fa0eccda7a0f132edbd23065f
+0dcf2485b6c6c3fc1e4f9cb0757da2aa
   evalwWithErrorThrowing ::
     Data.Either.Either GHC.Base.String Lib.Prog -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
@@ -2579,8 +2707,9 @@ e1a40dcb7a6ce2e6975b5c38ca09c23c
                             GHC.Base.String Lib.Prog) ->
                  case ds of wild {
                    Data.Either.Left errStr
-                   -> GHC.CString.unpackAppendCString#
-                        "not a valid bool expr: "#
+                   -> Lib.defMain14
+                        @ [GHC.Types.Char]
+                        (GHC.Types.: @ GHC.Types.Char)
                         errStr
                    Data.Either.Right prog
                    -> Data.Map.Base.$fShowMap_$cshow
@@ -3323,7 +3452,7 @@ f2d93871a5a3755828925fa63afca5ec
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Lib.Option) ->
                  case ds of wild { Lib.Option ds1 ds2 -> ds2 }) -}
-0ce99a2cf853f1070fcb55d04d6712c7
+30cb13d31293336e67be7532542e0194
   parseField :: GHC.Base.String -> Lib.Parser1 GHC.Base.String
   {- Arity: 3, Strictness: <L,U><S,1*U><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -3336,7 +3465,7 @@ f2d93871a5a3755828925fa63afca5ec
                                          <(GHC.Base.String, [GHC.Base.String])>_R))
                           (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
                                     <[GHC.Base.String]>_N <GHC.Types.IO>_R <GHC.Base.String>_N))) -}
-26478e1098443055a0cfec270b008ba2
+8896b2cf0b041bbd64494a624290f219
   parseField1 ::
     GHC.Base.String
     -> [GHC.Base.String]
@@ -3352,7 +3481,7 @@ f2d93871a5a3755828925fa63afca5ec
                    -> GHC.Prim.raiseIO#
                         @ GHC.Exception.SomeException
                         @ (GHC.Base.String, [GHC.Base.String])
-                        Lib.defMain8
+                        Lib.defMain20
                         eta1
                    : arg args'
                    -> case GHC.Base.eqString
@@ -3362,7 +3491,7 @@ f2d93871a5a3755828925fa63afca5ec
                         -> GHC.Prim.raiseIO#
                              @ GHC.Exception.SomeException
                              @ (GHC.Base.String, [GHC.Base.String])
-                             Lib.defMain8
+                             Lib.defMain20
                              eta1
                         GHC.Types.True
                         -> case args' of wild2 {
@@ -3412,7 +3541,7 @@ ea927cf328297493cc588b65f5848436
                              GHC.Base.$fAlternativeIO3
                              eta1
                         GHC.Types.True -> (# eta1, (f, args') #) } }) -}
-429f90593602ec7a75c5bcf00d477d39
+5db20662cc98589e65a474e863a34ab5
   parseInPath :: Lib.Parser1 GHC.Base.String
   {- Arity: 2,
      Unfolding: InlineRule (0, True, True)
@@ -3424,25 +3553,25 @@ ea927cf328297493cc588b65f5848436
                                     <(GHC.Base.String, [GHC.Base.String])>_R))
                      (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
                                <[GHC.Base.String]>_N <GHC.Types.IO>_R <GHC.Base.String>_N))) -}
-8a72da4ff82952ba68965607aba2e65d
+760240488e3354d2df633ba78db3e067
   parseInPath1 ::
     [GHC.Base.String]
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
           (GHC.Base.String, [GHC.Base.String]) #)
-  {- Arity: 2, Unfolding: (Lib.parseField1 Lib.defMain7) -}
-ca0eb6b2ecd914b0596e77be0e473726
+  {- Arity: 2, Unfolding: (Lib.parseField1 Lib.defMain19) -}
+86a95014f69c4a558eb35ae28cd1ee96
   parseOption :: Lib.Parser1 Lib.Option
   {- Arity: 2, Strictness: <S,U><S,U>,
      Unfolding: InlineRule (0, True, True)
-                Lib.defMain3
+                Lib.defMain15
                   `cast`
                 (Trans
                      (<[GHC.Base.String]>_R
                       ->_R Sym (GHC.Types.N:IO[0] <(Lib.Option, [GHC.Base.String])>_R))
                      (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
                                <[GHC.Base.String]>_N <GHC.Types.IO>_R <Lib.Option>_N))) -}
-01a5d2c1ba3a26f15d0690d62655091f
+79818d11c654527103d0496e94d06e66
   parseOutPath :: Lib.Parser1 GHC.Base.String
   {- Arity: 2,
      Unfolding: InlineRule (0, True, True)
@@ -3454,13 +3583,13 @@ ca0eb6b2ecd914b0596e77be0e473726
                                     <(GHC.Base.String, [GHC.Base.String])>_R))
                      (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
                                <[GHC.Base.String]>_N <GHC.Types.IO>_R <GHC.Base.String>_N))) -}
-3d7df0638f6cd12458363f42d01bdf7c
+c639e01070ac170f4125d6bf33460093
   parseOutPath1 ::
     [GHC.Base.String]
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
           (GHC.Base.String, [GHC.Base.String]) #)
-  {- Arity: 2, Unfolding: (Lib.parseField1 Lib.defMain5) -}
+  {- Arity: 2, Unfolding: (Lib.parseField1 Lib.defMain17) -}
 35617b48dd5eda3f142ecfd3d3479bb9
   setParser :: Data.Attoparsec.Text.Internal.Parser Lib.Statment
   {- Arity: 5,

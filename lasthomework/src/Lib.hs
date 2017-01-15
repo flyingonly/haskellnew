@@ -9,7 +9,8 @@ import Data.Functor
 import qualified Data.Map as Map
 import Control.Monad.State
 import System.Environment
-import Data.Text
+import Data.Text.IO
+import Control.Exception.Base
 
 type Var = String
 
@@ -473,7 +474,7 @@ defMain :: IO ()
 defMain = do
     args <- getArgs
     (option,_) <- runStateT parseOption args
-    inp <- readFile (inPath option)
-    instrs <- lines inp
-    writeFile (outPath option) inp
+    inp <- Data.Text.IO.readFile (inPath option)
+    output <- evaluate $ evalwWithErrorThrowing $ parseOnly statParser inp
+    Prelude.writeFile (outPath option) output
     {-writeFile (outPath option) output-}
