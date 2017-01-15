@@ -7,6 +7,9 @@ import Control.Applicative
 import Data.Attoparsec.Text
 import Data.Functor
 import qualified Data.Map as Map
+import Control.Monad.State
+import System.Environment
+import Data.Text
 
 type Var = String
 
@@ -86,7 +89,7 @@ beginParser = do
     stats <- many statParser
     lexeme $ char ')'
     return (Statmentlist stats)
-    
+
 variableonlyParser:: Parser Var
 variableonlyParser = do
  skipSpace
@@ -419,33 +422,58 @@ evalwWithErrorThrowing :: Either String Prog -> String
 evalwWithErrorThrowing (Left errStr) = "not a valid bool expr: " ++ errStr
 evalwWithErrorThrowing (Right prog) = show $ evalw prog Map.empty
 
+data Option = Option {
+    inPath :: String,
+    outPath :: String
+}
+    deriving Show
+
+type Parser1 a = StateT [String] IO a
+
+parseFlag :: String -> Parser1 String
+parseFlag f = do
+    args <- get
+    case args of
+        [] -> Control.Applicative.empty
+        (arg : args')
+            | arg == "--" ++ f -> do
+                put args'
+                return f
+            | otherwise -> Control.Applicative.empty
+
+parseField :: String -> Parser1 String
+parseField f = do
+    parseFlag f
+    args <- get
+    case args of
+        [] -> Control.Applicative.empty
+        (arg : args') -> do
+            put args'
+            return arg
+
+parseInPath :: Parser1 String
+parseInPath = parseField "in"
+
+parseOutPath :: Parser1 String
+parseOutPath = parseField "out"
+
+parseOption :: Parser1 Option
+parseOption = p0 <|> p1 where
+    p0 = do
+        i <- parseInPath
+        o <- parseOutPath
+        return (Option i o)
+
+    p1 = do
+        o <- parseOutPath
+        i <- parseInPath
+        return (Option i o)
+
 defMain :: IO ()
 defMain = do
-    putStrLn $ show $ parseOnly notParser "(not True)"
-    putStrLn $ show $ parse notParser "(not True)"
-    putStrLn "-------"
-    putStrLn $ show $ parseOnly notParser "(nXXX True)"
-    putStrLn $ show $ parse notParser "(nXXX True)"
-    putStrLn "-------"
-    putStrLn $ show $ parseOnly notParser "(not Tr"
-    putStrLn $ show $ parse notParser "(not Tr"
-    putStrLn "-------"
-    putStrLn $ show $ parseOnly notParser "(not True)   MORE"
-    putStrLn $ show $ parse notParser "(not True)   MORE"
-    putStrLn "--------------"
-    putStrLn $ show $ parseOnly exprParser "(not True)"
-    putStrLn $ show $ parse exprParser "(not True)"
-    putStrLn "-------"
-    putStrLn $ show $ parseOnly exprParser "(nXXX True)"
-    putStrLn $ show $ parse exprParser "(nXXX True)"
-    putStrLn "-------"
-    putStrLn $ show $ parseOnly exprParser "(not Tr"
-    putStrLn $ show $ parse exprParser "(not Tr"
-    putStrLn "-------"
-    putStrLn $ show $ parseOnly exprParser "(not True)   MORE"
-    putStrLn $ show $ parse exprParser "(not True)   MORE"
-    putStrLn "--------------"
-    putStrLn $ show $ evalWithErrorThrowing $ parseOnly exprParser "(not True)"
-    putStrLn $ show $ evalWithErrorThrowing $ parseOnly exprParser "(not Tr"
-    putStrLn $ show $ evalWithErrorThrowing $ parseOnly exprParser "(nXXX True)"
-    putStrLn $ show $ evalWithErrorThrowing $ parseOnly exprParser "(not True)   MORE"
+    args <- getArgs
+    (option,_) <- runStateT parseOption args
+    inp <- readFile (inPath option)
+    instrs <- lines inp
+    writeFile (outPath option) inp
+    {-writeFile (outPath option) output-}

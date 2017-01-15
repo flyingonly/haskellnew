@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-15 07:25:13.4017752 UTC
+2017-01-15 09:05:17.1012844 UTC
 
 interface main@main:Main 8001
-  interface hash: de99c31f8b386ce0f60eaca9c185f559
-  ABI hash: 4180b2f0ac60f979d9ac6daf5c52c115
-  export-list hash: 4062763872ff469bd017f8481a018629
+  interface hash: b82c8f0bf225ff01f69fdd2f0453a51d
+  ABI hash: c3e1384c3e20679245e0d1cf6c65fa08
+  export-list hash: ace2cf979ac420014aa29ff162838c39
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: acd3e26751c68ce034aa926940678791
   sig of: Nothing
@@ -23,6 +23,7 @@ package dependencies: array-0.5.1.1@array-0.5.1.1
                       hashable-1.2.4.0@hashable-1.2.4.0-Ctl752zbguF6QanxurLOm2
                       integer-gmp-1.0.0.1
                       lasthomework-0.1.0.0@lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk
+                      mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
                       primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
                       scientific-0.3.4.9@scientific-0.3.4.9-ENrtAw13zTS8y4klTK3l4D
                       text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs
@@ -58,7 +59,7 @@ family instance modules: attoparsec-0.13.1.0@attoparsec-0.13.1.0-2AyzLuPV4T95RcY
                          vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector
 import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
-import  -/  lasthomework-0.1.0.0@lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk:Lib a6fec67c73aaaddb65b440abd11b105e
+import  -/  lasthomework-0.1.0.0@lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk:Lib 235d4951ef41f3d2231abb69528be5d3
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -71,12 +72,12 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-79b4ff31e996b40dbc2405e1118fe148
+7fffbfcdce2e11e56d7dfffcd5b3e2da
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Lib.defMain1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-3e9742429ba47beaf4581b05e3275b7f
+dc66830b7d8d37634140f92337b0aebd
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
