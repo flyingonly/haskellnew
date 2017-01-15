@@ -6,6 +6,9 @@ module Lib where
 import Control.Applicative
 import Data.Attoparsec.Text
 import Data.Functor
+import qualified Data.Map as Map
+
+type Var = String
 
 data Expr
     = FalseLit
@@ -15,8 +18,7 @@ data Expr
     | Or Expr Expr
 
     | Nil
-    | Char_literal Char
-    | String_literal [Char]
+    | CharLit Char
     | Cons Expr Expr
     | Car Expr
     | Cdr Expr
@@ -33,51 +35,71 @@ data Expr
     | Greater Expr Expr
     | GreaterEq Expr Expr
 
-    | Variable
-    | Vectorref Expr Expr
-    | Functionname [Expr]
+    | VarRef Var
     deriving Show
 
 data Statment
-    = Begin [Statment]
-    |Set Expr Expr
+    = Statmentlist [Statment]
+    |Set Var Expr
     |Skip
     |If Expr Statment Statment
     |While Expr Statment
-    |Makevector Expr Expr
-    |Vectorset Expr Expr Expr
-    |Return Expr
+    deriving Show
 
-data Function = Define Expr Statment
+type Prog = Statment
+type Mem = Map.Map Var MyResult
 
-data Result1
+data MyResult
     = BoolResult Bool
     | NumResult Double
+    | CharResult Char
     | NilResult
-    | ConsResult Result1 Result1
+    | ConsResult MyResult MyResult
+    deriving Show
+
+testResult :: MyResult -> Bool
+testResult (BoolResult True) = True
+testResult _ = False
+
+evalw :: Prog -> Mem -> Mem
+
+evalw (Set p q) mem1 = let f _ = Just (eval q) in Map.alter f p mem1
+evalw Skip mem1 = mem1
+evalw (Statmentlist []) mem1 = mem1
+evalw (Statmentlist (x:xs)) mem1 = evalw (Statmentlist xs) (evalw x mem1)
+evalw (While p q) mem1
+    |testResult (eval p) = evalw (While p q) (evalw q mem1)
+    |otherwise = mem1
+evalw (If p q s) mem1
+    |testResult (eval p) = (evalw q mem1)
+    |otherwise = (evalw s mem1)
 
 statParser :: Parser Statment
 statParser = beginParser <|> setParser <|> skipParser <|> ifParser <|> whileParser
-            <|> makevectorParser <|> vectorsetParser <|> returnParser
 
 
 beginParser :: Parser Statment
 beginParser = do
     lexeme $ char '('
     lexeme $ string "begin"
-    stats <- many statParser
-    lexeme $ char ')'
-    return (Begin stats)
+    stats <- (manyTill statParser (char ')'))
+    return (Statmentlist stats)
+
+variableonlyParser:: Parser Var
+variableonlyParser = do
+ skipSpace
+ a <- (manyTill anyChar (char ' '))
+ return a
 
 setParser :: Parser Statment
 setParser = do
     lexeme $ char '('
     lexeme $ string "set!"
-    expr <- exprParser
+    v <- variableonlyParser
     skipSpace
     expr1 <- exprParser
     lexeme $ char ')'
-    return (Set expr expr1)
+    return (Set v expr1)
 
 skipParser :: Parser Statment
 skipParser = lexeme $ string "skip" $> Skip
@@ -104,7 +126,7 @@ whileParser = do
     lexeme $ char ')'
     return (While expr stat)
 
-makevectorParser :: Parser Statment
+{-makevectorParser :: Parser Statment
 makevectorParser = do
     lexeme $ char '('
     lexeme $ string "make-vector"
@@ -132,14 +154,24 @@ returnParser = do
     lexeme $ string "return"
     expr <- exprParser
     lexeme $ char ')'
-    return (Return expr)
+    return (Return expr)-}
 
 
 exprParser :: Parser Expr
-exprParser = falseParser <|> trueParser <|> notParser <|> andParser <|> orParser
+exprParser = nilParser <|> falseParser <|> trueParser <|> notParser <|> andParser <|> orParser
             <|> charParser <|> stringParser <|> consParser <|> carParser <|> cdrParser
             <|> numParser <|> addParser <|> minusParser <|> multParser <|> divParser
-            <|> eqParser <|> lessParser <|> lesseqParser <|> greaterParser <|> greatereqParser
+            <|> eqParser <|> lessParser <|> lesseqParser <|> greaterParser <|> greatereqParser 
+            <|> variableParser
+
+variableParser:: Parser Expr
+variableParser = do
+ skipSpace
+ a <- (manyTill anyChar (char ' '))
+ return (VarRef a)
+
+nilParser :: Parser Expr
+nilParser = lexeme $ string "nil" $> Nil
 
 falseParser :: Parser Expr
 falseParser = lexeme $ string "False" $> FalseLit
@@ -149,14 +181,17 @@ charParser = do
  lexeme $ char '\''
  a <- anyChar
  char '\''
- return (Char_literal a)
+ return (CharLit a)
+
+trans :: [Char] -> Expr
+trans [] = Nil
+trans (x:xs) = (Cons (CharLit x) (trans xs))
 
 stringParser:: Parser Expr
 stringParser = do
  lexeme $ char '\"'
- a <- many anyChar
- char '\"'
- return (String_literal a)
+ a <- (manyTill anyChar (char '\"'))
+ return (trans a)
 
 consParser:: Parser Expr
 consParser = do
@@ -326,12 +361,49 @@ greatereqParser = do
     return (GreaterEq expr expr1)
 
 
-eval :: Expr -> Bool
-eval FalseLit = False
-eval TrueLit = True
-eval (Not p) = not $ eval p
-eval (And p q) = and [(eval p),(eval q)]
-eval (Or p q) = or [(eval p),(eval q)]
+eval :: Expr -> MyResult
+eval FalseLit = BoolResult False
+eval TrueLit = BoolResult True
+eval (Not expr) = let BoolResult a = eval (expr) in BoolResult (not a)
+eval (And expr1 expr2) = let BoolResult a1 = eval (expr1)
+                             BoolResult a2 = eval (expr2)
+                         in BoolResult (and [a1, a2])
+eval (Or expr1 expr2) = let BoolResult a1 = eval (expr1)
+                            BoolResult a2 = eval (expr2)
+                        in BoolResult (or [a1, a2])
+eval (NumLit a) = NumResult a
+eval (Add expr1 expr2) = let NumResult a1 = eval (expr1)
+                             NumResult a2 = eval (expr2)
+                         in NumResult (a1 + a2)
+eval (Minus expr1 expr2) = let NumResult a1 = eval (expr1)
+                               NumResult a2 = eval (expr2)
+                           in NumResult (a1 - a2)
+eval (Mult expr1 expr2) = let NumResult a1 = eval (expr1)
+                              NumResult a2 = eval (expr2)
+                          in NumResult (a1 * a2)
+eval (Div expr1 expr2) = let NumResult a1 = eval (expr1)
+                             NumResult a2 = eval (expr2)
+                         in NumResult (a1 / a2)
+eval (Eq expr1 expr2) = let NumResult a1 = eval (expr1)
+                            NumResult a2 = eval (expr2)
+                        in BoolResult (a1 == a2)
+eval (Less expr1 expr2) = let NumResult a1 = eval (expr1)
+                              NumResult a2 = eval (expr2)
+                          in BoolResult (a1 < a2)
+eval (LessEq expr1 expr2) = let NumResult a1 = eval (expr1)
+                                NumResult a2 = eval (expr2)
+                            in BoolResult (a1 <= a2)
+eval (Greater expr1 expr2) = let NumResult a1 = eval (expr1)
+                                 NumResult a2 = eval (expr2)
+                             in BoolResult (a1 > a2)
+eval (GreaterEq expr1 expr2) = let NumResult a1 = eval (expr1)
+                                   NumResult a2 = eval (expr2)
+                               in BoolResult (a1 >= a2)
+eval Nil = NilResult
+eval (CharLit a) = CharResult a
+eval (Cons expr1 expr2) = ConsResult (eval expr1) (eval expr2)
+eval (Car expr) = let ConsResult a1 a2 = eval expr in a1
+eval (Cdr expr) = let ConsResult a1 a2 = eval expr in a2
 
 -- designed for parseOnly
 --   :: Data.Attoparsec.Text.Parser a

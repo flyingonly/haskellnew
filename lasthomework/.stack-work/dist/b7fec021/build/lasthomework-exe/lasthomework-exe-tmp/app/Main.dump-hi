@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-14 06:36:11.0439841 UTC
+2017-01-15 04:44:02.2749609 UTC
 
 interface main@main:Main 8001
-  interface hash: fcbb0c35875fd40726a04c2b321cd975
+  interface hash: 86d711625fae517e6eb8e55aea3d2423
   ABI hash: 4180b2f0ac60f979d9ac6daf5c52c115
   export-list hash: 4062763872ff469bd017f8481a018629
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -58,7 +58,7 @@ family instance modules: attoparsec-0.13.1.0@attoparsec-0.13.1.0-2AyzLuPV4T95RcY
                          vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector
 import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
-import  -/  lasthomework-0.1.0.0@lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk:Lib ed9b2fd98261b156dc7a0112080d32eb
+import  -/  lasthomework-0.1.0.0@lasthomework-0.1.0.0-38Oy90SkoIZ9X1g2jYCTPk:Lib a8c9ba0fbd5ac21dd572892409db8adb
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
